@@ -36,6 +36,19 @@ const AboutMe = () => {
           praesentium in quas nostrum nam.
         </p>
       </ContentWrapper>
+      <Curve2Container>
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="shape-fill"
+          ></path>
+        </svg>
+      </Curve2Container>
     </AboutMeWrapper>
   );
 };
@@ -44,7 +57,7 @@ export default AboutMe;
 
 const AboutMeWrapper = styled(HorizontalWrapper)`
   width: 100%;
-  height: 1500px;
+  height: 1050px;
   position: relative;
   box-sizing: border-box;
   justify-content: center;
@@ -56,7 +69,7 @@ const ContentWrapper = styled.div`
   height: 100%;
   padding-top: 100px;
   h1 {
-    color: #e0e3e7;
+    color: #b5df44;
     font-size: 70px;
     margin-bottom: 20px;
   }
@@ -77,12 +90,38 @@ const CurveContainer = styled.div`
   height: 101px;
   line-height: 0;
   rotate: 180deg;
+  box-sizing: border-box;
 
   svg {
     position: relative;
     top: 101px;
     display: block;
     width: calc(109% + 1.3px);
+    height: 101px;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+
+  .shape-fill {
+    fill: #4831d4;
+  }
+`;
+
+const Curve2Container = styled.section`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 101px;
+  line-height: 0;
+  box-sizing: border-box;
+
+  svg {
+    position: relative;
+    bottom: -101px;
+    display: block;
+    width: calc(100% + 1.3px);
+    overflow: hidden;
     height: 101px;
     z-index: 2;
   }

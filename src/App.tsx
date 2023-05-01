@@ -7,6 +7,9 @@ import {
 } from "./components/reusable/styled-components";
 import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
+import Work from "./components/Work";
+import Footer from "./components/Footer";
+import AnimatedHamburger from "./components/reusable/animated-hamburger";
 
 function App() {
   return (
@@ -18,13 +21,15 @@ function App() {
           </Title>
           <HeaderOptions>
             <HoverWrapper>
-              <AppsIcon sx={{ fontSize: 40 }} htmlColor="#e0e3e7" />
+              <AnimatedHamburger />
             </HoverWrapper>
           </HeaderOptions>
         </Header>
         <Body>
           <Landing />
           <AboutMe />
+          <Work />
+          <Footer />
         </Body>
       </BodyWrapper>
     </div>
@@ -69,7 +74,7 @@ const Body = styled.section`
 
 const Header = styled.header`
   width: 80%;
-  padding: 20px 0px;
+  padding: 40px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -33,7 +33,7 @@ export default Landing;
 const LandingWrapper = styled(VerticalWrapper)`
   width: 80%;
   height: 850px;
-  padding-top: 200px;
+  padding-top: 150px;
   box-sizing: border-box;
   column-gap: 40px;
 `;
