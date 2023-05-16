@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 
-const AnimatedHamburger = () => {
+const AnimatedHamburger = (props: any) => {
+  const [hamburgerState, setHamburgerState] = useState(false);
+
+  const hamburgerRef: any = useRef(null);
+
+  const clickHamburger = () => {
+    if (hamburgerRef.current) {
+      const hamburger = hamburgerRef.current;
+      if (props.state) {
+        hamburger.className = "";
+        props.setState(false);
+        return;
+      }
+      hamburger.className = "open";
+      props.setState(true);
+    }
+  };
+
   return (
     <Hamburger>
-      <div id="nav-icon3">
+      <div id="nav-icon3" ref={hamburgerRef} onClick={() => clickHamburger()}>
         <span></span>
         <span></span>
         <span></span>
@@ -17,10 +34,13 @@ const AnimatedHamburger = () => {
 export default AnimatedHamburger;
 
 const Hamburger = styled.div`
+  z-index: 4;
   #nav-icon3 {
-    width: 55px;
-    height: 45px;
-    position: relative;
+    width: 42px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -57,11 +77,11 @@ const Hamburger = styled.div`
 
   #nav-icon3 span:nth-child(2),
   #nav-icon3 span:nth-child(3) {
-    top: 14px;
+    top: 12px;
   }
 
   #nav-icon3 span:nth-child(4) {
-    top: 28px;
+    top: 24px;
   }
 
   #nav-icon3.open span:nth-child(1) {

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import LinkButton from "./reusable/LinkButton";
 import {
   HorizontalWrapper,
   VerticalWrapper,
@@ -19,9 +20,9 @@ const Landing = () => {
           and StyledComponents.
         </p>
         <ButtonRow>
-          <Button>Work</Button>
-          <Button>Contact Me</Button>
-          <Button>Resume</Button>
+          <LinkButton content={"Work"} />
+          <LinkButton content={"Contact Me"} />
+          <LinkButton content={"Resume"} />
         </ButtonRow>
       </Wrapper>
     </LandingWrapper>
@@ -32,8 +33,8 @@ export default Landing;
 
 const LandingWrapper = styled(VerticalWrapper)`
   width: 80%;
-  height: 850px;
-  padding-top: 150px;
+  height: 1050px;
+  padding-top: 300px;
   box-sizing: border-box;
   column-gap: 40px;
 `;
@@ -54,7 +55,7 @@ const AnimatedText = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 80px;
+  font-size: 70px;
   margin: 0px;
 
   @keyframes gradient {
@@ -78,7 +79,7 @@ const Wrapper = styled(VerticalWrapper)`
 
   p {
     font-family: Archivo;
-    font-size: 26px;
+    font-size: 24px;
     color: #e0e3e7;
     line-height: 40px;
   }
@@ -87,17 +88,4 @@ const Wrapper = styled(VerticalWrapper)`
 const ButtonRow = styled(HorizontalWrapper)`
   column-gap: 20px;
   margin-bottom: 20px;
-`;
-
-const Button = styled.button`
-  align-items: center;
-  justify-content: center;
-  border-radius: 2px;
-  border: 2px solid #d8d8d8;
-  background-color: transparent;
-  color: #e0e3e7;
-  padding: 7px 25px;
-  font-size: 22px;
-  font-weight: 200;
-  cursor: pointer;
 `;

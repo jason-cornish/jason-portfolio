@@ -1,13 +1,132 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { HorizontalWrapper } from "./reusable/styled-components";
-import AppleIcon from "@mui/icons-material/Apple";
+import {
+  HorizontalWrapper,
+  VerticalWrapper,
+} from "./reusable/styled-components";
+
 import ArboretumCreekLogo from "../images/ArboretumCreekLogo.png";
+import Chip from "./reusable/Chip";
+import SelectedWorkContent from "./SelectedWorkContent";
 
 const Work = () => {
+  const [selectedWork, setSelectedWork] = useState<number>(0);
+
+  const workLinks = [
+    "Apple",
+    "Zollege",
+    "Elliot Smith Player",
+    "Arboretum Creek",
+  ];
+
   return (
     <WorkWrapper>
+      <h1 className="WorkSectionTitle">/work</h1>
       <ContentWrapper>
+        <WorkChips>
+          {workLinks.map((work, idx) => {
+            const selected = idx === selectedWork;
+            return (
+              <Chip
+                selected={selected}
+                content={work}
+                customClickEvent={() => setSelectedWork(idx)}
+              />
+            );
+          })}
+        </WorkChips>
+        <Divider />
+        <SelectedWorkContent
+          selectedWork={workLinks[selectedWork]}
+          workLinks={workLinks}
+        ></SelectedWorkContent>
+      </ContentWrapper>
+      <CurveContainer>
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="shape-fill"
+          ></path>
+        </svg>
+      </CurveContainer>
+    </WorkWrapper>
+  );
+};
+
+export default Work;
+
+const WorkWrapper = styled.div`
+  padding-top: 250px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 1200px;
+  position: relative;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e3e7;
+  .WorkSectionTitle {
+    color: #121212 !important;
+    font-size: 70px;
+    margin: 0 0 75px 0px;
+  }
+`;
+
+const ContentWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 250px;
+  box-sizing: border-box;
+  justify-content: center;
+  column-gap: 25px;
+`;
+
+const WorkChips = styled(VerticalWrapper)`
+  row-gap: 15px;
+`;
+
+const Divider = styled.div`
+  width: 0px;
+  height: 100%;
+  border: 1px solid #282828;
+  border-radius: 3px;
+  margin-bottom: 25px;
+`;
+
+const CurveContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 101px;
+  line-height: 0;
+  box-sizing: border-box;
+
+  svg {
+    position: relative;
+    bottom: -101px;
+    display: block;
+    width: calc(109% + 1.3px);
+    height: 101px;
+    z-index: 2;
+    box-sizing: border-box;
+  }
+
+  .shape-fill {
+    fill: #e0e3e7;
+  }
+`;
+
+/*
+  <ContentWrapper>
         <h1>Some recent work:</h1>
         <WorkExamples>
           <WorkLink>
@@ -75,108 +194,4 @@ const Work = () => {
             ></path>
           </svg>
         </CurveContainer>
-      </ContentWrapper>
-    </WorkWrapper>
-  );
-};
-
-export default Work;
-
-const WorkWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  height: 1300px;
-  position: relative;
-  box-sizing: border-box;
-  justify-content: center;
-  background-color: #202124;
-`;
-
-const ContentWrapper = styled.div`
-  width: 80%;
-  height: 100%;
-  padding-top: 150px;
-  box-sizing: border-box;
-  h1 {
-    color: #e0e3e7;
-    font-size: 70px;
-    margin-bottom: 40px;
-  }
-  p {
-    color: #e0e3e7;
-    font-family: Archivo;
-    font-size: 26px;
-    max-width: 600px;
-    line-height: 40px;
-  }
-`;
-
-const WorkExamples = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px 40px;
-  grid-template-rows: 300px 300px;
-`;
-
-const WorkLink = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #303134;
-  border-radius: 2px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  cursor: pointer;
-  svg {
-    position: relative;
-    z-index: 5;
-  }
-
-  path {
-    width: 200px !important;
-  }
-
-  .appleLogo {
-    margin-bottom: 25px;
-  }
-
-  .arboretum-creek {
-    width: 350px;
-  }
-`;
-
-const ZospaceLogo = styled.div`
-  position: relative;
-  display: flex;
-  svg {
-    .text {
-      display: block;
-      position: absolute;
-      left: 50px;
-    }
-  }
-`;
-
-const CurveContainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 101px;
-  line-height: 0;
-  rotate: 180deg;
-  box-sizing: border-box;
-
-  svg {
-    position: relative;
-    bottom: 0px;
-    display: block;
-    width: calc(109% + 1.3px);
-    height: 101px;
-    z-index: 2;
-    box-sizing: border-box;
-  }
-
-  .shape-fill {
-    fill: #202124;
-  }
-`;
+*/

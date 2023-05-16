@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import AppsIcon from "@mui/icons-material/Apps";
 import {
@@ -9,22 +9,15 @@ import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
 import Work from "./components/Work";
 import Footer from "./components/Footer";
-import AnimatedHamburger from "./components/reusable/animated-hamburger";
+import Header from "./components/Header";
 
 function App() {
+  const [modalState, setModalState] = useState<boolean>(false);
+
   return (
     <div className="App">
       <BodyWrapper>
-        <Header>
-          <Title>
-            <h1>Jason Cornish</h1>
-          </Title>
-          <HeaderOptions>
-            <HoverWrapper>
-              <AnimatedHamburger />
-            </HoverWrapper>
-          </HeaderOptions>
-        </Header>
+        <Header />
         <Body>
           <Landing />
           <AboutMe />
@@ -47,22 +40,7 @@ const BodyWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   font-family: Roboto;
-  background-color: #202124;
-  background: linear-gradient(-45deg, #202124, #303134, #28292d);
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+  background-color: #282828;
 `;
 
 const Body = styled.section`
@@ -70,43 +48,6 @@ const Body = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const Header = styled.header`
-  width: 80%;
-  padding: 40px 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #e0e3e7;
-  font-family: Roboto;
-  box-sizing: border-box;
-  h1 {
-    font-size: 35px;
-    margin: 0px;
-
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-  }
-`;
-
-const Title = styled(HorizontalWrapper)`
-  align-items: center;
-  column-gap: 10px;
-`;
-
-const HeaderOptions = styled(HorizontalWrapper)`
-  align-items: center;
-  column-gap: 20px;
 `;
 
 // const Footer = styled.footer`

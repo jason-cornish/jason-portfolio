@@ -69,7 +69,7 @@ const ContentWrapper = styled.div`
   height: 100%;
   padding-top: 100px;
   h1 {
-    color: #b5df44;
+    color: #e0e3e7;
     font-size: 70px;
     margin-bottom: 20px;
   }
