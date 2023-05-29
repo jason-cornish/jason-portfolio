@@ -31,6 +31,8 @@ const ChipWrapper = styled.button`
   background-color: transparent;
   color: #121212;
   z-index: 2;
+  height: 50px;
+  width: 235px;
   p {
     font-family: Archivo;
     position: relative;
@@ -60,6 +62,11 @@ const ChipWrapper = styled.button`
       background-position: 0 100%;
     }
   }
+
+  @media screen and (max-width: 1200px) {
+    padding: 10px 5px !important;
+    width: 235px !important;
+  }
 `;
 
 const SelectedChipWrapper = styled.button`
@@ -69,11 +76,19 @@ const SelectedChipWrapper = styled.button`
   padding: 10px 25px;
   border-radius: 3px;
   color: #e0e3e7;
+  height: 50px;
+  width: 235px;
   p {
     position: relative;
     z-index: 2;
     margin: 0px;
     font-size: 22px;
+    width: 100%;
     color: #e0e3e7 !important;
+    font-family: Archivo;
+  }
+  @media screen and (max-width: 1200px) {
+    padding: 10px 5px !important;
+    width: 235px !important;
   }
 `;

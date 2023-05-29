@@ -9,6 +9,7 @@ import { ReactComponent as AppleMapsLogo } from "../svg/apple-maps.svg";
 import AppleMapsBackground from "../images/Apple-Maps-Background.png";
 import ZollegeBackground from "../images/Zollege-Background.png";
 import ElliotSmithPlayerBackground from "../images/Elliot-Smith-Player-Background.png";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 type WorkProps = {
   selectedWork: string;
@@ -20,130 +21,167 @@ const SelectedWorkContent = (props: WorkProps) => {
 
   const workDictionary = {
     [workLinks[0]]: (
-      <WorkWrapper>
-        <WorkTitle>
-          Full-Stack Developer @ <span>Apple</span>
-        </WorkTitle>
-        <WorkSubTitle>June 2022 - Present</WorkSubTitle>
-        <ChipRow>
-          <DeadChip content={"React.js"} />
-          <DeadChip content={"Node.js"} />
-          <DeadChip content={"Styled-Components"} />
-          <DeadChip content={"UI Design"} />
-          <DeadChip content={"Typescript"} />
-        </ChipRow>
-        <WorkContent>
-          <AppleImage>
-            <GreyLayer />
-            <AppleMapsLogo className="logo" />
-            <img src={AppleMapsBackground} alt="Apple Maps"></img>
-          </AppleImage>
-          <WorkParagraphWrapper>
-            <WorkParagraph>
-              Designed, developed, and maintained multiple major system feature
-              additions to internal Apple web applications using React,
-              Typescript, and Node.js.
-            </WorkParagraph>
-            <WorkParagraph>
-              Collaborated with Apple PM’s to design complex data visualizations
-              and user interfaces in Sketch.
-            </WorkParagraph>
-            <WorkParagraph>
-              Dockerized and deployed a Node.js REST API to a Kubernetes
-              namespace
-            </WorkParagraph>
-            <WorkParagraph>
-              Maintained and refactored previous developers’ Python/Typescript
-              code.
-            </WorkParagraph>
-          </WorkParagraphWrapper>
-        </WorkContent>
-      </WorkWrapper>
+      <CSSTransition timeout={400} classNames="transition" key="apple">
+        <WorkWrapper>
+          <WorkTitle>
+            Full-Stack Developer @ <span>Apple</span>
+          </WorkTitle>
+          <WorkSubTitle>June 2022 - Present</WorkSubTitle>
+          <ChipRow>
+            <DeadChip content={"React.js"} />
+            <DeadChip content={"Node.js"} />
+            <DeadChip content={"Styled-Components"} />
+            <DeadChip content={"UI Design"} />
+            <DeadChip content={"Typescript"} />
+          </ChipRow>
+          <WorkContent>
+            <AppleImage>
+              <GreyLayer />
+              <AppleMapsLogo className="logo" />
+              <img src={AppleMapsBackground} alt="Apple Maps"></img>
+            </AppleImage>
+            <WorkParagraphWrapper>
+              <WorkParagraph>
+                Designed, developed, and maintained multiple major system
+                feature additions to internal Apple web applications using
+                React, Typescript, and Node.js.
+              </WorkParagraph>
+              <WorkParagraph>
+                Collaborated with Apple PM’s to design complex data
+                visualizations and user interfaces in Sketch.
+              </WorkParagraph>
+              <WorkParagraph>
+                Dockerized and deployed a Node.js REST API to a Kubernetes
+                namespace
+              </WorkParagraph>
+              <WorkParagraph>
+                Maintained and refactored previous developers’ Python/Typescript
+                code.
+              </WorkParagraph>
+            </WorkParagraphWrapper>
+          </WorkContent>
+        </WorkWrapper>
+      </CSSTransition>
     ),
     [workLinks[1]]: (
-      <WorkWrapper>
-        <WorkTitle>
-          Front-End Developer @ <span>Zollege</span>
-        </WorkTitle>
-        <WorkSubTitle>January - June 2022</WorkSubTitle>
-        <ChipRow>
-          <DeadChip content={"Javascript"} />
-          <DeadChip content={"HTML5"} />
-          <DeadChip content={"CSS3"} />
-          <DeadChip content={"Git"} />
-          <DeadChip content={"Bootstrap"} />
-        </ChipRow>
-        <WorkContent>
-          <ZollegeImage>
-            <img src={ZollegeBackground}></img>
-          </ZollegeImage>
-          <WorkParagraphWrapper>
-            <WorkParagraph>
-              Designed, developed, and maintained multiple major system feature
-              additions to internal Apple web applications using React,
-              Typescript, and Node.js.
-            </WorkParagraph>
-            <WorkParagraph>
-              Collaborated with Apple PM’s to design complex data visualizations
-              and user interfaces in Sketch.
-            </WorkParagraph>
-            <WorkParagraph>
-              Dockerized and deployed a Node.js REST API to a Kubernetes
-              namespace
-            </WorkParagraph>
-            <WorkParagraph>
-              Maintained and refactored previous developers’ Python/Typescript
-              code.
-            </WorkParagraph>
-          </WorkParagraphWrapper>
-        </WorkContent>
-      </WorkWrapper>
+      <CSSTransition timeout={400} classNames="transition" key="zollege">
+        <WorkWrapper>
+          <WorkTitle>
+            Front-End Developer @ <span>Zollege</span>
+          </WorkTitle>
+          <WorkSubTitle>January - June 2022</WorkSubTitle>
+          <ChipRow>
+            <DeadChip content={"Javascript"} />
+            <DeadChip content={"HTML5"} />
+            <DeadChip content={"CSS3"} />
+            <DeadChip content={"Git"} />
+            <DeadChip content={"Bootstrap"} />
+          </ChipRow>
+          <WorkContent>
+            <ZollegeImage>
+              <img src={ZollegeBackground}></img>
+            </ZollegeImage>
+            <WorkParagraphWrapper>
+              <WorkParagraph>
+                Designed, developed, and maintained multiple major system
+                feature additions to internal Apple web applications using
+                React, Typescript, and Node.js.
+              </WorkParagraph>
+              <WorkParagraph>
+                Collaborated with Apple PM’s to design complex data
+                visualizations and user interfaces in Sketch.
+              </WorkParagraph>
+              <WorkParagraph>
+                Dockerized and deployed a Node.js REST API to a Kubernetes
+                namespace
+              </WorkParagraph>
+              <WorkParagraph>
+                Maintained and refactored previous developers’ Python/Typescript
+                code.
+              </WorkParagraph>
+            </WorkParagraphWrapper>
+          </WorkContent>
+        </WorkWrapper>
+      </CSSTransition>
     ),
     [workLinks[2]]: (
-      <WorkWrapper>
-        <WorkTitle>
-          Lead Developer @ <span>Elliot Smith Player</span>
-        </WorkTitle>
-        <WorkSubTitle>January - June 2022</WorkSubTitle>
-        <ChipRow>
-          <DeadChip content={"React.js"} />
-          <DeadChip content={"Node.js"} />
-          <DeadChip content={"Styled-Components"} />
-          <DeadChip content={"UI Design"} />
-          <DeadChip content={"Typescript"} />
-        </ChipRow>
-        <WorkContent>
-          <ElliotImage>
-            <img src={ElliotSmithPlayerBackground}></img>
-          </ElliotImage>
-          <WorkParagraphWrapper>
-            <WorkParagraph>
-              Designed, developed, and maintained multiple major system feature
-              additions to internal Apple web applications using React,
-              Typescript, and Node.js.
-            </WorkParagraph>
-            <WorkParagraph>
-              Collaborated with Apple PM’s to design complex data visualizations
-              and user interfaces in Sketch.
-            </WorkParagraph>
-            <WorkParagraph>
-              Dockerized and deployed a Node.js REST API to a Kubernetes
-              namespace
-            </WorkParagraph>
-            <WorkParagraph>
-              Maintained and refactored previous developers’ Python/Typescript
-              code.
-            </WorkParagraph>
-          </WorkParagraphWrapper>
-        </WorkContent>
-      </WorkWrapper>
+      <CSSTransition
+        timeout={350}
+        classNames="transition"
+        key="elliot-smith-player"
+      >
+        <WorkWrapper>
+          <WorkTitle>
+            Lead Developer @ <span>Elliot Smith Player</span>
+          </WorkTitle>
+          <WorkSubTitle>January - June 2022</WorkSubTitle>
+          <ChipRow>
+            <DeadChip content={"React.js"} />
+            <DeadChip content={"Node.js"} />
+            <DeadChip content={"Styled-Components"} />
+            <DeadChip content={"UI Design"} />
+            <DeadChip content={"Typescript"} />
+          </ChipRow>
+          <WorkContent>
+            <ElliotImage>
+              <img src={ElliotSmithPlayerBackground}></img>
+            </ElliotImage>
+            <WorkParagraphWrapper>
+              <WorkParagraph>
+                Designed, developed, and maintained multiple major system
+                feature additions to internal Apple web applications using
+                React, Typescript, and Node.js.
+              </WorkParagraph>
+              <WorkParagraph>
+                Collaborated with Apple PM’s to design complex data
+                visualizations and user interfaces in Sketch.
+              </WorkParagraph>
+              <WorkParagraph>
+                Dockerized and deployed a Node.js REST API to a Kubernetes
+                namespace
+              </WorkParagraph>
+              <WorkParagraph>
+                Maintained and refactored previous developers’ Python/Typescript
+                code.
+              </WorkParagraph>
+            </WorkParagraphWrapper>
+          </WorkContent>
+        </WorkWrapper>
+      </CSSTransition>
     ),
   };
 
-  return workDictionary[selectedWork];
+  return (
+    <TransitionGroup component={TransitionWrapper}>
+      {workDictionary[selectedWork]}
+    </TransitionGroup>
+  );
 };
 
 export default SelectedWorkContent;
+
+const TransitionWrapper = styled.div`
+  .transition-enter {
+    opacity: 0.01;
+    transform: translate(0, 10);
+  }
+
+  .transition-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 350ms linear;
+  }
+
+  .transition-exit {
+    display: none;
+    opacity: 0;
+  }
+
+  .transition-exit-active {
+    opacity: 1;
+    transition: all 0ms ease-in;
+  }
+`;
 
 const WorkWrapper = styled(VerticalWrapper)`
   padding: 0px 0px;
@@ -196,6 +234,7 @@ const AppleImage = styled.div`
   width: 100%;
   height: 320px;
   border-radius: 3px;
+
   img {
     position: absolute;
     width: 100%;
@@ -209,6 +248,14 @@ const AppleImage = styled.div`
     z-index: 4;
     opacity: 100%;
     fill: black;
+  }
+  @media screen and (max-width: 1200px) {
+    .img {
+      height: 200px;
+    }
+    .logo {
+      width: 350px;
+    }
   }
 `;
 

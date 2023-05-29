@@ -35,6 +35,11 @@ export default AnimatedHamburger;
 
 const Hamburger = styled.div`
   z-index: 4;
+  &:hover {
+    #nav-icon3 span {
+      background: #f6f7f8;
+    }
+  }
   #nav-icon3 {
     width: 42px;
     height: 40px;

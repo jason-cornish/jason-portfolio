@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import {
   HorizontalWrapper,
@@ -7,28 +7,44 @@ import {
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
+import {
+  TransitionGroup,
+  CSSTransition,
+  SwitchTransition,
+} from "react-transition-group";
 
-type PropsTypes = {
+type PropsType = {
   state: boolean;
 };
 
-const HamburgerModal = (props: PropsTypes) => {
-  const { state } = props;
-  return state ? (
-    <ModalWrapper>
-      <Links>
-        <Link>My Work</Link>
-        <Link>Contact Me</Link>
-        <Link>Resume</Link>
-      </Links>
-      <Row>
-        <LinkedInIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
-        <GitHubIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
-        <EmailIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
-      </Row>
-    </ModalWrapper>
-  ) : (
-    <div />
+const HamburgerModal = (props: PropsType) => {
+  const nodeRef = useRef<any>(null);
+  return (
+    <SwitchTransition mode="out-in">
+      <CSSTransition
+        nodeRef={nodeRef}
+        timeout={300}
+        classNames="modal"
+        key={props.state ? "modal" : "none"}
+      >
+        {props.state ? (
+          <ModalWrapper ref={nodeRef}>
+            <Links>
+              <Link>My Work</Link>
+              <Link>Contact Me</Link>
+              <Link>Resume</Link>
+            </Links>
+            <Row>
+              <LinkedInIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+              <GitHubIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+              <EmailIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+            </Row>
+          </ModalWrapper>
+        ) : (
+          <div />
+        )}
+      </CSSTransition>
+    </SwitchTransition>
   );
 };
 
@@ -46,7 +62,23 @@ const ModalWrapper = styled(VerticalWrapper)`
   padding: 50px 0px 50px 0px;
   box-sizing: border-box;
   row-gap: 35px;
-  transition: height 200ms;
+  .modal-enter {
+    opacity: 0;
+  }
+
+  .modal-enter-active {
+    opacity: 1;
+    transition: opacity 300ms linear;
+  }
+
+  .modal-exit {
+    opacity: 0;
+  }
+
+  .modal-exit-active {
+    opacity: 1;
+    transition: all 300ms linear;
+  }
 `;
 
 const Links = styled.ul`

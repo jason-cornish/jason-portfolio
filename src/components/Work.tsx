@@ -8,9 +8,17 @@ import {
 import ArboretumCreekLogo from "../images/ArboretumCreekLogo.png";
 import Chip from "./reusable/Chip";
 import SelectedWorkContent from "./SelectedWorkContent";
+import { useEffect } from "react";
 
 const Work = () => {
   const [selectedWork, setSelectedWork] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // useEffect(() => {
+  //   if (!loading) {
+  //     setLoading(true);
+  //   }
+  // }, [selectedWork]);
 
   const workLinks = [
     "Apple",
@@ -28,6 +36,7 @@ const Work = () => {
             const selected = idx === selectedWork;
             return (
               <Chip
+                key={`chip-${idx}`}
                 selected={selected}
                 content={work}
                 customClickEvent={() => setSelectedWork(idx)}
@@ -35,7 +44,7 @@ const Work = () => {
             );
           })}
         </WorkChips>
-        <Divider />
+        <Divider style={{}} />
         <SelectedWorkContent
           selectedWork={workLinks[selectedWork]}
           workLinks={workLinks}
@@ -61,11 +70,11 @@ const Work = () => {
 export default Work;
 
 const WorkWrapper = styled.div`
-  padding-top: 250px;
+  padding-top: 150px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 1200px;
+  min-height: 700px;
   position: relative;
   box-sizing: border-box;
   justify-content: center;
@@ -87,21 +96,34 @@ const ContentWrapper = styled.div`
   box-sizing: border-box;
   justify-content: center;
   column-gap: 25px;
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const WorkChips = styled(VerticalWrapper)`
   row-gap: 15px;
+  padding-left: 5%;
+  @media screen and (max-width: 1200px) {
+    flex-direction: row;
+    overflow-x: scroll;
+    column-gap: 5px;
+    button {
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 const Divider = styled.div`
   width: 0px;
-  height: 100%;
   border: 1px solid #282828;
   border-radius: 3px;
-  margin-bottom: 25px;
 `;
 
 const CurveContainer = styled.div`
+  display: none;
   position: absolute;
   bottom: 0;
   left: 0;
