@@ -34,15 +34,15 @@ const AnimatedHamburger = (props: any) => {
 export default AnimatedHamburger;
 
 const Hamburger = styled.div`
-  z-index: 4;
+  z-index: 5;
   &:hover {
     #nav-icon3 span {
       background: #f6f7f8;
     }
   }
   #nav-icon3 {
-    width: 42px;
-    height: 40px;
+    width: 40px;
+    height: 35px;
     position: absolute;
     top: 0;
     right: 0;
@@ -62,7 +62,8 @@ const Hamburger = styled.div`
     position: absolute;
     height: 4px;
     width: 100%;
-    background: #e0e3e7;
+    background: white;
+    box-shadow: 4px 4px #4831d4;
     border-radius: 2px;
     opacity: 1;
     left: 0;

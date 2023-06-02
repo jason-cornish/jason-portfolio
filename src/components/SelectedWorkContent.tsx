@@ -36,7 +36,6 @@ const SelectedWorkContent = (props: WorkProps) => {
           </ChipRow>
           <WorkContent>
             <AppleImage>
-              <GreyLayer />
               <AppleMapsLogo className="logo" />
               <img src={AppleMapsBackground} alt="Apple Maps"></img>
             </AppleImage>
@@ -59,6 +58,13 @@ const SelectedWorkContent = (props: WorkProps) => {
                 code.
               </WorkParagraph>
             </WorkParagraphWrapper>
+            <ChipRowMobile>
+              <DeadChip content={"React.js"} />
+              <DeadChip content={"Node.js"} />
+              <DeadChip content={"Styled-Components"} />
+              <DeadChip content={"UI Design"} />
+              <DeadChip content={"Typescript"} />
+            </ChipRowMobile>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -81,6 +87,7 @@ const SelectedWorkContent = (props: WorkProps) => {
             <ZollegeImage>
               <img src={ZollegeBackground}></img>
             </ZollegeImage>
+
             <WorkParagraphWrapper>
               <WorkParagraph>
                 Designed, developed, and maintained multiple major system
@@ -100,6 +107,13 @@ const SelectedWorkContent = (props: WorkProps) => {
                 code.
               </WorkParagraph>
             </WorkParagraphWrapper>
+            <ChipRowMobile>
+              <DeadChip content={"Javascript"} />
+              <DeadChip content={"HTML5"} />
+              <DeadChip content={"CSS3"} />
+              <DeadChip content={"Git"} />
+              <DeadChip content={"Bootstrap"} />
+            </ChipRowMobile>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -126,6 +140,7 @@ const SelectedWorkContent = (props: WorkProps) => {
             <ElliotImage>
               <img src={ElliotSmithPlayerBackground}></img>
             </ElliotImage>
+
             <WorkParagraphWrapper>
               <WorkParagraph>
                 Designed, developed, and maintained multiple major system
@@ -145,6 +160,13 @@ const SelectedWorkContent = (props: WorkProps) => {
                 code.
               </WorkParagraph>
             </WorkParagraphWrapper>
+            <ChipRowMobile>
+              <DeadChip content={"React.js"} />
+              <DeadChip content={"Node.js"} />
+              <DeadChip content={"Styled-Components"} />
+              <DeadChip content={"UI Design"} />
+              <DeadChip content={"Typescript"} />
+            </ChipRowMobile>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -185,12 +207,14 @@ const TransitionWrapper = styled.div`
 
 const WorkWrapper = styled(VerticalWrapper)`
   padding: 0px 0px;
-  /* background-color: #4831d4; */
-  /* overflow-y: auto; */
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 const WorkTitle = styled.h1`
-  font-size: 36px !important;
+  font-size: 30px !important;
   font-weight: 600;
   color: #282828;
   margin: 0px;
@@ -199,31 +223,108 @@ const WorkTitle = styled.h1`
   span {
     color: #4831d4;
   }
+  @media screen and (max-width: 1200px) {
+    margin-top: 10px;
+    padding: 0 10%;
+  }
+
+  @media screen and (max-width: 700px) {
+    padding: 0 2.5%;
+  }
 `;
 
 const WorkSubTitle = styled.h2`
+  display: flex;
   font-family: Archivo;
   color: #282828;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 400;
   margin: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 1200px) {
+    padding-left: 10%;
+  }
+
+  @media screen and (max-width: 700px) {
+    padding-left: 2.5%;
+  }
 `;
 
 const ChipRow = styled(HorizontalWrapper)`
+  display: flex;
   column-gap: 15px;
   margin-bottom: 15px;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+`;
+
+const ChipRowMobile = styled(ChipRow)`
+  display: none;
+
+  @media screen and (max-width: 1200px) {
+    margin-top: 15px;
+    row-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 0 10%;
+    margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 700px) {
+    margin-top: 15px;
+    padding: 0 2.5%;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
 `;
 
 const WorkContent = styled(VerticalWrapper)`
-  row-gap: 25px;
   width: 100%;
+  @media screen and (max-width: 1200px) {
+    justify-content: center;
+  }
 `;
 
 const WorkParagraphWrapper = styled(VerticalWrapper)`
-  padding: 0px 15px;
-  max-width: 800px;
+  position: relative;
+  max-width: 780px;
   row-gap: 15px;
+  padding-top: 10px;
+  padding-left: 20px;
+  @media screen and (max-width: 1200px) {
+    max-width: 100%;
+    padding: 0 calc(10% + 20px);
+    margin-top: 15px;
+  }
+
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
+    padding: 0 calc(2.5% + 20px);
+  }
+`;
+
+const WorkParagraph = styled.p`
+  position: relative;
+  &:before {
+    position: absolute;
+    content: "";
+    top: 11px;
+    left: -16px;
+    width: 8px;
+    height: 8px;
+    background-color: #4831d4;
+    border-radius: 50%;
+  }
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0px;
+
+  font-family: Archivo;
+  color: #121212 !important;
 `;
 
 const AppleImage = styled.div`
@@ -231,30 +332,43 @@ const AppleImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
   width: 100%;
-  height: 320px;
   border-radius: 3px;
+  height: 300px;
 
   img {
-    position: absolute;
     width: 100%;
-    height: 320px;
+    height: 300px;
     border-radius: 2px;
   }
   .logo {
-    width: 540px;
-    height: 400px;
+    position: absolute;
+    height: 200px;
     margin: 0px;
     z-index: 4;
     opacity: 100%;
     fill: black;
   }
   @media screen and (max-width: 1200px) {
-    .img {
-      height: 200px;
+    height: auto;
+    img {
+      width: 80%;
+      height: auto;
     }
     .logo {
-      width: 350px;
+      height: 150px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .logo {
+      height: 200px;
     }
   }
 `;
@@ -266,6 +380,20 @@ const ZollegeImage = styled.div`
     width: 780px;
     height: auto;
   }
+  @media screen and (max-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 const ElliotImage = styled.div`
@@ -275,6 +403,20 @@ const ElliotImage = styled.div`
     width: 780px;
     height: auto;
   }
+  @media screen and (max-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 const GreyLayer = styled.div`
@@ -283,24 +425,4 @@ const GreyLayer = styled.div`
   height: 320px;
   background: rgba(40, 40, 40, 0.2);
   z-index: 1;
-`;
-
-const WorkParagraph = styled.p`
-  display: flex;
-  &:before {
-    display: block;
-    margin-right: 15px;
-    content: "";
-    margin-top: 10px;
-    width: 10px;
-    height: 10px;
-    background-color: #4831d4;
-    border-radius: 50%;
-  }
-  font-size: 22px;
-  line-height: 30px;
-  margin: 0px;
-
-  font-family: Archivo;
-  color: #121212 !important;
 `;

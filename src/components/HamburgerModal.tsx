@@ -52,12 +52,12 @@ export default HamburgerModal;
 
 const ModalWrapper = styled(VerticalWrapper)`
   position: absolute;
-  top: -30px;
-  right: -25px;
+  top: -20px;
+  right: -15px;
   width: 350px;
   background-color: #4831d4;
   border-radius: 3px;
-  z-index: 3;
+  z-index: 4;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 50px 0px 50px 0px;
   box-sizing: border-box;

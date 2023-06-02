@@ -14,10 +14,15 @@ const Landing = () => {
         <br /> Front-End Web Developer.
       </AnimatedText>
       <Wrapper>
-        <p>
+        <p className="SubHeaderWide">
           I like to design and develop intuitive, elegant online experiences.
           <br /> I specialize in coding web applications with React, Typescript,
           and StyledComponents.
+        </p>
+        <p className="SubHeaderMobile">
+          I like to design and develop intuitive, elegant online experiences. I
+          specialize in coding web applications with React, Typescript, and
+          StyledComponents.
         </p>
         <ButtonRow>
           <LinkButton content={"Work"} />
@@ -32,11 +37,19 @@ const Landing = () => {
 export default Landing;
 
 const LandingWrapper = styled(VerticalWrapper)`
-  width: 80%;
-  height: 1050px;
-  padding-top: 300px;
+  width: 85%;
+  padding-top: 250px;
+  padding-bottom: 250px;
   box-sizing: border-box;
   column-gap: 40px;
+  @media screen and (max-width: 1200px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 700px) {
+    padding-top: 150px;
+    padding-bottom: 250px;
+    width: 95%;
+  }
 `;
 
 const AnimatedText = styled.h1`
@@ -55,7 +68,7 @@ const AnimatedText = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 70px;
+  font-size: 55px;
   margin: 0px;
 
   @keyframes gradient {
@@ -72,6 +85,10 @@ const AnimatedText = styled.h1`
   span {
     font-size: 50px;
   }
+  @media screen and (max-width: 700px) {
+    line-height: 70px;
+    margin-bottom: 20px;
+  }
 `;
 
 const Wrapper = styled(VerticalWrapper)`
@@ -79,13 +96,38 @@ const Wrapper = styled(VerticalWrapper)`
 
   p {
     font-family: Archivo;
-    font-size: 24px;
+    font-size: 20px;
     color: #e0e3e7;
     line-height: 40px;
+  }
+
+  .SubHeaderWide {
+    display: flex;
+  }
+
+  .SubHeaderMobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 700px) {
+    .SubHeaderWide {
+      display: none;
+    }
+
+    .SubHeaderMobile {
+      display: flex;
+      margin: 5px 0;
+    }
+    p {
+      line-height: 30px;
+    }
   }
 `;
 
 const ButtonRow = styled(HorizontalWrapper)`
   column-gap: 20px;
   margin-bottom: 20px;
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
 `;

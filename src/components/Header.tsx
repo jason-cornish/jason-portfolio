@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Title>
-        <h1>Jason Cornish</h1>
+        <h1>JC</h1>
       </Title>
       <HeaderOptions>
         <HoverWrapper>
@@ -29,30 +29,34 @@ export default Header;
 
 const HeaderWrapper = styled.header`
   position: fixed;
-  width: 90%;
-  padding: 40px 0px;
+  width: 95%;
+  padding: 30px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #e0e3e7;
-  font-family: Roboto;
+  font-family: Archivo;
   box-sizing: border-box;
-  z-index: 1;
+  z-index: 3;
   h1 {
-    font-size: 35px;
+    font-size: 40px;
     margin: 0px;
-
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+    text-shadow: #4831d4 4px 4px;
+    color: #e0e3e7;
+    cursor: pointer;
+    :hover {
+      color: #f6f7f8;
     }
+  }
+  @media screen and (max-width: 1200px) {
+    width: 97.5%;
+  }
+
+  @media screen and (max-width: 700px) {
+    background: rgba(40, 40, 40, 0.95);
+    width: 100%;
+    padding: 15px 5%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
 `;
 
@@ -66,4 +70,6 @@ const HeaderOptions = styled(HorizontalWrapper)`
   position: relative;
   align-items: center;
   column-gap: 20px;
+  width: 42px;
+  height: 30px;
 `;

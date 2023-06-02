@@ -15,7 +15,7 @@ function App() {
   const [modalState, setModalState] = useState<boolean>(false);
 
   return (
-    <div className="App">
+    <Application className="App">
       <BodyWrapper>
         <Header />
         <Body>
@@ -25,15 +25,39 @@ function App() {
           <Footer />
         </Body>
       </BodyWrapper>
-    </div>
+    </Application>
   );
 }
 
 export default App;
 
-const BodyWrapper = styled.div`
-  width: 100vw;
+const Application = styled.div`
+  width: 100%;
+  height: 100%;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 13px;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
 
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    height: 5px;
+    background: #4831d4;
+    border-radius: 3px;
+    height: 5px;
+  }
+`;
+
+const BodyWrapper = styled.div`
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

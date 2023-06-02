@@ -44,7 +44,7 @@ const Work = () => {
             );
           })}
         </WorkChips>
-        <Divider style={{}} />
+        <Divider />
         <SelectedWorkContent
           selectedWork={workLinks[selectedWork]}
           workLinks={workLinks}
@@ -70,20 +70,36 @@ const Work = () => {
 export default Work;
 
 const WorkWrapper = styled.div`
-  padding-top: 150px;
+  padding: 200px 10%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-height: 700px;
   position: relative;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
   background-color: #e0e3e7;
+  overflow: contain;
   .WorkSectionTitle {
+    display: flex;
     color: #121212 !important;
-    font-size: 70px;
-    margin: 0 0 75px 0px;
+    font-size: 50px;
+    margin: 0 0 20px 0px;
+  }
+  @media screen and (max-width: 1200px) {
+    .WorkSectionTitle {
+      display: flex;
+    }
+    padding: 150px 0;
+    padding-bottom: 100px;
+  }
+
+  @media screen and (max-width: 700px) {
+    align-items: center;
+    .WorkSectionTitle {
+      display: flex;
+      padding-left: 0;
+    }
   }
 `;
 
@@ -92,7 +108,6 @@ const ContentWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: row;
-  margin-bottom: 250px;
   box-sizing: border-box;
   justify-content: center;
   column-gap: 25px;
@@ -104,26 +119,63 @@ const ContentWrapper = styled.div`
 `;
 
 const WorkChips = styled(VerticalWrapper)`
+  position: relative;
   row-gap: 15px;
-  padding-left: 5%;
+  box-sizing: border-box;
+
+  button {
+    margin-bottom: 10px;
+  }
   @media screen and (max-width: 1200px) {
     flex-direction: row;
-    overflow-x: scroll;
+    overflow-x: auto;
     column-gap: 5px;
-    button {
-      margin-bottom: 10px;
+    width: 80%;
+    padding: 0;
+    box-sizing: border-box;
+
+    .WorkSectionTitleMobile {
+      display: none;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 13px;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: white;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      height: 5px;
+      background: #4831d4;
+      border-radius: 3px;
+      height: 5px;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 95%;
     }
   }
 `;
 
 const Divider = styled.div`
+  display: flex;
   width: 0px;
   border: 1px solid #282828;
   border-radius: 3px;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const CurveContainer = styled.div`
-  display: none;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -134,12 +186,12 @@ const CurveContainer = styled.div`
 
   svg {
     position: relative;
-    bottom: -101px;
+    bottom: -100px;
     display: block;
-    width: calc(109% + 1.3px);
+    width: calc(100% + 1.3px);
+    overflow: hidden;
     height: 101px;
     z-index: 2;
-    box-sizing: border-box;
   }
 
   .shape-fill {

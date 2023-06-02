@@ -20,11 +20,11 @@ const DeadChipWrapper = styled.div`
   background-color: transparent;
   border: 2px solid #282828;
   border-radius: 40px;
-  padding: 5px 15px;
+  padding: 5px 10px;
   p {
     font-family: Archivo;
     color: #282828 !important;
-    font-size: 18px;
+    font-size: 16px;
     margin: 0px !important;
   }
 `;

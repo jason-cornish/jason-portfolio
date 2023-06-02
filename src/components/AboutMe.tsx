@@ -57,7 +57,6 @@ export default AboutMe;
 
 const AboutMeWrapper = styled(HorizontalWrapper)`
   width: 100%;
-  height: 1050px;
   position: relative;
   box-sizing: border-box;
   justify-content: center;
@@ -65,20 +64,27 @@ const AboutMeWrapper = styled(HorizontalWrapper)`
 `;
 
 const ContentWrapper = styled.div`
-  width: 80%;
+  width: 85%;
   height: 100%;
-  padding-top: 100px;
+  padding-top: 50px;
+  padding-bottom: 100px;
   h1 {
     color: #e0e3e7;
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 20px;
   }
   p {
     color: #e0e3e7;
     font-family: Archivo;
-    font-size: 26px;
+    font-size: 20px;
     max-width: 600px;
-    line-height: 40px;
+    line-height: 30px;
+  }
+  @media screen and (max-width: 1200px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 700px) {
+    width: 95%;
   }
 `;
 
@@ -94,7 +100,7 @@ const CurveContainer = styled.div`
 
   svg {
     position: relative;
-    top: 101px;
+    top: 100px;
     display: block;
     width: calc(109% + 1.3px);
     height: 101px;
@@ -118,7 +124,7 @@ const Curve2Container = styled.section`
 
   svg {
     position: relative;
-    bottom: -101px;
+    bottom: -100px;
     display: block;
     width: calc(100% + 1.3px);
     overflow: hidden;

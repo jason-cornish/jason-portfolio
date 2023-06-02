@@ -25,20 +25,20 @@ export default Chip;
 
 const ChipWrapper = styled.button`
   position: relative;
-  padding: 10px 25px;
+  padding: 10px 15px;
   border-radius: 3px;
   border: 2px solid #121212;
   background-color: transparent;
   color: #121212;
   z-index: 2;
   height: 50px;
-  width: 235px;
   p {
     font-family: Archivo;
     position: relative;
     margin: 0px;
-    font-size: 22px;
+    font-size: 20px;
     color: #121212 !important;
+    white-space: nowrap;
   }
   &:before {
     content: "";
@@ -64,8 +64,7 @@ const ChipWrapper = styled.button`
   }
 
   @media screen and (max-width: 1200px) {
-    padding: 10px 5px !important;
-    width: 235px !important;
+    padding: 10px 15px !important;
   }
 `;
 
@@ -73,22 +72,22 @@ const SelectedChipWrapper = styled.button`
   background-color: #4831d4;
   border: 2px solid #4831d4;
   position: relative;
-  padding: 10px 25px;
+  padding: 10px 15px;
   border-radius: 3px;
   color: #e0e3e7;
   height: 50px;
-  width: 235px;
   p {
     position: relative;
     z-index: 2;
     margin: 0px;
-    font-size: 22px;
+    font-size: 20px;
     width: 100%;
     color: #e0e3e7 !important;
     font-family: Archivo;
+    white-space: nowrap;
   }
   @media screen and (max-width: 1200px) {
-    padding: 10px 5px !important;
-    width: 235px !important;
+    padding: 10px 15px !important;
+    height: 50px;
   }
 `;
