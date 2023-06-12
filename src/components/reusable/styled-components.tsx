@@ -19,3 +19,15 @@ export const HoverWrapper = styled(HorizontalWrapper)`
     background-color: #303134;
   }
 `;
+
+export const SectionTitle = styled.h1`
+  font-size: 65px;
+  margin: 0px;
+  font-family: Roboto;
+`;
+
+export const SubHeader = styled.h2`
+  font-size: 26px;
+  margin: 0px;
+  font-family: Roboto;
+`;

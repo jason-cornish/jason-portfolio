@@ -6,7 +6,7 @@ import {
   VerticalWrapper,
 } from "./reusable/styled-components";
 
-const Landing = () => {
+const Landing = (props: any) => {
   return (
     <LandingWrapper>
       <AnimatedText>
@@ -25,9 +25,12 @@ const Landing = () => {
           StyledComponents.
         </p>
         <ButtonRow>
-          <LinkButton content={"Work"} />
-          <LinkButton content={"Contact Me"} />
-          <LinkButton content={"Resume"} />
+          <LinkButton content={"About"} handleClick={props.handleLinkClick} />
+          <LinkButton content={"Work"} handleClick={props.handleLinkClick} />
+          <LinkButton
+            content={"Contact Me"}
+            handleClick={props.handleLinkClick}
+          />
         </ButtonRow>
       </Wrapper>
     </LandingWrapper>
@@ -46,9 +49,10 @@ const LandingWrapper = styled(VerticalWrapper)`
     width: 80%;
   }
   @media screen and (max-width: 700px) {
+    align-items: center;
     padding-top: 150px;
-    padding-bottom: 250px;
-    width: 95%;
+    padding-bottom: 200px;
+    width: 90%;
   }
 `;
 
@@ -68,7 +72,7 @@ const AnimatedText = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 55px;
+  font-size: 70px;
   margin: 0px;
 
   @keyframes gradient {
@@ -86,8 +90,11 @@ const AnimatedText = styled.h1`
     font-size: 50px;
   }
   @media screen and (max-width: 700px) {
+    font-size: 55px;
     line-height: 70px;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 

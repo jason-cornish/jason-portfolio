@@ -30,9 +30,9 @@ const HamburgerModal = (props: PropsType) => {
         {props.state ? (
           <ModalWrapper ref={nodeRef}>
             <Links>
-              <Link>My Work</Link>
-              <Link>Contact Me</Link>
-              <Link>Resume</Link>
+              <Link>About</Link>
+              <Link>Work</Link>
+              <Link>Contact</Link>
             </Links>
             <Row>
               <LinkedInIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />

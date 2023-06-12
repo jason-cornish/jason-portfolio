@@ -53,9 +53,9 @@ const HeaderWrapper = styled.header`
   }
 
   @media screen and (max-width: 700px) {
-    background: rgba(40, 40, 40, 0.95);
+    background: #1b1236;
     width: 100%;
-    padding: 15px 5%;
+    padding: 15px 2.5%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import AppsIcon from "@mui/icons-material/Apps";
 import {
@@ -10,19 +10,27 @@ import AboutMe from "./components/AboutMe";
 import Work from "./components/Work";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ContactMe from "./components/ContactMe";
 
 function App() {
+  const workRef = useRef<any>(null);
   const [modalState, setModalState] = useState<boolean>(false);
+
+  const handleLinkClick = () => {
+    console.log("running");
+    workRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <Application className="App">
       <BodyWrapper>
         <Header />
         <Body>
-          <Landing />
+          <Landing handleLinkClick={handleLinkClick} />
           <AboutMe />
-          <Work />
-          <Footer />
+          <Work ref={workRef} />
+          <ContactMe />
+          {/* <Footer /> */}
         </Body>
       </BodyWrapper>
     </Application>
@@ -64,7 +72,7 @@ const BodyWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   font-family: Roboto;
-  background-color: #282828;
+  background-color: #1b1236;
 `;
 
 const Body = styled.section`

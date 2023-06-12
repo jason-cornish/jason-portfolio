@@ -10,6 +10,7 @@ import AppleMapsBackground from "../images/Apple-Maps-Background.png";
 import ZollegeBackground from "../images/Zollege-Background.png";
 import ElliotSmithPlayerBackground from "../images/Elliot-Smith-Player-Background.png";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import ImagePlaceholder from "./reusable/ImagePlaceholder";
 
 type WorkProps = {
   selectedWork: string;
@@ -38,33 +39,27 @@ const SelectedWorkContent = (props: WorkProps) => {
             <AppleImage>
               <AppleMapsLogo className="logo" />
               <img src={AppleMapsBackground} alt="Apple Maps"></img>
+              <ImagePlaceholder />
             </AppleImage>
             <WorkParagraphWrapper>
               <WorkParagraph>
-                Designed, developed, and maintained multiple major system
-                feature additions to internal Apple web applications using
-                React, Typescript, and Node.js.
+                Designed, developed, and oversaw deployment of 2 major system
+                feature additions to Apple Maps React project management tools.
               </WorkParagraph>
               <WorkParagraph>
-                Collaborated with Apple PM’s to design complex data
-                visualizations and user interfaces in Sketch.
+                Engineered a library of reusable UI components, collaborated
+                with Apple PM’s to design complex data visualizations and user
+                interfaces in Sketch.
               </WorkParagraph>
               <WorkParagraph>
                 Dockerized and deployed a Node.js REST API to a Kubernetes
-                namespace
+                namespace.
               </WorkParagraph>
               <WorkParagraph>
                 Maintained and refactored previous developers’ Python/Typescript
                 code.
               </WorkParagraph>
             </WorkParagraphWrapper>
-            <ChipRowMobile>
-              <DeadChip content={"React.js"} />
-              <DeadChip content={"Node.js"} />
-              <DeadChip content={"Styled-Components"} />
-              <DeadChip content={"UI Design"} />
-              <DeadChip content={"Typescript"} />
-            </ChipRowMobile>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -86,34 +81,24 @@ const SelectedWorkContent = (props: WorkProps) => {
           <WorkContent>
             <ZollegeImage>
               <img src={ZollegeBackground}></img>
+              <ImagePlaceholder />
             </ZollegeImage>
 
             <WorkParagraphWrapper>
               <WorkParagraph>
-                Designed, developed, and maintained multiple major system
-                feature additions to internal Apple web applications using
-                React, Typescript, and Node.js.
+                Developed a fully responsive landing page and navigation bar
+                using HTML, CSS, Bootstrap, and Javascript
               </WorkParagraph>
               <WorkParagraph>
-                Collaborated with Apple PM’s to design complex data
-                visualizations and user interfaces in Sketch.
+                Learned a new Javascript library (DHTMLX Gantt) to build a
+                customized Gantt chart that helps Zollege administrators track
+                class schedules.
               </WorkParagraph>
               <WorkParagraph>
-                Dockerized and deployed a Node.js REST API to a Kubernetes
-                namespace
-              </WorkParagraph>
-              <WorkParagraph>
-                Maintained and refactored previous developers’ Python/Typescript
-                code.
+                Utilized Git to manage version control + push changes in
+                collaboration with 5 other developers.
               </WorkParagraph>
             </WorkParagraphWrapper>
-            <ChipRowMobile>
-              <DeadChip content={"Javascript"} />
-              <DeadChip content={"HTML5"} />
-              <DeadChip content={"CSS3"} />
-              <DeadChip content={"Git"} />
-              <DeadChip content={"Bootstrap"} />
-            </ChipRowMobile>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -160,13 +145,6 @@ const SelectedWorkContent = (props: WorkProps) => {
                 code.
               </WorkParagraph>
             </WorkParagraphWrapper>
-            <ChipRowMobile>
-              <DeadChip content={"React.js"} />
-              <DeadChip content={"Node.js"} />
-              <DeadChip content={"Styled-Components"} />
-              <DeadChip content={"UI Design"} />
-              <DeadChip content={"Typescript"} />
-            </ChipRowMobile>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -229,7 +207,7 @@ const WorkTitle = styled.h1`
   }
 
   @media screen and (max-width: 700px) {
-    padding: 0 2.5%;
+    padding: 0 5%;
   }
 `;
 
@@ -247,38 +225,26 @@ const WorkSubTitle = styled.h2`
   }
 
   @media screen and (max-width: 700px) {
-    padding-left: 2.5%;
+    padding-left: 5%;
   }
 `;
 
 const ChipRow = styled(HorizontalWrapper)`
   display: flex;
   column-gap: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
   @media screen and (max-width: 1200px) {
-    display: none;
-  }
-`;
-
-const ChipRowMobile = styled(ChipRow)`
-  display: none;
-
-  @media screen and (max-width: 1200px) {
-    margin-top: 15px;
-    row-gap: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
     padding: 0 10%;
-    margin-bottom: 10px;
+    flex-wrap: wrap;
+    column-gap: 5px;
   }
 
   @media screen and (max-width: 700px) {
-    margin-top: 15px;
-    padding: 0 2.5%;
+    row-gap: 5px;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    max-width: 100%;
+    padding: 0 5%;
   }
 `;
 
@@ -291,8 +257,8 @@ const WorkContent = styled(VerticalWrapper)`
 
 const WorkParagraphWrapper = styled(VerticalWrapper)`
   position: relative;
-  max-width: 780px;
-  row-gap: 15px;
+  max-width: 700px;
+  row-gap: 10px;
   padding-top: 10px;
   padding-left: 20px;
   @media screen and (max-width: 1200px) {
@@ -303,7 +269,7 @@ const WorkParagraphWrapper = styled(VerticalWrapper)`
 
   @media screen and (max-width: 700px) {
     max-width: 100%;
-    padding: 0 calc(2.5% + 20px);
+    padding: 0 calc(5% + 20px);
   }
 `;
 
@@ -319,8 +285,8 @@ const WorkParagraph = styled.p`
     background-color: #4831d4;
     border-radius: 50%;
   }
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 25px;
   margin: 0px;
 
   font-family: Archivo;
@@ -332,15 +298,12 @@ const AppleImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  width: 100%;
   border-radius: 3px;
-  height: 300px;
 
   img {
-    width: 100%;
-    height: 300px;
+    width: 700px;
     border-radius: 2px;
+    z-index: 2;
   }
   .logo {
     position: absolute;
@@ -374,10 +337,12 @@ const AppleImage = styled.div`
 `;
 
 const ZollegeImage = styled.div`
+  position: relative;
   width: 100%;
   border-radius: 3px;
+  overflow: hidden;
   img {
-    width: 780px;
+    width: 700px;
     height: auto;
   }
   @media screen and (max-width: 1200px) {
@@ -400,7 +365,7 @@ const ElliotImage = styled.div`
   width: 100%;
   border-radius: 3px;
   img {
-    width: 780px;
+    width: 700px;
     height: auto;
   }
   @media screen and (max-width: 1200px) {

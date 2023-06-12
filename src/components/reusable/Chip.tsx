@@ -24,20 +24,21 @@ const Chip = (props: ChipProps) => {
 export default Chip;
 
 const ChipWrapper = styled.button`
+  border: 2px solid #121212;
   position: relative;
   padding: 10px 15px;
   border-radius: 3px;
-  border: 2px solid #121212;
-  background-color: transparent;
   color: #121212;
-  z-index: 2;
   height: 50px;
+  background-color: transparent;
   p {
-    font-family: Archivo;
     position: relative;
+    z-index: 2;
     margin: 0px;
     font-size: 20px;
+    width: 100%;
     color: #121212 !important;
+    font-family: Archivo;
     white-space: nowrap;
   }
   &:before {
