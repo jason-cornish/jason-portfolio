@@ -92,7 +92,7 @@ const ContactMe = () => {
 
   return (
     <ContactMeWrapper>
-      <CurveContainer inverted={true} fill={"#1b1236"} aligned={"top"} />
+      {/* <CurveContainer inverted={true} fill={"#1b1236"} aligned={"top"} /> */}
       <SectionTitle>Let's get in touch.</SectionTitle>
       <SubHeader>
         Interested in working together or just have some questions? Lets chat.

@@ -7,31 +7,43 @@ import CurveContainer from "./reusable/CurveContainer";
 const AboutMe = () => {
   return (
     <AboutMeWrapper>
-      <CurveContainer fill={"#4831d4"} inverted={true} aligned="top" />
+      {/* <CurveContainer fill={"#4831d4"} inverted={true} aligned="top" /> */}
       <ContentWrapper>
         <TextSection>
           <h1>Over the years,</h1>
           <p>
-            I've done Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Expedita libero nemo fugiat, nam aliquam repellendus corrupti et
-            consectetur dolores impedit incidunt omnis dignissimos tempora nisi
-            delectus, at eos? Velit, omnis?
+            I've sharpened my skills in front-end development and UI/UX design
+            across projects of diverse use-cases and client needs. I've
+            interfaced with both technical and non-technical stakeholders on
+            projects, and am adept at communicating and collaborating with both
+            audiences.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ea
-            vitae aliquid impedit, enim, nam natus perspiciatis expedita facere
-            odio suscipit nisi minus! Itaque nam laudantium deleniti. Nostrum,
-            totam quae. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Dolorum eius voluptate repellat possimus, voluptates ex! Impedit,
-            voluptas ab repudiandae hic accusantium sunt tempora minus repellat
-            praesentium in quas nostrum nam.
+            Currently I'm working as a Full-Stack Developer at Apple Maps where
+            I'm leading the UI design and front-end development of a workforce
+            training and monitoring dashboard. The dashboard reports on the
+            productivity and effectiveness of 3500+ technicians, analysts, and
+            editors globally by tracking 50,000+ completed work tasks.
+          </p>
+          {/* <p>
+            In this role, I've worked with technical and non-technical
+            stakeholders to design data visualizations that tell actionable user
+            stories, create UI mockups, and develop a data driven
+            React/Typescript application.
+          </p> */}
+          <p>
+            Previously I worked as a Front-End Developer at Zollege, where I
+            developed a React application to assist teachers in managing their
+            class schedules. The application charted class schedules on a gantt
+            chart, allowing teachers to keep up to date with the timeline of
+            their current classes and easily plan future ones.
           </p>
         </TextSection>
         <ImageSection>
           <img src={JasonFloating}></img>
         </ImageSection>
       </ContentWrapper>
-      <CurveContainer fill={"#4831d4"} inverted={false} aligned="bottom" />
+      {/* <CurveContainer fill={"#4831d4"} inverted={false} aligned="bottom" /> */}
     </AboutMeWrapper>
   );
 };
@@ -49,13 +61,13 @@ const AboutMeWrapper = styled(HorizontalWrapper)`
 const ContentWrapper = styled.div`
   position: relative;
   width: 85%;
-  height: 100%;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
   display: flex;
 
   @media screen and (max-width: 1200px) {
     width: 80%;
+    padding-bottom: 80px;
   }
   @media screen and (max-width: 700px) {
     padding-top: 20px;
@@ -78,48 +90,27 @@ const TextSection = styled.div`
     max-width: 600px;
     line-height: 30px;
   }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1200px) {
     width: 100%;
+
+    p {
+      max-width: 100%;
+    }
   }
 `;
 
 const ImageSection = styled.div`
   display: flex;
   justify-content: center;
-  top: -20px;
-  width: 50%;
+  align-items: center;
+  height: 100%;
+  max-width: 50%;
   padding-left: 50px;
-  right: 0;
+  padding-top: 20px;
   img {
-    max-width: 550px;
+    max-height: 550px;
   }
   @media screen and (max-width: 1100px) {
     display: none;
-  }
-`;
-
-const CurveWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 101px;
-  line-height: 0;
-  box-sizing: border-box;
-  rotate: 180deg;
-
-  svg {
-    position: relative;
-    bottom: -100x;
-    bottom: 0px;
-    display: block;
-    width: calc(100% + 1.3px);
-    overflow: hidden;
-    height: 101px;
-    z-index: 2;
-  }
-
-  .shape-fill {
-    fill: black;
   }
 `;
