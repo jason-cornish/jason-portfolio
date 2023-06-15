@@ -38,15 +38,16 @@ const HeaderWrapper = styled.header`
   font-family: Archivo;
   box-sizing: border-box;
   z-index: 3;
+  pointer-events: none;
   h1 {
     font-size: 40px;
     margin: 0px;
-    text-shadow: #4831d4 4px 4px;
     color: #e0e3e7;
     cursor: pointer;
     :hover {
       color: #f6f7f8;
     }
+    pointer-events: auto;
   }
   @media screen and (max-width: 1200px) {
     width: 97.5%;
@@ -72,4 +73,5 @@ const HeaderOptions = styled(HorizontalWrapper)`
   column-gap: 20px;
   width: 42px;
   height: 30px;
+  pointer-events: auto;
 `;

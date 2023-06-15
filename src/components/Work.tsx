@@ -23,7 +23,8 @@ const Work = (props: any) => {
 
   const workLinks = [
     "Apple",
-    "Zollege",
+    "Gantt App",
+    "Zospace",
     "Elliot Smith Player",
     "Arboretum Creek",
   ];
@@ -61,7 +62,7 @@ const Work = (props: any) => {
 export default Work;
 
 const WorkWrapper = styled.div`
-  padding: 150px 10%;
+  padding: 100px 10%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -81,8 +82,8 @@ const WorkWrapper = styled.div`
     .WorkSectionTitle {
       display: flex;
     }
-    padding: 150px 0;
-    padding-bottom: 150px;
+    padding: 80px 0;
+    padding-bottom: 100px;
   }
 
   @media screen and (max-width: 700px) {

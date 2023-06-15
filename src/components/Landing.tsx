@@ -41,8 +41,8 @@ export default Landing;
 
 const LandingWrapper = styled(VerticalWrapper)`
   width: 85%;
-  padding-top: 250px;
-  padding-bottom: 250px;
+  padding-top: 200px;
+  padding-bottom: 200px;
   box-sizing: border-box;
   column-gap: 40px;
   @media screen and (max-width: 1200px) {

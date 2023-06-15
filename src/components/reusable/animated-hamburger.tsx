@@ -63,7 +63,6 @@ const Hamburger = styled.div`
     height: 4px;
     width: 100%;
     background: white;
-    box-shadow: 4px 4px #4831d4;
     border-radius: 2px;
     opacity: 1;
     left: 0;
