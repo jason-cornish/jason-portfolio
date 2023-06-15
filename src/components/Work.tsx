@@ -11,7 +11,7 @@ import SelectedWorkContent from "./SelectedWorkContent";
 import { useEffect } from "react";
 import CurveContainer from "./reusable/CurveContainer";
 
-const Work = (props: any) => {
+const Work = forwardRef((props, workRef: any) => {
   const [selectedWork, setSelectedWork] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -30,10 +30,8 @@ const Work = (props: any) => {
   ];
 
   return (
-    <WorkWrapper>
-      <h1 className="WorkSectionTitle" ref={props.ref}>
-        /work
-      </h1>
+    <WorkWrapper ref={workRef}>
+      <h1 className="WorkSectionTitle">/work</h1>
       <ContentWrapper>
         <WorkChips>
           {workLinks.map((work, idx) => {
@@ -57,7 +55,7 @@ const Work = (props: any) => {
       {/* <CurveContainer fill={"#e0e3e7"} inverted={true} aligned={"bottom"} /> */}
     </WorkWrapper>
   );
-};
+});
 
 export default Work;
 

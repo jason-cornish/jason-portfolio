@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, forwardRef } from "react";
 import styled from "styled-components";
 import CurveContainer from "./reusable/CurveContainer";
 import LinkButton from "./reusable/LinkButton";
@@ -12,7 +12,7 @@ import emailjs from "@emailjs/browser";
 
 type ErrorStateType = string | boolean;
 
-const ContactMe = () => {
+const ContactMe = forwardRef((props, contactRef: any) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -91,7 +91,7 @@ const ContactMe = () => {
   ]);
 
   return (
-    <ContactMeWrapper>
+    <ContactMeWrapper ref={contactRef}>
       {/* <CurveContainer inverted={true} fill={"#1b1236"} aligned={"top"} /> */}
       <SectionTitle>Let's get in touch.</SectionTitle>
       <SubHeader>
@@ -155,7 +155,7 @@ const ContactMe = () => {
       </SubmitButton>
     </ContactMeWrapper>
   );
-};
+});
 
 export default ContactMe;
 

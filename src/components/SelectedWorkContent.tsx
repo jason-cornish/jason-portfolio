@@ -156,7 +156,7 @@ const SelectedWorkContent = (props: WorkProps) => {
             <WorkParagraphWrapper>
               <WorkParagraph>
                 Developed a fully responsive landing page and navigation bar
-                using HTML, CSS, Bootstrap, and Javascript
+                using HTML5, CSS3, Bootstrap, and Javascript
               </WorkParagraph>
               <WorkParagraph>
                 Learned a new Javascript library (DHTMLX Gantt) to build a
@@ -180,9 +180,16 @@ const SelectedWorkContent = (props: WorkProps) => {
       >
         <WorkWrapper>
           <WorkTitle>
-            Lead Developer @ <span>Elliot Smith Player</span>
+            Capstone ACA Project{" "}
+            <a
+              href="https://elliot-smith-player.web.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Elliot Smith Player
+            </a>
           </WorkTitle>
-          <WorkSubTitle>January - June 2022</WorkSubTitle>
+          <WorkSubTitle>October - December 2021</WorkSubTitle>
           <ChipRow>
             <DeadChip content={"React.js"} />
             <DeadChip content={"Node.js"} />
@@ -190,7 +197,6 @@ const SelectedWorkContent = (props: WorkProps) => {
             <DeadChip content={"Express"} />
             <DeadChip content={"REST API"} />
             <DeadChip content={"CSS3"} />
-            <DeadChip content={"Git"} />
           </ChipRow>
           <WorkContent>
             <ElliotImage>
@@ -199,21 +205,21 @@ const SelectedWorkContent = (props: WorkProps) => {
 
             <WorkParagraphWrapper>
               <WorkParagraph>
-                Designed, developed, and maintained multiple major system
-                feature additions to internal Apple web applications using
-                React, Typescript, and Node.js.
+                Designed and built an online jukebox for Elliot Smith's music as
+                my capstone project at Austin Coding Academy. Key features
+                include creating accounts, creating &amp; saving custom
+                playlists, listening to songs, and browsing albums.
               </WorkParagraph>
               <WorkParagraph>
-                Collaborated with Apple PM’s to design complex data
-                visualizations and user interfaces in Sketch.
+                Engineered a fully-responsive front-end with React, using Redux
+                for state mangagement. Developed custom React hooks for fetching
+                and updating back-end data, utilizing JSON Web Tokens via Auth0
+                for web security.
               </WorkParagraph>
               <WorkParagraph>
-                Dockerized and deployed a Node.js REST API to a Kubernetes
-                namespace
-              </WorkParagraph>
-              <WorkParagraph>
-                Maintained and refactored previous developers’ Python/Typescript
-                code.
+                Developed an Express REST API with Node.js for communication
+                with my MySQL database and React front-end. Wrote MySQL queries
+                to fetch, update, and delete data upon user request.
               </WorkParagraph>
             </WorkParagraphWrapper>
           </WorkContent>
@@ -243,7 +249,8 @@ const SelectedWorkContent = (props: WorkProps) => {
             <DeadChip content={"HTML5"} />
             <DeadChip content={"CSS3"} />
             <DeadChip content={"SVG"} />
-            <DeadChip content={"UI Design"} />
+            <DeadChip content={"Web Design"} />
+            <DeadChip content={"Hosted"} />
           </ChipRow>
           <WorkContent>
             <ElliotImage>
@@ -252,21 +259,19 @@ const SelectedWorkContent = (props: WorkProps) => {
 
             <WorkParagraphWrapper>
               <WorkParagraph>
-                Designed, developed, and maintained multiple major system
-                feature additions to internal Apple web applications using
-                React, Typescript, and Node.js.
+                Volunteered for a non-profit organization to design and build a
+                website that demonstrates the ecological need to recreate a
+                creek in the Seattle Arboretum park to reduce flooding damage.
               </WorkParagraph>
               <WorkParagraph>
-                Collaborated with Apple PM’s to design complex data
-                visualizations and user interfaces in Sketch.
+                Developed a fully responsive static website with HTML5, CSS3,
+                and Javascript. Built an interactive visionary image of the
+                future Arboretum Creek with SVG and Adobe Illustrator to teach
+                visitors about the types of life that could thrive in Arboretum
+                Creek.
               </WorkParagraph>
               <WorkParagraph>
-                Dockerized and deployed a Node.js REST API to a Kubernetes
-                namespace
-              </WorkParagraph>
-              <WorkParagraph>
-                Maintained and refactored previous developers’ Python/Typescript
-                code.
+                Deployed and hosted the website via Bluehost.
               </WorkParagraph>
             </WorkParagraphWrapper>
           </WorkContent>

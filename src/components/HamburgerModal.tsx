@@ -15,52 +15,79 @@ import {
 
 type PropsType = {
   state: boolean;
+  handleLinkClick: any;
 };
 
 const HamburgerModal = (props: PropsType) => {
   const nodeRef = useRef<any>(null);
   return (
-    <SwitchTransition mode="out-in">
-      <CSSTransition
-        nodeRef={nodeRef}
-        timeout={300}
-        classNames="modal"
-        key={props.state ? "modal" : "none"}
-      >
-        {props.state ? (
-          <ModalWrapper ref={nodeRef}>
-            <Header>Navigate</Header>
-            <Links>
-              <Link>About</Link>
-              <Link>Work</Link>
-              <Link>Contact</Link>
-            </Links>
-            <Row>
+    <div>
+      {props.state ? (
+        <ModalWrapper ref={nodeRef}>
+          <Header>Navigate</Header>
+          <Links>
+            <Link onClick={() => props.handleLinkClick("about")}>About</Link>
+            <Link onClick={() => props.handleLinkClick("work")}>Work</Link>
+            <Link onClick={() => props.handleLinkClick("contact")}>
+              Contact
+            </Link>
+          </Links>
+          <Row>
+            <MobileRow
+              href="https://www.linkedin.com/in/jason-cornish5/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <LinkedInIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+            </MobileRow>
+            <MobileRow
+              href="https://github.com/jason-cornish"
+              target="_blank"
+              rel="noreferrer"
+            >
               <GitHubIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+            </MobileRow>
+
+            <MobileRow
+              href="mailto: jasoncornish14@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <EmailIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
-            </Row>
-            <MobileColumns>
-              <Header>Find me</Header>
-              <MobileRow href="https://www.linkedin.com/in/jason-cornish5/">
-                <LinkedInIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
-                <p>jason-cornish5</p>
-              </MobileRow>
-              <MobileRow href="https://github.com/jason-cornish">
-                <GitHubIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
-                <p>jason-cornish</p>
-              </MobileRow>
-              <MobileRow href="mailto: jasoncornish14@gmail.com">
-                <EmailIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
-                <p>jasoncornish14@gmail.com</p>
-              </MobileRow>
-            </MobileColumns>
-          </ModalWrapper>
-        ) : (
-          <div />
-        )}
-      </CSSTransition>
-    </SwitchTransition>
+            </MobileRow>
+          </Row>
+          <MobileColumns>
+            <Header>Find me</Header>
+            <MobileRow
+              href="https://www.linkedin.com/in/jason-cornish5/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedInIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+              <p>jason-cornish5</p>
+            </MobileRow>
+            <MobileRow
+              href="https://github.com/jason-cornish"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHubIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+              <p>jason-cornish</p>
+            </MobileRow>
+            <MobileRow
+              href="mailto: jasoncornish14@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <EmailIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+              <p>jasoncornish14@gmail.com</p>
+            </MobileRow>
+          </MobileColumns>
+        </ModalWrapper>
+      ) : (
+        <div />
+      )}
+    </div>
   );
 };
 

@@ -1,12 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { HorizontalWrapper } from "./reusable/styled-components";
 import JasonFloating from "../images/jason-floating.png";
-import CurveContainer from "./reusable/CurveContainer";
 
-const AboutMe = () => {
+const AboutMe = forwardRef((props, aboutRef: any) => {
   return (
-    <AboutMeWrapper>
+    <AboutMeWrapper ref={aboutRef}>
       {/* <CurveContainer fill={"#4831d4"} inverted={true} aligned="top" /> */}
       <ContentWrapper>
         <TextSection>
@@ -46,7 +45,7 @@ const AboutMe = () => {
       {/* <CurveContainer fill={"#4831d4"} inverted={false} aligned="bottom" /> */}
     </AboutMeWrapper>
   );
-};
+});
 
 export default AboutMe;
 

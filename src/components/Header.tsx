@@ -7,19 +7,22 @@ import {
 import AnimatedHamburger from "../components/reusable/animated-hamburger";
 import HamburgerModal from "../components/HamburgerModal";
 
-const Header = () => {
+const Header = (props: any) => {
   const [modalState, setModalState] = useState<boolean>(false);
 
   return (
     <HeaderWrapper>
-      <Title>
+      <Title onClick={() => props.handleLinkClick("home")}>
         <h1>JC</h1>
       </Title>
       <HeaderOptions>
         <HoverWrapper>
           <AnimatedHamburger setState={setModalState} state={modalState} />
         </HoverWrapper>
-        <HamburgerModal state={modalState} />
+        <HamburgerModal
+          state={modalState}
+          handleLinkClick={props.handleLinkClick}
+        />
       </HeaderOptions>
     </HeaderWrapper>
   );

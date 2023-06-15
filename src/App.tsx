@@ -1,27 +1,30 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import AppsIcon from "@mui/icons-material/Apps";
-import {
-  HorizontalWrapper,
-  HoverWrapper,
-  VerticalWrapper,
-} from "./components/reusable/styled-components";
 import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
 import Work from "./components/Work";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ContactMe from "./components/ContactMe";
 import { useEffect } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 function App() {
+  const homeRef = useRef<any>(null);
+  const aboutRef = useRef<any>(null);
   const workRef = useRef<any>(null);
+  const contactRef = useRef<any>(null);
+
   const [loadingState, setLoadingState] = useState<boolean>(true);
 
-  const handleLinkClick = () => {
-    console.log("running");
-    workRef.current?.scrollIntoView({ behavior: "smooth" });
+  const handleLinkClick = (refType: string) => {
+    const refMapping: any = {
+      home: homeRef,
+      about: aboutRef,
+      work: workRef,
+      contact: contactRef,
+    };
+
+    refMapping[refType].current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -42,12 +45,12 @@ function App() {
       </TransitionGroup>
 
       <BodyWrapper>
-        <Header />
+        <Header handleLinkClick={handleLinkClick} />
         <Body>
-          <Landing handleLinkClick={handleLinkClick} />
-          <AboutMe />
+          <Landing ref={homeRef} handleLinkClick={handleLinkClick} />
+          <AboutMe ref={aboutRef} />
           <Work ref={workRef} />
-          <ContactMe />
+          <ContactMe ref={contactRef} />
           {/* <Footer /> */}
         </Body>
       </BodyWrapper>
@@ -93,17 +96,6 @@ const Application = styled.div`
 `;
 
 const TransitionWrapper = styled.div`
-  .transition-enter {
-    opacity: 0.01;
-    transform: translate(0, 10);
-  }
-
-  .transition-enter-active {
-    opacity: 1;
-    transform: translate(0, 0);
-    transition: all 350ms linear;
-  }
-
   .transition-exit {
     display: none;
     opacity: 0;
@@ -129,7 +121,6 @@ const PreLoader = styled.div`
     font-family: Archivo;
     font-size: 60px;
     margin: 0px;
-    text-shadow: #4831d4 4px 4px;
     color: #e0e3e7;
     cursor: pointer;
     :hover {

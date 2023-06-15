@@ -1,4 +1,5 @@
 import React from "react";
+import { forwardRef } from "react";
 import styled from "styled-components";
 import LinkButton from "./reusable/LinkButton";
 import {
@@ -6,10 +7,10 @@ import {
   VerticalWrapper,
 } from "./reusable/styled-components";
 
-const Landing = (props: any) => {
+const Landing = forwardRef((props: any, homeRef: any) => {
   return (
     <LandingWrapper>
-      <AnimatedText>
+      <AnimatedText ref={homeRef}>
         Hi, I'm Jason.
         <br /> Front-End Web Developer.
       </AnimatedText>
@@ -25,17 +26,26 @@ const Landing = (props: any) => {
           StyledComponents.
         </p>
         <ButtonRow>
-          <LinkButton content={"About"} handleClick={props.handleLinkClick} />
-          <LinkButton content={"Work"} handleClick={props.handleLinkClick} />
+          <LinkButton
+            content={"About"}
+            handleClick={props.handleLinkClick}
+            destination={"about"}
+          />
+          <LinkButton
+            content={"Work"}
+            handleClick={props.handleLinkClick}
+            destination={"work"}
+          />
           <LinkButton
             content={"Contact Me"}
             handleClick={props.handleLinkClick}
+            destination={"contact"}
           />
         </ButtonRow>
       </Wrapper>
     </LandingWrapper>
   );
-};
+});
 
 export default Landing;
 
