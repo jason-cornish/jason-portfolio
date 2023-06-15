@@ -74,6 +74,7 @@ const AnimatedText = styled.h1`
   -webkit-text-fill-color: transparent;
   font-size: 70px;
   margin: 0px;
+  font-weight: 600;
 
   @keyframes gradient {
     0% {
