@@ -1,6 +1,7 @@
 import React from "react";
 import { forwardRef } from "react";
 import styled from "styled-components";
+import AnimatedBlob from "./reusable/animated-blob";
 import LinkButton from "./reusable/LinkButton";
 import {
   HorizontalWrapper,
@@ -10,65 +11,111 @@ import {
 const Landing = forwardRef((props: any, homeRef: any) => {
   return (
     <LandingWrapper>
-      <AnimatedText ref={homeRef}>
-        Hi, I'm Jason.
-        <br /> Front-End Web Developer.
-      </AnimatedText>
-      <Wrapper>
-        <p className="SubHeaderWide">
-          I like to design and develop intuitive, elegant online experiences.
-          <br /> I specialize in coding web applications with React, Typescript,
-          and StyledComponents.
-        </p>
-        <p className="SubHeaderMobile">
-          I like to design and develop intuitive, elegant online experiences. I
-          specialize in coding web applications with React, Typescript, and
-          StyledComponents.
-        </p>
-        <ButtonRow>
-          <LinkButton
-            content={"About"}
-            handleClick={props.handleLinkClick}
-            destination={"about"}
-          />
-          <LinkButton
-            content={"Work"}
-            handleClick={props.handleLinkClick}
-            destination={"work"}
-          />
-          <LinkButton
-            content={"Contact Me"}
-            handleClick={props.handleLinkClick}
-            destination={"contact"}
-          />
-        </ButtonRow>
-      </Wrapper>
+      <feTurbulence
+        className="noiseLayer"
+        type="turbulence"
+        baseFrequency="7.02"
+        numOctaves="1"
+        stitchTiles="stitch"
+      />
+      <LeftColumn>
+        <AnimatedText ref={homeRef}>
+          Hi, I'm Jason.
+          <br /> Front-End Web Developer.
+        </AnimatedText>
+        <Wrapper>
+          <p className="SubHeaderWide">
+            I like to design and develop intuitive, elegant online experiences.
+            <br /> I specialize in coding web applications with React,
+            Typescript, and StyledComponents.
+          </p>
+          <p className="SubHeaderMobile">
+            I like to design and develop intuitive, elegant online experiences.
+            I specialize in coding web applications with React, Typescript, and
+            StyledComponents.
+          </p>
+          <ButtonRow>
+            <LinkButton
+              content={"About"}
+              handleClick={props.handleLinkClick}
+              destination={"about"}
+            />
+            <LinkButton
+              content={"Work"}
+              handleClick={props.handleLinkClick}
+              destination={"work"}
+            />
+            <LinkButton
+              content={"Contact Me"}
+              handleClick={props.handleLinkClick}
+              destination={"contact"}
+            />
+          </ButtonRow>
+        </Wrapper>
+      </LeftColumn>
+      <RightColumn>
+        <AnimationLayer>
+          <AnimatedBlob />
+        </AnimationLayer>
+      </RightColumn>
     </LandingWrapper>
   );
 });
 
 export default Landing;
 
-const LandingWrapper = styled(VerticalWrapper)`
+const LandingWrapper = styled(HorizontalWrapper)`
   width: 85%;
+  box-sizing: border-box;
+
+  /* .noiseLayer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  } */
+`;
+
+const LeftColumn = styled(VerticalWrapper)`
+  margin-right: 150px;
   padding-top: 200px;
   padding-bottom: 200px;
-  box-sizing: border-box;
-  column-gap: 40px;
+
   @media screen and (max-width: 1200px) {
+    padding-top: 150px;
+    padding-bottom: 150px;
     width: 80%;
+    margin-right: 0px;
   }
   @media screen and (max-width: 700px) {
     align-items: center;
     padding-top: 150px;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
     width: 90%;
+    margin-right: 0px;
   }
+`;
+
+const RightColumn = styled(VerticalWrapper)`
+  height: 100%;
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+`;
+
+const AnimationLayer = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const AnimatedText = styled.h1`
   display: inline-block;
-  background: linear-gradient(
+  background-color: #e0e3e7;
+  /* background: linear-gradient(
     -45deg,
     #ee7752,
     #e73c7e,
@@ -77,7 +124,7 @@ const AnimatedText = styled.h1`
     #4831d4
   );
   background-size: 400% 400%;
-  animation: gradient 25s ease infinite;
+  animation: gradient 25s ease infinite; */
   position: relative;
   background-clip: text;
   -webkit-background-clip: text;
