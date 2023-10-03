@@ -15,6 +15,7 @@ import {
 
 type PropsType = {
   state: boolean;
+  setState: any;
   handleLinkClick: any;
 };
 
@@ -26,9 +27,28 @@ const HamburgerModal = (props: PropsType) => {
         <ModalWrapper ref={nodeRef}>
           <Header>Navigate</Header>
           <Links>
-            <Link onClick={() => props.handleLinkClick("about")}>About</Link>
-            <Link onClick={() => props.handleLinkClick("work")}>Work</Link>
-            <Link onClick={() => props.handleLinkClick("contact")}>
+            <Link
+              onClick={() => [
+                props.setState(false),
+                props.handleLinkClick("about"),
+              ]}
+            >
+              About
+            </Link>
+            <Link
+              onClick={() => [
+                props.setState(false),
+                props.handleLinkClick("work"),
+              ]}
+            >
+              Work
+            </Link>
+            <Link
+              onClick={() => [
+                props.setState(false),
+                props.handleLinkClick("contact"),
+              ]}
+            >
               Contact
             </Link>
           </Links>

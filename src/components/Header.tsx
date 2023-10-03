@@ -16,11 +16,10 @@ const Header = (props: any) => {
         <h1>JC</h1>
       </Title>
       <HeaderOptions>
-        <HoverWrapper>
-          <AnimatedHamburger setState={setModalState} state={modalState} />
-        </HoverWrapper>
+        <AnimatedHamburger setState={setModalState} state={modalState} />
         <HamburgerModal
           state={modalState}
+          setState={setModalState}
           handleLinkClick={props.handleLinkClick}
         />
       </HeaderOptions>
@@ -46,6 +45,7 @@ const HeaderWrapper = styled.header`
     font-size: 40px;
     margin: 0px;
     color: #e0e3e7;
+    text-shadow: 4px 4px #4831d4;
     cursor: pointer;
     :hover {
       color: #f6f7f8;

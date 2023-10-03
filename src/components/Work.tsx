@@ -23,7 +23,6 @@ const Work = forwardRef((props, workRef: any) => {
 
   const workLinks = [
     "Apple",
-    "Gantt App",
     "Zospace",
     "Elliot Smith Player",
     "Arboretum Creek",

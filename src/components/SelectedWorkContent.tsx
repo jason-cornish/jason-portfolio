@@ -76,61 +76,61 @@ const SelectedWorkContent = (props: WorkProps) => {
         </WorkWrapper>
       </CSSTransition>
     ),
-    [workLinks[1]]: (
-      <CSSTransition
-        timeout={400}
-        classNames="transition"
-        key="zollege-landing"
-      >
-        <WorkWrapper>
-          <WorkTitle>
-            Gantt App @{" "}
-            <a
-              href="https://htmlpreview.github.io/?https://github.com/theMVPshop/landingpage/blob/main/html/landing.html"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Zollege
-            </a>
-          </WorkTitle>
-          <WorkSubTitle>January - June 2022</WorkSubTitle>
-          <ChipRow>
-            <DeadChip content={"Javascript"} />
-            <DeadChip content={"HTML5"} />
-            <DeadChip content={"CSS3"} />
-            <DeadChip content={"Git"} />
-            <DeadChip content={"Bootstrap"} />
-          </ChipRow>
-          <WorkContent>
-            <ZollegeImage>
-              <img src={ZollegeBackground}></img>
-              <ImagePlaceholder />
-            </ZollegeImage>
+    // [workLinks[1]]: (
+    //   <CSSTransition
+    //     timeout={400}
+    //     classNames="transition"
+    //     key="zollege-landing"
+    //   >
+    //     <WorkWrapper>
+    //       <WorkTitle>
+    //         Gantt App @{" "}
+    //         <a
+    //           href="https://htmlpreview.github.io/?https://github.com/theMVPshop/landingpage/blob/main/html/landing.html"
+    //           target="_blank"
+    //           rel="noreferrer"
+    //         >
+    //           Zollege
+    //         </a>
+    //       </WorkTitle>
+    //       <WorkSubTitle>January - June 2022</WorkSubTitle>
+    //       <ChipRow>
+    //         <DeadChip content={"Javascript"} />
+    //         <DeadChip content={"HTML5"} />
+    //         <DeadChip content={"CSS3"} />
+    //         <DeadChip content={"Git"} />
+    //         <DeadChip content={"Bootstrap"} />
+    //       </ChipRow>
+    //       <WorkContent>
+    //         <ZollegeImage>
+    //           <img src={ZollegeBackground}></img>
+    //           <ImagePlaceholder />
+    //         </ZollegeImage>
 
-            <WorkParagraphWrapper>
-              <WorkParagraph>
-                Developed a fully responsive landing page and navigation bar
-                using HTML, CSS, Bootstrap, and Javascript
-              </WorkParagraph>
-              <WorkParagraph>
-                Learned a new Javascript library (DHTMLX Gantt) to build a
-                customized Gantt chart that helps Zollege administrators track
-                class schedules.
-              </WorkParagraph>
-              <WorkParagraph>
-                Utilized Git to manage version control + push changes in
-                collaboration with 5 other developers.
-              </WorkParagraph>
-            </WorkParagraphWrapper>
-          </WorkContent>
-        </WorkWrapper>
-      </CSSTransition>
-    ),
-    [workLinks[2]]: (
+    //         <WorkParagraphWrapper>
+    //           <WorkParagraph>
+    //             Developed a fully responsive landing page and navigation bar
+    //             using HTML, CSS, Bootstrap, and Javascript
+    //           </WorkParagraph>
+    //           <WorkParagraph>
+    //             Learned a new Javascript library (DHTMLX Gantt) to build a
+    //             customized Gantt chart that helps Zollege administrators track
+    //             class schedules.
+    //           </WorkParagraph>
+    //           <WorkParagraph>
+    //             Utilized Git to manage version control + push changes in
+    //             collaboration with 5 other developers.
+    //           </WorkParagraph>
+    //         </WorkParagraphWrapper>
+    //       </WorkContent>
+    //     </WorkWrapper>
+    //   </CSSTransition>
+    // ),
+    [workLinks[1]]: (
       <CSSTransition timeout={400} classNames="transition" key="zollege-gantt">
         <WorkWrapper>
           <WorkTitle>
-            Landing Page @{" "}
+            Zospace @{" "}
             <a
               href="https://htmlpreview.github.io/?https://github.com/theMVPshop/landingpage/blob/main/html/landing.html"
               target="_blank"
@@ -172,7 +172,7 @@ const SelectedWorkContent = (props: WorkProps) => {
         </WorkWrapper>
       </CSSTransition>
     ),
-    [workLinks[3]]: (
+    [workLinks[2]]: (
       <CSSTransition
         timeout={350}
         classNames="transition"
@@ -226,7 +226,7 @@ const SelectedWorkContent = (props: WorkProps) => {
         </WorkWrapper>
       </CSSTransition>
     ),
-    [workLinks[4]]: (
+    [workLinks[3]]: (
       <CSSTransition
         timeout={350}
         classNames="transition"
@@ -390,24 +390,25 @@ const ChipRow = styled(HorizontalWrapper)`
 const WorkContent = styled(VerticalWrapper)`
   width: 100%;
   @media screen and (max-width: 1200px) {
+    width: 100%;
     justify-content: center;
   }
 `;
 
 const WorkParagraphWrapper = styled(VerticalWrapper)`
   position: relative;
-  max-width: 700px;
+  max-width: 630px;
   row-gap: 10px;
   padding-top: 10px;
   padding-left: 20px;
   @media screen and (max-width: 1200px) {
+    width: 100%;
     max-width: 100%;
-    padding: 0 calc(10% + 20px);
+    margin: auto auto;
     margin-top: 15px;
   }
 
   @media screen and (max-width: 700px) {
-    max-width: 100%;
     padding: 0 calc(5% + 20px);
   }
 `;
@@ -448,7 +449,7 @@ const AppleImage = styled.div`
     position: absolute;
     height: 200px;
     margin: 0px;
-    z-index: 4;
+    z-index: 3;
     opacity: 100%;
     fill: black;
   }

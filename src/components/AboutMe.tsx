@@ -93,7 +93,7 @@ const TextSection = styled.div`
     width: 100%;
 
     p {
-      max-width: 100%;
+      max-width: 630px;
     }
   }
 `;
