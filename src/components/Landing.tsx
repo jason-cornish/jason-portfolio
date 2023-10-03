@@ -11,13 +11,6 @@ import {
 const Landing = forwardRef((props: any, homeRef: any) => {
   return (
     <LandingWrapper>
-      <feTurbulence
-        className="noiseLayer"
-        type="turbulence"
-        baseFrequency="7.02"
-        numOctaves="1"
-        stitchTiles="stitch"
-      />
       <LeftColumn>
         <AnimatedText ref={homeRef}>
           Hi, I'm Jason.
@@ -67,13 +60,6 @@ export default Landing;
 const LandingWrapper = styled(HorizontalWrapper)`
   width: 85%;
   box-sizing: border-box;
-
-  /* .noiseLayer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-  } */
 `;
 
 const LeftColumn = styled(VerticalWrapper)`

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const AnimatedBlob = () => {
-  const animationCycle = ["animation1", "animation2", "animation3"];
   return (
     <Wrapper>
       <Blob>
