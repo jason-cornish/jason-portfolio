@@ -21,7 +21,7 @@ export const HoverWrapper = styled(HorizontalWrapper)`
 `;
 
 export const SectionTitle = styled.h1`
-  font-size: 65px;
+  font-size: 55px;
   margin: 0px;
   font-family: Roboto;
 `;

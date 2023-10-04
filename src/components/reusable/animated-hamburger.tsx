@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const AnimatedHamburger = (props: any) => {
@@ -19,6 +20,13 @@ const AnimatedHamburger = (props: any) => {
     }
   };
 
+  useEffect(() => {
+    if (hamburgerRef.current && !props.state) {
+      console.log(props.state);
+      hamburgerRef.current.className = "";
+    }
+  }, [props.state]);
+
   return (
     <Hamburger>
       <div id="nav-icon3" ref={hamburgerRef} onClick={() => clickHamburger()}>
@@ -34,6 +42,7 @@ const AnimatedHamburger = (props: any) => {
 export default AnimatedHamburger;
 
 const Hamburger = styled.div`
+  background-color: transparent;
   z-index: 5;
   &:hover {
     #nav-icon3 span {
@@ -58,12 +67,12 @@ const Hamburger = styled.div`
   }
 
   #nav-icon3 span {
+    box-shadow: 4px 4px #4831d4;
     display: block;
     position: absolute;
     height: 4px;
     width: 100%;
     background: white;
-    box-shadow: 4px 4px #4831d4;
     border-radius: 2px;
     opacity: 1;
     left: 0;
@@ -75,6 +84,10 @@ const Hamburger = styled.div`
     -moz-transition: 0.25s ease-in-out;
     -o-transition: 0.25s ease-in-out;
     transition: 0.25s ease-in-out;
+  }
+
+  #nav-icon3.open span {
+    box-shadow: 0px 0px #4831d4 !important;
   }
 
   #nav-icon3 span:nth-child(1) {

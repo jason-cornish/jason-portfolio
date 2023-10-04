@@ -11,7 +11,7 @@ import SelectedWorkContent from "./SelectedWorkContent";
 import { useEffect } from "react";
 import CurveContainer from "./reusable/CurveContainer";
 
-const Work = (props: any) => {
+const Work = forwardRef((props, workRef: any) => {
   const [selectedWork, setSelectedWork] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -23,16 +23,14 @@ const Work = (props: any) => {
 
   const workLinks = [
     "Apple",
-    "Zollege",
+    "Zospace",
     "Elliot Smith Player",
     "Arboretum Creek",
   ];
 
   return (
-    <WorkWrapper>
-      <h1 className="WorkSectionTitle" ref={props.ref}>
-        /work
-      </h1>
+    <WorkWrapper ref={workRef}>
+      <h1 className="WorkSectionTitle">/work</h1>
       <ContentWrapper>
         <WorkChips>
           {workLinks.map((work, idx) => {
@@ -56,12 +54,12 @@ const Work = (props: any) => {
       {/* <CurveContainer fill={"#e0e3e7"} inverted={true} aligned={"bottom"} /> */}
     </WorkWrapper>
   );
-};
+});
 
 export default Work;
 
 const WorkWrapper = styled.div`
-  padding: 150px 10%;
+  padding: 100px 10%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -81,8 +79,8 @@ const WorkWrapper = styled.div`
     .WorkSectionTitle {
       display: flex;
     }
-    padding: 150px 0;
-    padding-bottom: 150px;
+    padding: 80px 0;
+    padding-bottom: 100px;
   }
 
   @media screen and (max-width: 700px) {

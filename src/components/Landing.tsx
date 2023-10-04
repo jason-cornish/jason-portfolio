@@ -1,7 +1,9 @@
 import React from "react";
 import { forwardRef } from "react";
 import styled from "styled-components";
-import AnimatedBlob from "./reusable/animated-blob";
+import AnimatedBlobLarge from "./reusable/animated-blob-large";
+import AnimatedBlobMedium from "./reusable/animated-blob-medium";
+import AnimatedBlobSmall from "./reusable/animated-blob-small";
 import LinkButton from "./reusable/LinkButton";
 import {
   HorizontalWrapper,
@@ -28,18 +30,31 @@ const Landing = forwardRef((props: any, homeRef: any) => {
             StyledComponents.
           </p>
           <ButtonRow>
-            <LinkButton content={"About"} handleClick={props.handleLinkClick} />
-            <LinkButton content={"Work"} handleClick={props.handleLinkClick} />
+            <LinkButton
+              content={"About"}
+              handleClick={props.handleLinkClick}
+              destination={"about"}
+            />
+            <LinkButton
+              content={"Work"}
+              handleClick={props.handleLinkClick}
+              destination={"work"}
+            />
             <LinkButton
               content={"Contact Me"}
               handleClick={props.handleLinkClick}
+              destination={"contact"}
             />
           </ButtonRow>
         </Wrapper>
       </LeftColumn>
       <RightColumn>
         <AnimationLayer>
-          <AnimatedBlob />
+          <AnimatedBlobLarge />
+          <Column>
+            <AnimatedBlobMedium />
+            <AnimatedBlobSmall />
+          </Column>
         </AnimationLayer>
       </RightColumn>
     </LandingWrapper>
@@ -51,10 +66,11 @@ export default Landing;
 const LandingWrapper = styled(HorizontalWrapper)`
   width: 85%;
   box-sizing: border-box;
+  justify-content: space-between;
 `;
 
 const LeftColumn = styled(VerticalWrapper)`
-  margin-right: 150px;
+  margin-right: 50px;
   padding-top: 200px;
   padding-bottom: 200px;
 
@@ -84,9 +100,16 @@ const RightColumn = styled(VerticalWrapper)`
 `;
 
 const AnimationLayer = styled.div`
+  position: relative;
   height: 100%;
   display: flex;
-  justify-content: flex-end;
+  .small {
+    bottom: 0px;
+  }
+`;
+
+const Column = styled(VerticalWrapper)`
+  row-gap: 15px;
 `;
 
 const AnimatedText = styled.h1`
@@ -106,7 +129,7 @@ const AnimatedText = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 70px;
+  font-size: 55px;
   margin: 0px;
   font-weight: 600;
 

@@ -7,19 +7,21 @@ import {
 import AnimatedHamburger from "../components/reusable/animated-hamburger";
 import HamburgerModal from "../components/HamburgerModal";
 
-const Header = () => {
+const Header = (props: any) => {
   const [modalState, setModalState] = useState<boolean>(false);
 
   return (
     <HeaderWrapper>
-      <Title>
+      <Title onClick={() => props.handleLinkClick("home")}>
         <h1>JC</h1>
       </Title>
       <HeaderOptions>
-        <HoverWrapper>
-          <AnimatedHamburger setState={setModalState} state={modalState} />
-        </HoverWrapper>
-        <HamburgerModal state={modalState} />
+        <AnimatedHamburger setState={setModalState} state={modalState} />
+        <HamburgerModal
+          state={modalState}
+          setState={setModalState}
+          handleLinkClick={props.handleLinkClick}
+        />
       </HeaderOptions>
     </HeaderWrapper>
   );
@@ -38,15 +40,17 @@ const HeaderWrapper = styled.header`
   font-family: Archivo;
   box-sizing: border-box;
   z-index: 3;
+  pointer-events: none;
   h1 {
     font-size: 40px;
     margin: 0px;
-    text-shadow: #4831d4 4px 4px;
     color: #e0e3e7;
+    text-shadow: 4px 4px #4831d4;
     cursor: pointer;
     :hover {
       color: #f6f7f8;
     }
+    pointer-events: auto;
   }
   @media screen and (max-width: 1200px) {
     width: 97.5%;
@@ -72,4 +76,5 @@ const HeaderOptions = styled(HorizontalWrapper)`
   column-gap: 20px;
   width: 42px;
   height: 30px;
+  pointer-events: auto;
 `;

@@ -9,6 +9,7 @@ import { ReactComponent as AppleMapsLogo } from "../svg/apple-maps.svg";
 import AppleMapsBackground from "../images/Apple-Maps-Background.png";
 import ZollegeBackground from "../images/Zollege-Background.png";
 import ElliotSmithPlayerBackground from "../images/Elliot-Smith-Player-Background.png";
+import ArboretumCreekBackground from "../images/Arboretum-Creek-Background.png";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ImagePlaceholder from "./reusable/ImagePlaceholder";
 
@@ -24,16 +25,16 @@ const SelectedWorkContent = (props: WorkProps) => {
     [workLinks[0]]: (
       <CSSTransition timeout={400} classNames="transition" key="apple">
         <WorkWrapper>
-          <WorkTitle>
-            Full-Stack Developer @ <span>Apple</span>
-          </WorkTitle>
+          <WorkTitle>Full-Stack Developer @ Apple</WorkTitle>
           <WorkSubTitle>June 2022 - Present</WorkSubTitle>
           <ChipRow>
             <DeadChip content={"React.js"} />
+            <DeadChip content={"Typescript"} />
             <DeadChip content={"Node.js"} />
             <DeadChip content={"Styled-Components"} />
-            <DeadChip content={"UI Design"} />
-            <DeadChip content={"Typescript"} />
+            <DeadChip content={"Git"} />
+            <DeadChip content={"BlueprintJS"} />
+            <DeadChip content={"Highcharts"} />
           </ChipRow>
           <WorkContent>
             <AppleImage>
@@ -43,13 +44,24 @@ const SelectedWorkContent = (props: WorkProps) => {
             </AppleImage>
             <WorkParagraphWrapper>
               <WorkParagraph>
-                Designed, developed, and oversaw deployment of 2 major system
-                feature additions to Apple Maps React project management tools.
+                Designed and developed a workforce productivity dashboard in
+                React that reports on the productivity and effectiveness of
+                3500+ technicians, analysts, and editors by tracking 50,000+
+                data points.
               </WorkParagraph>
               <WorkParagraph>
-                Engineered a library of reusable UI components, collaborated
-                with Apple PM’s to design complex data visualizations and user
-                interfaces in Sketch.
+                Designed and developed a workforce monitoring tool in React that
+                tracks the qualifications, skill readiness, and training recency
+                of a workforce of 6000+ Apple Maps editors.
+              </WorkParagraph>
+              <WorkParagraph>
+                Engineered a library of reusable UI React components in
+                Typescript and Styled-Components with customizable styling and
+                content.
+              </WorkParagraph>
+              <WorkParagraph>
+                Collaborated with Apple managers to design complex data
+                visualizations and user interfaces in Sketch.
               </WorkParagraph>
               <WorkParagraph>
                 Dockerized and deployed a Node.js REST API to a Kubernetes
@@ -64,11 +76,68 @@ const SelectedWorkContent = (props: WorkProps) => {
         </WorkWrapper>
       </CSSTransition>
     ),
+    // [workLinks[1]]: (
+    //   <CSSTransition
+    //     timeout={400}
+    //     classNames="transition"
+    //     key="zollege-landing"
+    //   >
+    //     <WorkWrapper>
+    //       <WorkTitle>
+    //         Gantt App @{" "}
+    //         <a
+    //           href="https://htmlpreview.github.io/?https://github.com/theMVPshop/landingpage/blob/main/html/landing.html"
+    //           target="_blank"
+    //           rel="noreferrer"
+    //         >
+    //           Zollege
+    //         </a>
+    //       </WorkTitle>
+    //       <WorkSubTitle>January - June 2022</WorkSubTitle>
+    //       <ChipRow>
+    //         <DeadChip content={"Javascript"} />
+    //         <DeadChip content={"HTML5"} />
+    //         <DeadChip content={"CSS3"} />
+    //         <DeadChip content={"Git"} />
+    //         <DeadChip content={"Bootstrap"} />
+    //       </ChipRow>
+    //       <WorkContent>
+    //         <ZollegeImage>
+    //           <img src={ZollegeBackground}></img>
+    //           <ImagePlaceholder />
+    //         </ZollegeImage>
+
+    //         <WorkParagraphWrapper>
+    //           <WorkParagraph>
+    //             Developed a fully responsive landing page and navigation bar
+    //             using HTML, CSS, Bootstrap, and Javascript
+    //           </WorkParagraph>
+    //           <WorkParagraph>
+    //             Learned a new Javascript library (DHTMLX Gantt) to build a
+    //             customized Gantt chart that helps Zollege administrators track
+    //             class schedules.
+    //           </WorkParagraph>
+    //           <WorkParagraph>
+    //             Utilized Git to manage version control + push changes in
+    //             collaboration with 5 other developers.
+    //           </WorkParagraph>
+    //         </WorkParagraphWrapper>
+    //       </WorkContent>
+    //     </WorkWrapper>
+    //   </CSSTransition>
+    // ),
     [workLinks[1]]: (
-      <CSSTransition timeout={400} classNames="transition" key="zollege">
+      <CSSTransition timeout={400} classNames="transition" key="zollege-gantt">
         <WorkWrapper>
           <WorkTitle>
-            Front-End Developer @ <span>Zollege</span>
+            Zospace @{" "}
+            <a
+              href="https://htmlpreview.github.io/?https://github.com/theMVPshop/landingpage/blob/main/html/landing.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Zollege
+            </a>
           </WorkTitle>
           <WorkSubTitle>January - June 2022</WorkSubTitle>
           <ChipRow>
@@ -87,7 +156,7 @@ const SelectedWorkContent = (props: WorkProps) => {
             <WorkParagraphWrapper>
               <WorkParagraph>
                 Developed a fully responsive landing page and navigation bar
-                using HTML, CSS, Bootstrap, and Javascript
+                using HTML5, CSS3, Bootstrap, and Javascript
               </WorkParagraph>
               <WorkParagraph>
                 Learned a new Javascript library (DHTMLX Gantt) to build a
@@ -111,15 +180,23 @@ const SelectedWorkContent = (props: WorkProps) => {
       >
         <WorkWrapper>
           <WorkTitle>
-            Lead Developer @ <span>Elliot Smith Player</span>
+            Capstone ACA Project{" "}
+            <a
+              href="https://elliot-smith-player.web.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Elliot Smith Player
+            </a>
           </WorkTitle>
-          <WorkSubTitle>January - June 2022</WorkSubTitle>
+          <WorkSubTitle>October - December 2021</WorkSubTitle>
           <ChipRow>
             <DeadChip content={"React.js"} />
             <DeadChip content={"Node.js"} />
-            <DeadChip content={"Styled-Components"} />
-            <DeadChip content={"UI Design"} />
-            <DeadChip content={"Typescript"} />
+            <DeadChip content={"MySQL"} />
+            <DeadChip content={"Express"} />
+            <DeadChip content={"REST API"} />
+            <DeadChip content={"CSS3"} />
           </ChipRow>
           <WorkContent>
             <ElliotImage>
@@ -128,21 +205,73 @@ const SelectedWorkContent = (props: WorkProps) => {
 
             <WorkParagraphWrapper>
               <WorkParagraph>
-                Designed, developed, and maintained multiple major system
-                feature additions to internal Apple web applications using
-                React, Typescript, and Node.js.
+                Designed and built an online jukebox for Elliot Smith's music as
+                my capstone project at Austin Coding Academy. Key features
+                include creating accounts, creating &amp; saving custom
+                playlists, listening to songs, and browsing albums.
               </WorkParagraph>
               <WorkParagraph>
-                Collaborated with Apple PM’s to design complex data
-                visualizations and user interfaces in Sketch.
+                Engineered a fully-responsive front-end with React, using Redux
+                for state mangagement. Developed custom React hooks for fetching
+                and updating back-end data, utilizing JSON Web Tokens via Auth0
+                for web security.
               </WorkParagraph>
               <WorkParagraph>
-                Dockerized and deployed a Node.js REST API to a Kubernetes
-                namespace
+                Developed an Express REST API with Node.js for communication
+                with my MySQL database and React front-end. Wrote MySQL queries
+                to fetch, update, and delete data upon user request.
+              </WorkParagraph>
+            </WorkParagraphWrapper>
+          </WorkContent>
+        </WorkWrapper>
+      </CSSTransition>
+    ),
+    [workLinks[3]]: (
+      <CSSTransition
+        timeout={350}
+        classNames="transition"
+        key="arboretum-creek"
+      >
+        <WorkWrapper>
+          <WorkTitle>
+            Lead Developer @{" "}
+            <a
+              href="https://arboretumcreek.org"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Arboretum Creek
+            </a>
+          </WorkTitle>
+          <WorkSubTitle>January - June 2022</WorkSubTitle>
+          <ChipRow>
+            <DeadChip content={"Javascript"} />
+            <DeadChip content={"HTML5"} />
+            <DeadChip content={"CSS3"} />
+            <DeadChip content={"SVG"} />
+            <DeadChip content={"Web Design"} />
+            <DeadChip content={"Hosted"} />
+          </ChipRow>
+          <WorkContent>
+            <ElliotImage>
+              <img src={ArboretumCreekBackground}></img>
+            </ElliotImage>
+
+            <WorkParagraphWrapper>
+              <WorkParagraph>
+                Volunteered for a non-profit organization to design and build a
+                website that demonstrates the ecological need to recreate a
+                creek in the Seattle Arboretum park to reduce flooding damage.
               </WorkParagraph>
               <WorkParagraph>
-                Maintained and refactored previous developers’ Python/Typescript
-                code.
+                Developed a fully responsive static website with HTML5, CSS3,
+                and Javascript. Built an interactive visionary image of the
+                future Arboretum Creek with SVG and Adobe Illustrator to teach
+                visitors about the types of life that could thrive in Arboretum
+                Creek.
+              </WorkParagraph>
+              <WorkParagraph>
+                Deployed and hosted the website via Bluehost.
               </WorkParagraph>
             </WorkParagraphWrapper>
           </WorkContent>
@@ -201,6 +330,13 @@ const WorkTitle = styled.h1`
   span {
     color: #4831d4;
   }
+  a {
+    color: #4831d4;
+    text-decoration: none;
+    :hover {
+      text-decoration: underline;
+    }
+  }
   @media screen and (max-width: 1200px) {
     margin-top: 10px;
     padding: 0 10%;
@@ -231,13 +367,16 @@ const WorkSubTitle = styled.h2`
 
 const ChipRow = styled(HorizontalWrapper)`
   display: flex;
-  column-gap: 15px;
+  column-gap: 10px;
   margin-bottom: 10px;
+  flex-wrap: wrap;
+  row-gap: 5px;
 
   @media screen and (max-width: 1200px) {
     padding: 0 10%;
     flex-wrap: wrap;
     column-gap: 5px;
+    row-gap: 5px;
   }
 
   @media screen and (max-width: 700px) {
@@ -251,30 +390,33 @@ const ChipRow = styled(HorizontalWrapper)`
 const WorkContent = styled(VerticalWrapper)`
   width: 100%;
   @media screen and (max-width: 1200px) {
+    width: 100%;
     justify-content: center;
   }
 `;
 
 const WorkParagraphWrapper = styled(VerticalWrapper)`
   position: relative;
-  max-width: 700px;
+  max-width: 630px;
   row-gap: 10px;
   padding-top: 10px;
   padding-left: 20px;
+  word-wrap: break-word;
   @media screen and (max-width: 1200px) {
-    max-width: 100%;
-    padding: 0 calc(10% + 20px);
+    max-width: 90%;
+    margin: auto auto;
     margin-top: 15px;
+    padding: 0 10%;
   }
 
   @media screen and (max-width: 700px) {
-    max-width: 100%;
     padding: 0 calc(5% + 20px);
   }
 `;
 
 const WorkParagraph = styled.p`
   position: relative;
+  word-wrap: break-word;
   &:before {
     position: absolute;
     content: "";
@@ -309,7 +451,7 @@ const AppleImage = styled.div`
     position: absolute;
     height: 200px;
     margin: 0px;
-    z-index: 4;
+    z-index: 3;
     opacity: 100%;
     fill: black;
   }

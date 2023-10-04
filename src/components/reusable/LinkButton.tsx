@@ -3,13 +3,14 @@ import styled from "styled-components";
 type LinkProps = {
   content: string;
   handleClick: any | null;
+  destination: string;
 };
 
 const LinkButton = (props: LinkProps) => {
-  const { content } = props;
+  const { content, destination, handleClick } = props;
 
   return (
-    <LinkButtonWrapper onClick={() => props.handleClick()}>
+    <LinkButtonWrapper onClick={() => handleClick(destination)}>
       <p>{content}</p>
     </LinkButtonWrapper>
   );
