@@ -12,6 +12,7 @@ import ElliotSmithPlayerBackground from "../images/Elliot-Smith-Player-Backgroun
 import ArboretumCreekBackground from "../images/Arboretum-Creek-Background.png";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ImagePlaceholder from "./reusable/ImagePlaceholder";
+import MycoTex from "../images/Myco-Tex.png";
 
 type WorkProps = {
   selectedWork: string;
@@ -23,16 +24,21 @@ const SelectedWorkContent = (props: WorkProps) => {
 
   const workDictionary = {
     [workLinks[0]]: (
-      <CSSTransition timeout={400} classNames="transition" key="apple">
+      <CSSTransition
+        timeout={400}
+        classNames="transition"
+        key="apple"
+        className={selectedWork === workLinks[0] ? "visible" : "hidden"}
+      >
         <WorkWrapper>
           <WorkTitle>Full-Stack Developer @ Apple</WorkTitle>
           <WorkSubTitle>June 2022 - Present</WorkSubTitle>
           <ChipRow>
-            <DeadChip content={"React.js"} />
+            <DeadChip content={"ReactJS"} />
             <DeadChip content={"Typescript"} />
+            <DeadChip content={"Zustand"} />
             <DeadChip content={"Node.js"} />
             <DeadChip content={"Styled-Components"} />
-            <DeadChip content={"Git"} />
             <DeadChip content={"BlueprintJS"} />
             <DeadChip content={"Highcharts"} />
           </ChipRow>
@@ -76,58 +82,68 @@ const SelectedWorkContent = (props: WorkProps) => {
         </WorkWrapper>
       </CSSTransition>
     ),
-    // [workLinks[1]]: (
-    //   <CSSTransition
-    //     timeout={400}
-    //     classNames="transition"
-    //     key="zollege-landing"
-    //   >
-    //     <WorkWrapper>
-    //       <WorkTitle>
-    //         Gantt App @{" "}
-    //         <a
-    //           href="https://htmlpreview.github.io/?https://github.com/theMVPshop/landingpage/blob/main/html/landing.html"
-    //           target="_blank"
-    //           rel="noreferrer"
-    //         >
-    //           Zollege
-    //         </a>
-    //       </WorkTitle>
-    //       <WorkSubTitle>January - June 2022</WorkSubTitle>
-    //       <ChipRow>
-    //         <DeadChip content={"Javascript"} />
-    //         <DeadChip content={"HTML5"} />
-    //         <DeadChip content={"CSS3"} />
-    //         <DeadChip content={"Git"} />
-    //         <DeadChip content={"Bootstrap"} />
-    //       </ChipRow>
-    //       <WorkContent>
-    //         <ZollegeImage>
-    //           <img src={ZollegeBackground}></img>
-    //           <ImagePlaceholder />
-    //         </ZollegeImage>
-
-    //         <WorkParagraphWrapper>
-    //           <WorkParagraph>
-    //             Developed a fully responsive landing page and navigation bar
-    //             using HTML, CSS, Bootstrap, and Javascript
-    //           </WorkParagraph>
-    //           <WorkParagraph>
-    //             Learned a new Javascript library (DHTMLX Gantt) to build a
-    //             customized Gantt chart that helps Zollege administrators track
-    //             class schedules.
-    //           </WorkParagraph>
-    //           <WorkParagraph>
-    //             Utilized Git to manage version control + push changes in
-    //             collaboration with 5 other developers.
-    //           </WorkParagraph>
-    //         </WorkParagraphWrapper>
-    //       </WorkContent>
-    //     </WorkWrapper>
-    //   </CSSTransition>
-    // ),
     [workLinks[1]]: (
-      <CSSTransition timeout={400} classNames="transition" key="zollege-gantt">
+      <CSSTransition
+        timeout={400}
+        classNames="transition"
+        key="myco-tex"
+        className={selectedWork === workLinks[1] ? "visible" : "hidden"}
+      >
+        <WorkWrapper>
+          <WorkTitle>
+            Lead Engineer & Designer @{" "}
+            <a
+              href="https://myco-tex.web.app/landing"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Myco-Tex
+            </a>
+          </WorkTitle>
+          <WorkSubTitle>January - June 2022</WorkSubTitle>
+          <ChipRow>
+            <DeadChip content={"ReactJS"} />
+            <DeadChip content={"Typescript"} />
+            <DeadChip content={"Styled-Components"} />
+            <DeadChip content={"UI/UX Design"} />
+            <DeadChip content={"JWT Auth"} />
+          </ChipRow>
+          <WorkContent>
+            <ZollegeImage>
+              <img src={MycoTex}></img>
+              <ImagePlaceholder />
+            </ZollegeImage>
+
+            <WorkParagraphWrapper>
+              <WorkParagraph>
+                Designed and developed an environmental monitoring React
+                dashboard for mushroom farmers that improved crop yield by `
+                {">"}`20%.
+              </WorkParagraph>
+              <WorkParagraph>
+                Mentored junior developer, checking code quality and
+                implementing code optimizations where needed.
+              </WorkParagraph>
+              <WorkParagraph>
+                Coded custom React hooks to fetch from REST API’s and display
+                live data in HighCharts data visualizations.
+              </WorkParagraph>
+              <WorkParagraph>
+                Secured sensitive user data by implementing JWT authorization to
+                protected endpoints on a Node.js REST API.
+              </WorkParagraph>
+            </WorkParagraphWrapper>
+          </WorkContent>
+        </WorkWrapper>
+      </CSSTransition>
+    ),
+    [workLinks[2]]: (
+      <CSSTransition
+        timeout={400}
+        classNames="transition"
+        key="zollege-gantt"
+        className={selectedWork === workLinks[2] ? "visible" : "hidden"}
+      >
         <WorkWrapper>
           <WorkTitle>
             Zospace @{" "}
@@ -172,11 +188,12 @@ const SelectedWorkContent = (props: WorkProps) => {
         </WorkWrapper>
       </CSSTransition>
     ),
-    [workLinks[2]]: (
+    [workLinks[3]]: (
       <CSSTransition
         timeout={350}
         classNames="transition"
         key="elliot-smith-player"
+        className={selectedWork === workLinks[3] ? "visible" : "hidden"}
       >
         <WorkWrapper>
           <WorkTitle>
@@ -191,7 +208,7 @@ const SelectedWorkContent = (props: WorkProps) => {
           </WorkTitle>
           <WorkSubTitle>October - December 2021</WorkSubTitle>
           <ChipRow>
-            <DeadChip content={"React.js"} />
+            <DeadChip content={"ReactJS"} />
             <DeadChip content={"Node.js"} />
             <DeadChip content={"MySQL"} />
             <DeadChip content={"Express"} />
@@ -226,11 +243,12 @@ const SelectedWorkContent = (props: WorkProps) => {
         </WorkWrapper>
       </CSSTransition>
     ),
-    [workLinks[3]]: (
+    [workLinks[4]]: (
       <CSSTransition
         timeout={350}
         classNames="transition"
         key="arboretum-creek"
+        className={selectedWork === workLinks[4] ? "visible" : "hidden"}
       >
         <WorkWrapper>
           <WorkTitle>
@@ -282,7 +300,9 @@ const SelectedWorkContent = (props: WorkProps) => {
 
   return (
     <TransitionGroup component={TransitionWrapper}>
-      {workDictionary[selectedWork]}
+      {Object.keys(workDictionary).map((work) => {
+        return workDictionary[work];
+      })}
     </TransitionGroup>
   );
 };
@@ -290,6 +310,18 @@ const SelectedWorkContent = (props: WorkProps) => {
 export default SelectedWorkContent;
 
 const TransitionWrapper = styled.div`
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  .visible {
+    opacity: 1;
+    transition: all 350ms linear;
+  }
+  .hidden {
+    transition: all 100ms ease-in;
+  }
+
   .transition-enter {
     opacity: 0.01;
     transform: translate(0, 10);
@@ -303,35 +335,31 @@ const TransitionWrapper = styled.div`
 
   .transition-exit {
     display: none;
-    opacity: 0;
   }
 
   .transition-exit-active {
-    opacity: 1;
-    transition: all 0ms ease-in;
   }
 `;
 
 const WorkWrapper = styled(VerticalWrapper)`
   padding: 0px 0px;
-
   @media screen and (max-width: 1200px) {
-    width: 100%;
+    width: 70%;
   }
 `;
 
 const WorkTitle = styled.h1`
-  font-size: 30px !important;
+  font-size: 28px !important;
   font-weight: 600;
-  color: #282828;
+  color: #d0cae6;
   margin: 0px;
   padding-top: 5px;
   margin-bottom: 5px;
   span {
-    color: #4831d4;
+    color: #5d42ff;
   }
   a {
-    color: #4831d4;
+    color: #5d42ff;
     text-decoration: none;
     :hover {
       text-decoration: underline;
@@ -350,7 +378,7 @@ const WorkTitle = styled.h1`
 const WorkSubTitle = styled.h2`
   display: flex;
   font-family: Archivo;
-  color: #282828;
+  color: #cfcde0;
   font-size: 16px;
   font-weight: 400;
   margin: 0px;
@@ -397,13 +425,13 @@ const WorkContent = styled(VerticalWrapper)`
 
 const WorkParagraphWrapper = styled(VerticalWrapper)`
   position: relative;
-  max-width: 630px;
+  max-width: 600px;
   row-gap: 10px;
   padding-top: 10px;
   padding-left: 20px;
   word-wrap: break-word;
   @media screen and (max-width: 1200px) {
-    max-width: 90%;
+    max-width: 100%;
     margin: auto auto;
     margin-top: 15px;
     padding: 0 10%;
@@ -427,12 +455,12 @@ const WorkParagraph = styled.p`
     background-color: #4831d4;
     border-radius: 50%;
   }
-  font-size: 18px;
+  font-size: 16px;
   line-height: 25px;
   margin: 0px;
 
   font-family: Archivo;
-  color: #121212 !important;
+  color: #cfcde0 !important;
 `;
 
 const AppleImage = styled.div`
@@ -443,7 +471,7 @@ const AppleImage = styled.div`
   border-radius: 3px;
 
   img {
-    width: 700px;
+    width: 600px;
     border-radius: 2px;
     z-index: 2;
   }
@@ -484,14 +512,14 @@ const ZollegeImage = styled.div`
   border-radius: 3px;
   overflow: hidden;
   img {
-    width: 700px;
+    width: 600px;
     height: auto;
   }
   @media screen and (max-width: 1200px) {
     display: flex;
     justify-content: center;
     img {
-      width: 80%;
+      width: 100%;
     }
   }
   @media screen and (max-width: 700px) {
@@ -507,7 +535,7 @@ const ElliotImage = styled.div`
   width: 100%;
   border-radius: 3px;
   img {
-    width: 700px;
+    width: 600px;
     height: auto;
   }
   @media screen and (max-width: 1200px) {

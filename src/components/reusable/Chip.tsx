@@ -10,11 +10,7 @@ type ChipProps = {
 const Chip = (props: ChipProps) => {
   const { selected, content, customClickEvent } = props;
 
-  return selected ? (
-    <SelectedChipWrapper>
-      <p>{content}</p>
-    </SelectedChipWrapper>
-  ) : (
+  return (
     <ChipWrapper onClick={customClickEvent}>
       <HoverableTextWrapper content={content} />
     </ChipWrapper>
@@ -35,7 +31,7 @@ const ChipWrapper = styled.button`
     position: relative;
     z-index: 2;
     margin: 0px;
-    font-size: 20px;
+    font-size: 16px;
     width: 100%;
     color: #121212 !important;
     font-family: Archivo;
@@ -77,6 +73,7 @@ const SelectedChipWrapper = styled.button`
   border-radius: 3px;
   color: #e0e3e7;
   height: 50px;
+  transition: all 0.3s ease-in-out;
   p {
     position: relative;
     z-index: 2;

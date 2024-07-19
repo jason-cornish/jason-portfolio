@@ -3,8 +3,6 @@ import { useEffect } from "react";
 import styled from "styled-components";
 
 const AnimatedHamburger = (props: any) => {
-  const [hamburgerState, setHamburgerState] = useState(false);
-
   const hamburgerRef: any = useRef(null);
 
   const clickHamburger = () => {
@@ -42,37 +40,34 @@ const AnimatedHamburger = (props: any) => {
 export default AnimatedHamburger;
 
 const Hamburger = styled.div`
+  position: absolute;
   background-color: transparent;
   z-index: 5;
-  &:hover {
-    #nav-icon3 span {
-      background: #f6f7f8;
-    }
-  }
+  top: 3px;
+  left: 3px;
+
   #nav-icon3 {
-    width: 40px;
+    width: 35px;
     height: 35px;
     position: absolute;
-    top: 0;
-    right: 0;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
     cursor: pointer;
   }
 
   #nav-icon3 span {
-    box-shadow: 4px 4px #4831d4;
+    /* box-shadow: 3px 3px #6551db; */
     display: block;
     position: absolute;
-    height: 4px;
+    height: 3px;
     width: 100%;
-    background: white;
+    background: #d0cae6;
     border-radius: 2px;
     opacity: 1;
     left: 0;
@@ -87,7 +82,7 @@ const Hamburger = styled.div`
   }
 
   #nav-icon3.open span {
-    box-shadow: 0px 0px #4831d4 !important;
+    box-shadow: 0px 0px #6551db !important;
   }
 
   #nav-icon3 span:nth-child(1) {
@@ -96,11 +91,11 @@ const Hamburger = styled.div`
 
   #nav-icon3 span:nth-child(2),
   #nav-icon3 span:nth-child(3) {
-    top: 12px;
+    top: 11px;
   }
 
   #nav-icon3 span:nth-child(4) {
-    top: 24px;
+    top: 22px;
   }
 
   #nav-icon3.open span:nth-child(1) {
@@ -127,5 +122,31 @@ const Hamburger = styled.div`
     top: 18px;
     width: 0%;
     left: 50%;
+  }
+
+  @media screen and (max-width: 700px) {
+    #nav-icon3 {
+      width: 30px;
+      height: 20px;
+    }
+
+    #nav-icon3 span:nth-child(1) {
+      top: 0px;
+    }
+
+    #nav-icon3 span:nth-child(2),
+    #nav-icon3 span:nth-child(3) {
+      top: 8px;
+    }
+
+    #nav-icon3 span:nth-child(4) {
+      top: 16px;
+    }
+
+    #nav-icon3.open span:nth-child(1) {
+      top: 16px;
+      width: 0%;
+      left: 50%;
+    }
   }
 `;

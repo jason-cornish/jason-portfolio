@@ -1,0 +1,17 @@
+<svg viewBox="0 0 400 400">
+  <defs>
+    <path id="Links"
+          d="M 200, 200
+             m -100, 0
+             a 100,100 0 1,1 200,0
+             a 100,100 0 1,1 -200,0
+" />
+
+  </defs>
+
+  <text font-family="Cardo" font-size="9" fill="#d0cae6" text-stroke="#d0cae6" >
+    <textPath xlink:href="#Links" >
+      Contact    Work    About
+    </textPath>
+  </text>
+</svg>

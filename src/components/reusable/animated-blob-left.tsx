@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const AnimatedBlobLarge = () => {
+const LeftBlob = () => {
   return (
     <Wrapper>
       <Blob>
@@ -21,13 +21,14 @@ const AnimatedBlobLarge = () => {
   );
 };
 
-export default AnimatedBlobLarge;
+export default LeftBlob;
 
 const Wrapper = styled.div`
   position: relative;
   padding-top: 20px;
-  animation: opacify 10s ease-in-out infinite;
-  @keyframes opacify {
+  /* animation: opacify 10s ease-in-out infinite; */
+  /* filter: blur(8px); */
+  /* @keyframes opacify {
     0% {
       opacity: 1;
     }
@@ -40,15 +41,20 @@ const Wrapper = styled.div`
     100% {
       opacity: 1;
     }
-  }
+  } */
 `;
 
 const Blob = styled.div`
+  left: 0;
+  position: absolute;
+  filter: blur(100px);
   svg {
-    width: 350px;
-    height: 350px;
+    width: 600px;
+    height: 300px;
+
     filter: contrast(150%) brightness(70%);
-    background: radial-gradient(
+    /* filter: drop-shadow(20px 20px 20px blue); */
+    /* background: radial-gradient(
         circle at -24% -26%,
         rgba(72, 49, 212, 1),
         rgba(0, 0, 0, 0)
@@ -68,10 +74,25 @@ const Blob = styled.div`
         rgba(35, 166, 213, 1),
         rgba(0, 0, 255, 0)
       ),
-      url(/👆/that/noise.svg);
+      /*radial-gradient(
+        circle at -24% -26%,
+        rgba(208, 202, 230, 1),
+        rgba(0, 0, 0, 0)
+      ),
+      radial-gradient(
+        circle at 66% 105%,
+        rgba(67, 45, 131, 1),
+        rgba(255, 0, 255, 0)
+      ),
+      radial-gradient(circle at 71% 25%, #4831d4, rgba(0, 255, 255, 0)),
+      radial-gradient(circle at 17% 137%, #1b1236, rgba(0, 0, 255, 0)), */
+    /* url(/👆/that/noise.svg); */
+
+    background: rgba(231, 60, 126, 1) url(/👆/that/noise.svg);
 
     transition: all 10s ease-in-out;
     animation: animate 10s ease-in-out infinite;
+    /* box-shadow: 0 0 10px 5px white; */
 
     @media screen and (min-width: 1201px) {
       @keyframes animate {

@@ -16,7 +16,10 @@ const Header = (props: any) => {
         <h1>JC</h1>
       </Title>
       <HeaderOptions>
-        <AnimatedHamburger setState={setModalState} state={modalState} />
+        <HamburgerWrapper>
+          <AnimatedHamburger setState={setModalState} state={modalState} />
+        </HamburgerWrapper>
+
         <HamburgerModal
           state={modalState}
           setState={setModalState}
@@ -31,24 +34,28 @@ export default Header;
 
 const HeaderWrapper = styled.header`
   position: fixed;
-  width: 95%;
-  padding: 30px 0px;
+  width: calc(100% - 30px);
+  /* background-color: #4831d4; */
+  margin-top: 15px;
+  /* padding: 10px 15px; */
   display: flex;
+  border-radius: 6px;
   justify-content: space-between;
   align-items: center;
   color: #e0e3e7;
-  font-family: Archivo;
   box-sizing: border-box;
   z-index: 3;
   pointer-events: none;
   h1 {
-    font-size: 40px;
+    font-size: 24px;
     margin: 0px;
-    color: #e0e3e7;
-    text-shadow: 4px 4px #4831d4;
+    color: #d0cae6;
+    font-family: Cardo;
+    /* text-shadow: 3px 3px #6551db; */
+    /* -webkit-text-stroke: 6px #432d83;
+    paint-order: stroke fill; */
     cursor: pointer;
     :hover {
-      color: #f6f7f8;
     }
     pointer-events: auto;
   }
@@ -57,24 +64,59 @@ const HeaderWrapper = styled.header`
   }
 
   @media screen and (max-width: 700px) {
-    background: #1b1236;
-    width: 100%;
-    padding: 15px 2.5%;
+    background: #4831d4;
+    width: 95%;
+    padding: 15px 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    h1 {
+      font-size: 20px;
+    }
   }
 `;
 
 const Title = styled(HorizontalWrapper)`
   align-items: center;
   column-gap: 10px;
+  position: relative;
   z-index: 5;
+  transition: background-color 300ms ease-in-out;
+  /* background-color: #432d83; */
+  background-color: rgba(208, 202, 230, 0.05);
+  border-radius: 6px;
+  padding: 15px 20px;
+  :hover {
+    background-color: rgba(208, 202, 230, 0.15);
+  }
+`;
+
+const HamburgerWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  border-radius: 6px;
 `;
 
 const HeaderOptions = styled(HorizontalWrapper)`
   position: relative;
-  align-items: center;
-  column-gap: 20px;
-  width: 42px;
-  height: 30px;
   pointer-events: auto;
+  /* background-color: #432d83; */
+  background-color: rgba(208, 202, 230, 0.05);
+  width: 40px;
+  height: 30px;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.13), 0 1px 4px 0 rgba(0, 0, 0, 0.11);
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  :hover {
+    #nav-icon3 span {
+      /* background-color: #f5f4fd;
+      fill: #f5f4fd; */
+    }
+    background-color: rgba(208, 202, 230, 0.1);
+  }
+  @media screen and (max-width: 700px) {
+    padding: 10px;
+  }
 `;

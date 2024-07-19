@@ -11,6 +11,10 @@ const AboutMe = forwardRef((props, aboutRef: any) => {
         <TextSection>
           <h1>Over the years,</h1>
           <p>
+            I've come to love the intersection of design and engineering that
+            the front-end offers.
+          </p>
+          {/* <p>
             I've sharpened my skills in front-end development and UI/UX design
             across projects of diverse use-cases and client needs. I've
             interfaced with both technical and non-technical stakeholders on
@@ -23,24 +27,22 @@ const AboutMe = forwardRef((props, aboutRef: any) => {
             training and monitoring dashboard. The dashboard reports on the
             productivity and effectiveness of 3500+ technicians, analysts, and
             editors globally by tracking 50,000+ completed work tasks.
-          </p>
+          </p> */}
           {/* <p>
             In this role, I've worked with technical and non-technical
             stakeholders to design data visualizations that tell actionable user
             stories, create UI mockups, and develop a data driven
             React/Typescript application.
           </p> */}
-          <p>
+          {/* <p>
             Previously I worked as a Front-End Developer at Zollege, where I
             developed a React application to assist teachers in managing their
             class schedules. The application charted class schedules on a gantt
             chart, allowing teachers to keep up to date with the timeline of
             their current classes and easily plan future ones.
-          </p>
+          </p> */}
         </TextSection>
-        <ImageSection>
-          <img src={JasonFloating}></img>
-        </ImageSection>
+        {/* <ImageSection><img src={JasonFloating}></img></ImageSection> */}
       </ContentWrapper>
       {/* <CurveContainer fill={"#4831d4"} inverted={false} aligned="bottom" /> */}
     </AboutMeWrapper>
@@ -55,13 +57,15 @@ const AboutMeWrapper = styled(HorizontalWrapper)`
   box-sizing: border-box;
   justify-content: center;
   background-color: #4831d4;
+  box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.13), 0 1px 4px 0 rgba(0, 0, 0, 0.11);
 `;
 
 const ContentWrapper = styled.div`
   position: relative;
-  width: 85%;
+  width: 80%;
+  justify-content: center;
   padding-top: 50px;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
   display: flex;
 
   @media screen and (max-width: 1200px) {
@@ -78,14 +82,14 @@ const TextSection = styled.div`
   position: relative;
   width: 50%;
   h1 {
-    color: #e0e3e7;
-    font-size: 55px;
+    color: #d8d3f6;
+    font-size: 40px;
     margin-bottom: 20px;
   }
   p {
-    color: #e0e3e7;
+    color: #d8d3f6;
     font-family: Archivo;
-    font-size: 18px;
+    font-size: 16px;
     max-width: 600px;
     line-height: 30px;
   }
@@ -107,7 +111,7 @@ const ImageSection = styled.div`
   padding-left: 50px;
   padding-top: 20px;
   img {
-    max-height: 550px;
+    max-height: 500px;
   }
   @media screen and (max-width: 1100px) {
     display: none;

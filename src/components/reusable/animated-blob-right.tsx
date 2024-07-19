@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-const AnimatedBlobMedium = () => {
+const RightBlob = () => {
   return (
     <Wrapper className="small">
       <Blob2>
-        <svg viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 165 145  0" xmlns="http://www.w3.org/2000/svg">
           <filter id="noiseFilter2">
             <feTurbulence
               type="turbulence"
@@ -21,13 +21,13 @@ const AnimatedBlobMedium = () => {
   );
 };
 
-export default AnimatedBlobMedium;
+export default RightBlob;
 
 const Wrapper = styled.div`
-  position: relative;
-  transform: rotate(180deg);
-  animation: opacify 10s ease-in-out infinite;
-  @keyframes opacify {
+  position: absolute;
+  right: 0;
+  /* animation: opacify 5s ease-in-out infinite; */
+  /* @keyframes opacify {
     0% {
       opacity: 1;
     }
@@ -40,15 +40,16 @@ const Wrapper = styled.div`
     100% {
       opacity: 1;
     }
-  }
+  } */
 `;
 
 const Blob2 = styled.div`
+  filter: blur(100px);
   svg {
-    width: 220px;
-    height: 180px;
-    filter: contrast(150%) brightness(70%);
-    background: radial-gradient(
+    width: 605px;
+    height: 500px;
+    filter: contrast(100%) brightness(100%);
+    /* background: radial-gradient(
         circle at -24% -26%,
         rgba(72, 49, 212, 1),
         rgba(0, 0, 0, 0)
@@ -68,7 +69,9 @@ const Blob2 = styled.div`
         rgba(35, 166, 213, 1),
         rgba(0, 0, 255, 0)
       ),
-      url(/👆/that/noise.svg);
+      url(/👆/that/noise.svg); */
+
+    background: rgba(35, 166, 213, 1) url(/👆/that/noise.svg);
     /* background: radial-gradient(
         circle at 115% 128%,
         rgba(13, 98, 244, 1),
@@ -86,53 +89,45 @@ const Blob2 = styled.div`
       ),
       url(/👆/that/noise.svg); */
 
-    transition: all 15s ease-in-out;
-    animation: animatesmall 15s ease-in-out infinite;
-
     @media screen and (min-width: 1201px) {
       @keyframes animatesmall {
         0% {
-          height: 180px;
           filter: contrast(150%) brightness(70%);
-          border-radius: 78% 22% 83% 17% / 85% 62% 38% 15%;
+          border-radius: 57% 43% 29% 71% / 52% 75% 25% 48%;
         }
         33% {
-          height: 180px;
           filter: contrast(170%) brightness(70%);
           border-radius: 67% 33% 15% 85% / 33% 63% 37% 67%;
         }
         66% {
           filter: contrast(160%) brightness(70%);
-          border-radius: 28% 72% 42% 58% / 49% 75% 25% 51%;
+          border-radius: 54% 46% 35% 65% / 49% 100% 0% 51%;
         }
         100% {
           filter: contrast(150%) brightness(70%);
-          border-radius: 78% 22% 83% 17% / 85% 62% 38% 15%;
+          border-radius: 57% 43% 29% 71% / 52% 75% 25% 48%;
         }
       }
     }
 
     @media screen and (max-width: 1200px) {
       display: none;
-      padding-top: 60px;
       @keyframes animatesmall {
         0% {
           filter: contrast(150%) brightness(70%);
-          border-radius: 33% 67% 51% 49% / 65% 78% 22% 35%;
+          border-radius: 57% 43% 29% 71% / 52% 75% 25% 48%;
         }
         33% {
           filter: contrast(170%) brightness(70%);
-          border-radius: 67% 33% 15% 85% / 33% 63% 37% 67%;
+          border-radius: 77% 23% 80% 20% / 28% 86% 14% 72%;
         }
         66% {
-          height: 180px;
           filter: contrast(160%) brightness(70%);
-          border-radius: 28% 72% 42% 58% / 49% 75% 25% 51%;
+          border-radius: 54% 46% 35% 65% / 49% 100% 0% 51%;
         }
         100% {
-          height: 180px;
           filter: contrast(150%) brightness(70%);
-          border-radius: 78% 22% 83% 17% / 85% 62% 38% 15%;
+          border-radius: 57% 43% 29% 71% / 52% 75% 25% 48%;
         }
       }
     }

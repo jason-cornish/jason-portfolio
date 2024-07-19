@@ -4,13 +4,17 @@ type LinkProps = {
   content: string;
   handleClick: any | null;
   destination: string;
+  isSelected?: boolean;
 };
 
 const LinkButton = (props: LinkProps) => {
-  const { content, destination, handleClick } = props;
+  const { content, destination, handleClick, isSelected } = props;
 
   return (
-    <LinkButtonWrapper onClick={() => handleClick(destination)}>
+    <LinkButtonWrapper
+      onClick={() => handleClick(destination)}
+      isSelected={isSelected || false}
+    >
       <p>{content}</p>
     </LinkButtonWrapper>
   );
@@ -18,22 +22,25 @@ const LinkButton = (props: LinkProps) => {
 
 export default LinkButton;
 
-const LinkButtonWrapper = styled.button`
+const LinkButtonWrapper = styled.button<{ isSelected: boolean }>`
   position: relative;
   padding: 5px 25px;
   border-radius: 3px;
-  background-color: #432d83 !important;
-  border: 2px solid #432d83;
+  background-color: ${(props) =>
+    props.isSelected ? "#4831d4" : "#432d83"} !important;
+  border: ${(props) =>
+    props.isSelected ? "2px solid #4831d4" : "2px solid #432d83"};
   background-color: transparent;
-
+  white-space: nowrap;
   p {
     position: relative;
     z-index: 2;
     margin: 0px;
-    font-size: 22px;
+    font-size: 18px;
     font-family: Archivo;
-    color: #e0e3e7 !important;
+    color: ${(props) => (props.isSelected ? "white" : "#e7e4f9")} !important;
     line-height: 40px;
+    transition: color 300ms ease-in-out;
   }
   &:before {
     content: "";
@@ -41,7 +48,7 @@ const LinkButtonWrapper = styled.button`
     left: 0;
     top: 0;
     background-color: #4831d4;
-    width: 0px;
+    width: ${(props) => (props.isSelected ? "100%" : "0px")};
     height: 100%;
     transition: all 0.3s;
   }
@@ -51,7 +58,9 @@ const LinkButtonWrapper = styled.button`
       width: 100%;
     }
     border: 2px solid #4831d4;
-    color: #e0e3e7 !important;
+    p {
+      color: white !important;
+    }
     cursor: pointer;
   }
 `;

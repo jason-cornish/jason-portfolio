@@ -58,14 +58,14 @@ const HamburgerModal = (props: PropsType) => {
               target="_blank"
               rel="noreferrer"
             >
-              <LinkedInIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+              <LinkedInIcon sx={{ fontSize: 36, color: "#e0e3e7" }} />
             </MobileRow>
             <MobileRow
               href="https://github.com/jason-cornish"
               target="_blank"
               rel="noreferrer"
             >
-              <GitHubIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+              <GitHubIcon sx={{ fontSize: 36, color: "#e0e3e7" }} />
             </MobileRow>
 
             <MobileRow
@@ -73,7 +73,7 @@ const HamburgerModal = (props: PropsType) => {
               target="_blank"
               rel="noreferrer"
             >
-              <EmailIcon sx={{ fontSize: 40, color: "#e0e3e7" }} />
+              <EmailIcon sx={{ fontSize: 36, color: "#e0e3e7" }} />
             </MobileRow>
           </Row>
           <MobileColumns>
@@ -115,16 +115,16 @@ export default HamburgerModal;
 
 const ModalWrapper = styled(VerticalWrapper)`
   position: absolute;
-  top: -20px;
-  right: -15px;
-  width: 350px;
+  top: 0px;
+  right: 0px;
+  width: 300px;
   background-color: #4831d4;
   border-radius: 3px;
   z-index: 4;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 50px 0px 50px 0px;
+  padding: 30px 0px 30px 0px;
   box-sizing: border-box;
-  row-gap: 35px;
+  row-gap: 15px;
   .modal-enter {
     opacity: 0;
   }
@@ -168,8 +168,8 @@ const Links = styled.ul`
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  padding-left: 40px;
-  row-gap: 35px;
+  padding-left: 30px;
+  row-gap: 15px;
   width: auto;
 
   @media screen and (max-width: 700px) {
@@ -187,12 +187,14 @@ const Link = styled.li`
   width: auto;
   color: #e0e3e7;
   font-family: Archivo;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 20px;
   font-weight: 400;
+  transition: all 300ms ease-in-out;
   cursor: pointer;
   &:hover {
     color: #f6f7f8;
+    font-size: 24px;
   }
 `;
 

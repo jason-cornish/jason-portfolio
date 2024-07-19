@@ -10,6 +10,7 @@ import Chip from "./reusable/Chip";
 import SelectedWorkContent from "./SelectedWorkContent";
 import { useEffect } from "react";
 import CurveContainer from "./reusable/CurveContainer";
+import LinkButton from "./reusable/LinkButton";
 
 const Work = forwardRef((props, workRef: any) => {
   const [selectedWork, setSelectedWork] = useState<number>(0);
@@ -23,6 +24,7 @@ const Work = forwardRef((props, workRef: any) => {
 
   const workLinks = [
     "Apple",
+    "Myco-Tex",
     "Zospace",
     "Elliot Smith Player",
     "Arboretum Creek",
@@ -30,18 +32,24 @@ const Work = forwardRef((props, workRef: any) => {
 
   return (
     <WorkWrapper ref={workRef}>
-      <h1 className="WorkSectionTitle">/work</h1>
       <ContentWrapper>
         <WorkChips>
           {workLinks.map((work, idx) => {
             const selected = idx === selectedWork;
             return (
-              <Chip
+              <LinkButton
                 key={`chip-${idx}`}
-                selected={selected}
                 content={work}
-                customClickEvent={() => setSelectedWork(idx)}
+                handleClick={() => setSelectedWork(idx)}
+                destination={work}
+                isSelected={selected}
               />
+              // <Chip
+              //   key={`chip-${idx}`}
+              //   selected={selected}
+              //   content={work}
+              //   customClickEvent={() => setSelectedWork(idx)}
+              // />
             );
           })}
         </WorkChips>
@@ -59,7 +67,7 @@ const Work = forwardRef((props, workRef: any) => {
 export default Work;
 
 const WorkWrapper = styled.div`
-  padding: 100px 10%;
+  padding: 15px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -67,12 +75,11 @@ const WorkWrapper = styled.div`
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
-  background-color: #e0e3e7;
   overflow: contain;
   .WorkSectionTitle {
     display: flex;
     color: #1b1236;
-    font-size: 50px;
+    font-size: 45px;
     margin: 0 0 20px 0px;
   }
   @media screen and (max-width: 1200px) {
@@ -153,7 +160,7 @@ const WorkChips = styled(VerticalWrapper)`
 const Divider = styled.div`
   display: flex;
   width: 0px;
-  border: 1px solid #282828;
+  border: 1px solid rgba(207, 205, 224, 0.2);
   border-radius: 3px;
   @media screen and (max-width: 1200px) {
     display: none;

@@ -1,169 +1,221 @@
 import React from "react";
 import { forwardRef } from "react";
 import styled from "styled-components";
-import AnimatedBlobLarge from "./reusable/animated-blob-large";
-import AnimatedBlobMedium from "./reusable/animated-blob-medium";
-import AnimatedBlobSmall from "./reusable/animated-blob-small";
 import LinkButton from "./reusable/LinkButton";
 import {
   HorizontalWrapper,
   VerticalWrapper,
 } from "./reusable/styled-components";
+import JasonImage from "../images/jason-image.png";
+import PlaceIcon from "@mui/icons-material/Place";
+import OpenSign from "./open-sign";
+import LeftBlob from "./reusable/animated-blob-left";
+import CenterBlob from "./reusable/animated-blob-center";
+import RightBlob from "./reusable/animated-blob-right";
+import RingsOfLights from "./ring-of-lights/rings-of-lights";
 
 const Landing = forwardRef((props: any, homeRef: any) => {
   return (
     <LandingWrapper>
-      <LeftColumn>
-        <AnimatedText ref={homeRef}>
-          Hi, I'm Jason.
-          <br /> Front-End Web Developer.
-        </AnimatedText>
-        <Wrapper>
-          <p className="SubHeaderWide">
-            I like to design and develop intuitive, elegant online experiences.
-            <br /> I specialize in coding web applications with React,
-            Typescript, and StyledComponents.
-          </p>
-          <p className="SubHeaderMobile">
-            I like to design and develop intuitive, elegant online experiences.
-            I specialize in coding web applications with React, Typescript, and
-            StyledComponents.
-          </p>
-          <ButtonRow>
-            <LinkButton
-              content={"About"}
-              handleClick={props.handleLinkClick}
-              destination={"about"}
-            />
-            <LinkButton
-              content={"Work"}
-              handleClick={props.handleLinkClick}
-              destination={"work"}
-            />
-            <LinkButton
-              content={"Contact Me"}
-              handleClick={props.handleLinkClick}
-              destination={"contact"}
-            />
-          </ButtonRow>
-        </Wrapper>
-      </LeftColumn>
-      <RightColumn>
-        <AnimationLayer>
-          <AnimatedBlobLarge />
-          <Column>
-            <AnimatedBlobMedium />
-            <AnimatedBlobSmall />
-          </Column>
-        </AnimationLayer>
-      </RightColumn>
+      <RingsOfLights />
+      <BackgroundWrapper>
+        {/* <NewBodyWrapper></NewBodyWrapper> */}
+        <h1>Jason Cornish</h1>
+        <div className="mobile-wrapper"></div>
+      </BackgroundWrapper>
     </LandingWrapper>
   );
 });
 
 export default Landing;
 
+// const styled;
+/*
+<LeftSide>
+          <LeftColumn>
+            <div className="profile-circle">
+              <img
+                src={JasonImage}
+                alt="Jason Cornish grinning in front of a forested background."
+              />
+            </div>
+          </LeftColumn>
+          <RightColumn>
+             <h1>
+              👋
+              <span>
+                {` `}Hi, I'm Jason.
+                <br />
+              </span>
+              <span>Front-End Engineer.</span>
+            </h1> 
+            <AnimatedText ref={homeRef}>
+            <span>👋</span> Hi, I'm Jason.
+            <br /> Front-End Engineer.
+          </AnimatedText> 
+          <h1>Jason Cornish</h1>
+          <Wrapper>
+            <p className="SubHeaderWide">
+              I design and develop elegant online experiences with React,
+              Typescript, and Styled-Components. I've been coding for 5 years
+              and working professionally for 3.
+              {/* <br /> I specialize in coding web applications with React,
+            Typescript, and Styled-Components. }
+            </p>
+             <p className="SubHeaderMobile">
+            I like to design and develop intuitive, elegant online
+            experiences. I specialize in coding web applications with React,
+            Typescript, and StyledComponents.
+          </p> }
+            <ButtonRow>
+              <LinkButton
+                content={"About"}
+                handleClick={props.handleLinkClick}
+                destination={"about"}
+              />
+              <LinkButton
+                content={"Work"}
+                handleClick={props.handleLinkClick}
+                destination={"work"}
+              />
+              <LinkButton
+                content={"Contact Me"}
+                handleClick={props.handleLinkClick}
+                destination={"contact"}
+              />
+            </ButtonRow>
+          </Wrapper>
+        </RightColumn>
+      </LeftSide>
+*/
+
 const LandingWrapper = styled(HorizontalWrapper)`
-  width: 85%;
+  width: 100%;
+  min-height: 550px;
+  height: 100vh;
+  position: relative;
   box-sizing: border-box;
-  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  /* justify-content: center; */
+  flex-direction: column;
+  h1 {
+    font-family: Spectral;
+    color: #d0cae6;
+    font-size: 50px;
+    font-weight: 400;
+  }
+  padding-top: 150px;
+  padding-bottom: 150px;
+`;
+
+const LeftSide = styled.div`
+  display: flex;
+  column-gap: 30px;
+`;
+
+const BackgroundWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  padding: 30px;
+  opacity: 1;
+  border-radius: 3px;
+  z-index: 0;
+  :hover {
+    opacity: 1.1;
+  }
+  .mobile-wrapper {
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+  }
 `;
 
 const LeftColumn = styled(VerticalWrapper)`
-  margin-right: 50px;
-  padding-top: 200px;
-  padding-bottom: 200px;
-
-  @media screen and (max-width: 1200px) {
-    padding-top: 150px;
-    padding-bottom: 150px;
-    width: 80%;
-    margin-right: 0px;
-  }
-  @media screen and (max-width: 700px) {
+  height: 100%;
+  z-index: 2;
+  .profile-circle {
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
+      0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
     align-items: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    width: 90%;
-    margin-right: 0px;
+    justify-content: center;
+    /* padding: 15px; */
+    width: 200px;
+    height: 200px;
+    img {
+      margin-bottom: 60px;
+      width: 130%;
+      object-position: 50% 50%;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .profile-circle {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .profile-circle {
+      display: none;
+    }
   }
 `;
 
 const RightColumn = styled(VerticalWrapper)`
-  height: 100%;
-  position: relative;
-  padding-top: 200px;
-  padding-bottom: 200px;
-  @media screen and (max-width: 1200px) {
-    display: none;
+  z-index: 1;
+  row-gap: 15px;
+
+  h1 {
+    font-size: 40px;
+    margin: 0px;
+    font-family: Archivo;
+    span {
+      color: #d0cae6;
+      font-weight: 600;
+    }
+    font-weight: 600;
+    color: #d0cae6;
   }
+
+  @media screen and (max-width: 1000px) {
+    width: 85%;
+    margin-right: 0px;
+    max-width: 400px;
+  }
+  /* @media screen and (max-width: 700px) {
+    align-items: center;
+    padding-top: 150px;
+    width: 90%;
+    margin-right: 0px;
+  } */
 `;
 
 const AnimationLayer = styled.div`
   position: relative;
   height: 100%;
   display: flex;
+  z-index: 0;
   .small {
     bottom: 0px;
   }
 `;
 
-const Column = styled(VerticalWrapper)`
-  row-gap: 15px;
-`;
-
-const AnimatedText = styled.h1`
-  display: inline-block;
-  background-color: #e0e3e7;
-  /* background: linear-gradient(
-    -45deg,
-    #ee7752,
-    #e73c7e,
-    #23a6d5,
-    #23d5ab,
-    #4831d4
-  );
-  background-size: 400% 400%;
-  animation: gradient 25s ease infinite; */
-  position: relative;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 55px;
-  margin: 0px;
-  font-weight: 600;
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  span {
-    font-size: 50px;
-  }
-  @media screen and (max-width: 700px) {
-    font-size: 55px;
-    line-height: 70px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-`;
-
 const Wrapper = styled(VerticalWrapper)`
   width: 100%;
-
+  row-gap: 15px;
   p {
-    font-family: Archivo;
-    font-size: 20px;
-    color: #e0e3e7;
-    line-height: 40px;
+    /* font-family: Archivo; */
+    font-size: 16px;
+    color: #dad8eb;
+    line-height: 25px;
+    max-width: 500px;
+    margin: 0px;
   }
 
   .SubHeaderWide {
@@ -174,7 +226,7 @@ const Wrapper = styled(VerticalWrapper)`
     display: none;
   }
 
-  @media screen and (max-width: 700px) {
+  /* @media screen and (max-width: 700px) {
     .SubHeaderWide {
       display: none;
     }
@@ -186,7 +238,7 @@ const Wrapper = styled(VerticalWrapper)`
     p {
       line-height: 30px;
     }
-  }
+  } */
 `;
 
 const ButtonRow = styled(HorizontalWrapper)`

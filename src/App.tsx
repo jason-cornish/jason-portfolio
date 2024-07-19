@@ -7,6 +7,9 @@ import Header from "./components/Header";
 import ContactMe from "./components/ContactMe";
 import { useEffect } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import ComponentsSection from "./components/ComponentsSections";
+import RingsOfLights from "./components/ring-of-lights/rings-of-lights";
+import NewLanding from "./components/new-landing";
 
 function App() {
   const homeRef = useRef<any>(null);
@@ -38,6 +41,7 @@ function App() {
       <TransitionGroup component={TransitionWrapper}>
         <CSSTransition timeout={400} classNames="transition">
           <PreLoader className={loadingState ? "visible" : "hidden"}>
+            <RingsOfLights />
             <h1>JASON CORNISH</h1>
             <p>PORTFOLIO LOADING...</p>
           </PreLoader>
@@ -47,9 +51,12 @@ function App() {
       <BodyWrapper>
         <Header handleLinkClick={handleLinkClick} />
         <Body>
-          <Landing ref={homeRef} handleLinkClick={handleLinkClick} />
+          <NewLanding />
+          {/* <Landing ref={homeRef} handleLinkClick={handleLinkClick} /> */}
+          {/* <AboutMe ref={aboutRef} /> */}
+          {/* <Work  /> */}
+          <ComponentsSection ref={workRef} />
           <AboutMe ref={aboutRef} />
-          <Work ref={workRef} />
           <ContactMe ref={contactRef} />
           {/* <Footer /> */}
         </Body>
@@ -115,7 +122,7 @@ const PreLoader = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 10;
-  background-color: #1b1236;
+  background-color: #150e2b;
   h1 {
     text-align: center;
     font-family: Archivo;
@@ -171,7 +178,7 @@ const BodyWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   font-family: Roboto;
-  background-color: #1b1236;
+  background-color: #150e2b;
 `;
 
 const Body = styled.section`
