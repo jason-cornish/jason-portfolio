@@ -93,10 +93,8 @@ const ContactMe = forwardRef((props, contactRef: any) => {
   return (
     <ContactMeWrapper ref={contactRef}>
       {/* <CurveContainer inverted={true} fill={"#1b1236"} aligned={"top"} /> */}
-      <SectionTitle>Let's get in touch.</SectionTitle>
-      <SubHeader>
-        Interested in working together or just have some questions? Let's chat.
-      </SubHeader>
+      <SectionTitle>Inquire</SectionTitle>
+      <SubHeader>Interested in working together? Shoot me a message.</SubHeader>
       <ContactForm noValidate>
         <HorizontalWrapper className="horizontal-wrapper">
           <InputWrapper
@@ -108,7 +106,7 @@ const ContactMe = forwardRef((props, contactRef: any) => {
             <Input
               id="name"
               className="name-input error"
-              placeholder="Enter your name."
+              placeholder="Name"
               required={true}
               type="text"
               onChange={(e) => setName(e.target.value)}
@@ -126,7 +124,7 @@ const ContactMe = forwardRef((props, contactRef: any) => {
               className="email-input"
               type="email"
               required={true}
-              placeholder="Enter your email address."
+              placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
@@ -144,14 +142,14 @@ const ContactMe = forwardRef((props, contactRef: any) => {
             id="message"
             className="messageInput"
             required={true}
-            placeholder="I am interested in discusssing your work to see if you might be a good fit for a position that just opened up."
+            placeholder="Coffee?"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
           />
         </InputWrapper>
       </ContactForm>
       <SubmitButton onClick={submitForm}>
-        <p>Send it</p>
+        <p>Send</p>
       </SubmitButton>
     </ContactMeWrapper>
   );
@@ -161,20 +159,24 @@ export default ContactMe;
 
 const ContactMeWrapper = styled(VerticalWrapper)`
   position: relative;
-  width: 100%;
-  padding: 100px 0 100px 0;
+  background-color: ${(props) => props.theme.colors.opaque1};
+  border-radius: 3px;
+  padding: 30px;
+  margin-bottom: 150px;
   align-items: center;
+
   h1 {
-    font-size: 45px;
+    font-size: 35px;
     color: #d0cae6;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: center;
+    font-family: Cardo;
   }
   h2 {
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
-    color: #d0cae6;
-
+    color: ${(props) => props.theme.colors.grey};
+    font-family: Cardo;
     max-width: 400px;
     font-weight: 400;
   }
@@ -188,6 +190,7 @@ const ContactMeWrapper = styled(VerticalWrapper)`
 `;
 
 const ContactForm = styled.form`
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   padding-top: 30px;
@@ -213,21 +216,23 @@ const ContactForm = styled.form`
       color: #f6f7f8;
     }
     label {
-      color: red;
+      /* color: #e64848; */
     }
     input {
-      border-bottom: 1px solid red;
+      border: 1px solid #e64848;
       animation: shake 0.2s ease-in-out 0s 2;
     }
     textarea {
-      border-bottom: 1px solid red;
+      border: 1px solid #e64848;
       animation: shake 0.2s ease-in-out 0s 2;
     }
     &::after {
+      font-family: Cardo;
+      font-size: 14px;
       position: absolute;
       bottom: -25px;
       left: 0px;
-      color: red;
+      color: #e64848;
     }
   }
 
@@ -247,35 +252,42 @@ const ContactForm = styled.form`
 const InputWrapper = styled(VerticalWrapper)`
   box-sizing: border-box;
   label {
-    color: #b7b9bc;
-    font-size: 18px;
-    font-family: Archivo;
+    transition: all 300ms ease-in-out;
+    color: ${(props) => props.theme.colors.white};
+    font-size: 16px;
+    font-family: Cardo;
     margin-bottom: 10px;
   }
   :focus-within label {
-    color: #f6f7f8;
+    transition: all 300ms ease-in-out;
   }
 `;
 
 const Input = styled.input`
   display: block;
-  font-size: 18px;
-  font-family: Archivo;
+  font-size: 16px;
+  font-family: Cardo;
   height: 30px;
   width: 300px;
-  background-color: transparent;
-  border: 0px;
-  border-bottom: 1px solid #b7b9bc;
-  caret-color: #e0e3e7;
-  color: #e0e3e7;
-  padding-bottom: 10px;
-  padding-left: 0px;
+  background-color: ${(props) => props.theme.colors.opaque2};
+  border: 1px solid transparent;
+  border-radius: 6px;
+  /* border-bottom: 1px solid #e64848; */
+  caret-color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.grey};
+  padding: 10px;
   position: relative;
+  transition: all 300ms ease-in-out;
+  ::placeholder {
+    color: #918da1;
+  }
   :focus {
+    background-color: ${(props) => props.theme.colors.opaque4};
+    color: ${(props) => props.theme.colors.white};
     outline: none;
-    border-bottom: 1px solid #f6f7f8;
+    /* border-bottom: 1px solid #f6f7f8; */
     ::placeholder {
-      color: transparent;
+      color: #918da1;
     }
   }
   @media screen and (max-width: 700px) {
@@ -285,42 +297,49 @@ const Input = styled.input`
 
 const MessageInput = styled.textarea`
   width: 100%;
-  font-size: 18px;
-  font-family: Archivo;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Cardo;
   background-color: transparent;
-  border: 0px;
-  border-bottom: 1px solid #e0e3e7;
-  caret-color: #e0e3e7;
-  color: #e0e3e7;
-  padding-bottom: 5px;
-  padding-left: 0px;
+  border: 1px solid transparent;
+  background-color: ${(props) => props.theme.colors.opaque2};
+  padding: 10px;
+  caret-color: ${(props) => props.theme.colors.white};
+  border-radius: 6px;
+  color: ${(props) => props.theme.colors.white};
   line-height: 25px;
+  min-height: 60px;
   resize: none;
+  transition: all 300ms ease-in-out;
+  ::placeholder {
+    color: #918da1;
+  }
   :focus {
+    background-color: ${(props) => props.theme.colors.opaque4};
     outline: none;
-    border-bottom: 1px solid #f6f7f8;
     ::placeholder {
-      color: transparent;
+      color: #a6a1b8;
     }
   }
 `;
 
 const SubmitButton = styled.button`
   position: relative;
-  padding: 10px 100px;
+  padding: 5px 50px;
   border-radius: 3px;
-  background-color: #432d83 !important;
-  border: 2px solid #432d83;
+  background-color: ${(props) => props.theme.colors.opaque3} !important;
+  border: 2px solid ${(props) => props.theme.colors.opaque3} !important;
   background-color: transparent;
 
   p {
     position: relative;
     z-index: 2;
     margin: 0px;
-    font-size: 22px;
+    font-size: 18px;
     width: auto;
-    font-family: Archivo;
-    color: #e0e3e7 !important;
+    font-family: Cardo;
+    color: ${(props) => props.theme.colors.white} !important;
     line-height: 40px;
   }
   &:before {
@@ -328,7 +347,7 @@ const SubmitButton = styled.button`
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #4831d4;
+    background-color: ${(props) => props.theme.colors.opaque4};
     width: 0px;
     height: 100%;
     transition: all 0.3s;

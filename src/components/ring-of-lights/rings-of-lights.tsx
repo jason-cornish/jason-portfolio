@@ -5,7 +5,7 @@ import OuterRing from "./outer-ring";
 
 const RingsOfLights = () => {
   return (
-    <RingsOfLightsWrapper>
+    <RingsOfLightsWrapper className="lights-background">
       <InnerCircle />
       <InnerRing />
       <OuterRing />

@@ -15,7 +15,7 @@ const ComponentsSection = forwardRef((props: any, workRef: any) => {
   return (
     <ComponentsWrapper ref={workRef}>
       <SectionHeader>
-        <SectionTitle>My Work</SectionTitle>
+        {/* <SectionTitle>My Work</SectionTitle> */}
         {/* <SectionTitle>My Work</SectionTitle>
         <SectionDescription>
           <p>
@@ -67,7 +67,6 @@ const ContentWrapper = styled.div`
   overflow: hidden;
   z-index: 3;
   border-radius: 3px;
-  background-color: #140d27;
   /* max-height: 1000px; */
   /* overflow: hidden; */
   justify-content: center;
@@ -103,14 +102,18 @@ const RightWrapper = styled.div`
 `;
 
 const ComponentsWrapper = styled.div`
-  padding: 100px 10%;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   position: relative;
   box-sizing: border-box;
   justify-content: center;
+  background-color: ${(props) => props.theme.colors.opaque1};
+  border-radius: 3px;
+
   align-items: center;
   overflow: contain;
+  margin-bottom: 250px;
   @media screen and (max-width: 1200px) {
     .WorkSectionTitle {
       display: flex;
@@ -129,8 +132,8 @@ const ComponentsWrapper = styled.div`
 `;
 
 const SectionTitle = styled.h1`
-  font-size: 40px;
-  color: #d0cae6;
+  font-size: 35px;
+  color: rgba(208, 202, 230, 0.85);
   margin: 0px;
   font-family: Cardo;
 `;
@@ -149,17 +152,17 @@ const SectionDescription = styled.div`
 const SectionHeader = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
+  row-gap: 10px;
   width: 100%;
   align-items: center;
   transition: all 300ms ease-in-out;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 `;
 
 const HorizontalDivider = styled.div`
   height: 0px;
   width: 100%;
   margin-bottom: 15px;
-  border: 1px solid rgba(207, 205, 224, 0.2);
+  border: 1px solid ${(props) => props.theme.colors.opaque2};
   border-radius: 3px;
 `;

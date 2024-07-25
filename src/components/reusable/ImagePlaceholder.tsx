@@ -8,7 +8,7 @@ export default ImagePlaceholder;
 
 const Placeholder = styled.div`
   position: absolute;
-  width: 700px;
+  width: 550px;
   height: 200px;
 
   @media screen and (max-width: 1200px) {

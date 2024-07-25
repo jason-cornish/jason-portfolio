@@ -7,7 +7,7 @@ const OuterRing = () => {
       {Array.from({ length: 12 }).map((circle, i) => {
         return (
           <div className="circle" key={`circle-${i}`}>
-            <div className="circle-inner" />
+            {/* <div className="circle-inner" /> */}
             <div className="circle-glow" />
           </div>
         );
@@ -43,7 +43,7 @@ const OuterRingWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: rotate 35s linear infinite;
+  /* animation: rotate 35s linear infinite; */
   animation-direction: reverse;
 
   /* .glow-wrapper {

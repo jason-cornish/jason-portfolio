@@ -58,14 +58,14 @@ const HamburgerModal = (props: PropsType) => {
               target="_blank"
               rel="noreferrer"
             >
-              <LinkedInIcon sx={{ fontSize: 36, color: "#e0e3e7" }} />
+              <LinkedInIcon sx={{ fontSize: 36, color: "#d0cae6" }} />
             </MobileRow>
             <MobileRow
               href="https://github.com/jason-cornish"
               target="_blank"
               rel="noreferrer"
             >
-              <GitHubIcon sx={{ fontSize: 36, color: "#e0e3e7" }} />
+              <GitHubIcon sx={{ fontSize: 36, color: "#d0cae6" }} />
             </MobileRow>
 
             <MobileRow
@@ -73,7 +73,7 @@ const HamburgerModal = (props: PropsType) => {
               target="_blank"
               rel="noreferrer"
             >
-              <EmailIcon sx={{ fontSize: 36, color: "#e0e3e7" }} />
+              <EmailIcon sx={{ fontSize: 36, color: "#d0cae6" }} />
             </MobileRow>
           </Row>
           <MobileColumns>
@@ -118,10 +118,10 @@ const ModalWrapper = styled(VerticalWrapper)`
   top: 0px;
   right: 0px;
   width: 300px;
-  background-color: #4831d4;
+  background-color: ${(props) => props.theme.colors.opaque2};
   border-radius: 3px;
   z-index: 4;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
   padding: 30px 0px 30px 0px;
   box-sizing: border-box;
   row-gap: 15px;
@@ -185,15 +185,15 @@ const Links = styled.ul`
 
 const Link = styled.li`
   width: auto;
-  color: #e0e3e7;
-  font-family: Archivo;
+  color: ${(props) => props.theme.colors.white};
+  font-family: Cardo;
   font-size: 20px;
   line-height: 20px;
   font-weight: 400;
   transition: all 300ms ease-in-out;
   cursor: pointer;
   &:hover {
-    color: #f6f7f8;
+    color: ${(props) => props.theme.colors.white};
     font-size: 24px;
   }
 `;

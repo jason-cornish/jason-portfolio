@@ -6,10 +6,10 @@ import {
 } from "./reusable/styled-components";
 import AppleIcon from "@mui/icons-material/Apple";
 import { ReactComponent as AppleMapsLogo } from "../svg/apple-maps.svg";
-import AppleMapsBackground from "../images/Apple-Maps-Background.png";
-import ZollegeBackground from "../images/Zollege-Background.png";
-import ElliotSmithPlayerBackground from "../images/Elliot-Smith-Player-Background.png";
-import ArboretumCreekBackground from "../images/Arboretum-Creek-Background.png";
+import AppleMapsBackground from "../images/Apple-Maps-Background-min.png";
+import ZollegeBackground from "../images/Zollege-Background-min.png";
+import ElliotSmithPlayerBackground from "../images/Elliot-Smith-Player-Background-min.png";
+import ArboretumCreekBackground from "../images/Arboretum-Creek-Background-min.png";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ImagePlaceholder from "./reusable/ImagePlaceholder";
 import MycoTex from "../images/Myco-Tex.png";
@@ -32,52 +32,47 @@ const SelectedWorkContent = (props: WorkProps) => {
       >
         <WorkWrapper>
           <WorkTitle>Full-Stack Developer @ Apple</WorkTitle>
-          <WorkSubTitle>June 2022 - Present</WorkSubTitle>
+          <WorkSubTitle>Jun 2022 - Present</WorkSubTitle>
           <ChipRow>
             <DeadChip content={"ReactJS"} />
             <DeadChip content={"Typescript"} />
             <DeadChip content={"Zustand"} />
             <DeadChip content={"Node.js"} />
             <DeadChip content={"Styled-Components"} />
-            <DeadChip content={"BlueprintJS"} />
+            {/* <DeadChip content={"BlueprintJS"} /> */}
             <DeadChip content={"Highcharts"} />
           </ChipRow>
           <WorkContent>
-            <AppleImage>
-              <AppleMapsLogo className="logo" />
-              <img src={AppleMapsBackground} alt="Apple Maps"></img>
-              <ImagePlaceholder />
-            </AppleImage>
             <WorkParagraphWrapper>
               <WorkParagraph>
-                Designed and developed a workforce productivity dashboard in
-                React that reports on the productivity and effectiveness of
-                3500+ technicians, analysts, and editors by tracking 50,000+
-                data points.
+                Designed and developed workforce monitoring tools in React &
+                Typescript to fetch historical data and display key insights
+                into the qualifications, skill readiness, training recency, and
+                workplace performance of 6000+ Apple Maps editors.
               </WorkParagraph>
-              <WorkParagraph>
-                Designed and developed a workforce monitoring tool in React that
-                tracks the qualifications, skill readiness, and training recency
-                of a workforce of 6000+ Apple Maps editors.
-              </WorkParagraph>
-              <WorkParagraph>
+              {/* <WorkParagraph>
                 Engineered a library of reusable UI React components in
                 Typescript and Styled-Components with customizable styling and
                 content.
-              </WorkParagraph>
-              <WorkParagraph>
+              </WorkParagraph> */}
+              {/* <WorkParagraph>
                 Collaborated with Apple managers to design complex data
                 visualizations and user interfaces in Sketch.
-              </WorkParagraph>
-              <WorkParagraph>
+              </WorkParagraph> */}
+              {/* <WorkParagraph>
                 Dockerized and deployed a Node.js REST API to a Kubernetes
                 namespace.
               </WorkParagraph>
               <WorkParagraph>
                 Maintained and refactored previous developers’ Python/Typescript
                 code.
-              </WorkParagraph>
+              </WorkParagraph> */}
             </WorkParagraphWrapper>
+            <AppleImage>
+              <AppleMapsLogo className="logo" />
+              <img src={AppleMapsBackground} alt="Apple Maps"></img>
+              <ImagePlaceholder />
+            </AppleImage>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -100,7 +95,7 @@ const SelectedWorkContent = (props: WorkProps) => {
               Myco-Tex
             </a>
           </WorkTitle>
-          <WorkSubTitle>January - June 2022</WorkSubTitle>
+          <WorkSubTitle>Nov 2023 - Apr 2024</WorkSubTitle>
           <ChipRow>
             <DeadChip content={"ReactJS"} />
             <DeadChip content={"Typescript"} />
@@ -109,18 +104,14 @@ const SelectedWorkContent = (props: WorkProps) => {
             <DeadChip content={"JWT Auth"} />
           </ChipRow>
           <WorkContent>
-            <ZollegeImage>
-              <img src={MycoTex}></img>
-              <ImagePlaceholder />
-            </ZollegeImage>
-
             <WorkParagraphWrapper>
               <WorkParagraph>
                 Designed and developed an environmental monitoring React
-                dashboard for mushroom farmers that improved crop yield by `
-                {">"}`20%.
+                dashboard for mushroom farmers that helped to improve crop yield
+                by displaying live and historical humidity, temperature, and air
+                quality data.
               </WorkParagraph>
-              <WorkParagraph>
+              {/* <WorkParagraph>
                 Mentored junior developer, checking code quality and
                 implementing code optimizations where needed.
               </WorkParagraph>
@@ -131,8 +122,16 @@ const SelectedWorkContent = (props: WorkProps) => {
               <WorkParagraph>
                 Secured sensitive user data by implementing JWT authorization to
                 protected endpoints on a Node.js REST API.
-              </WorkParagraph>
+              </WorkParagraph> */}
             </WorkParagraphWrapper>
+            <ZollegeImage>
+              <img
+                src={MycoTex}
+                style={{ marginTop: "-2px" }}
+                alt="Myco-Tex user interface screenshot"
+              ></img>
+              <ImagePlaceholder />
+            </ZollegeImage>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -146,7 +145,7 @@ const SelectedWorkContent = (props: WorkProps) => {
       >
         <WorkWrapper>
           <WorkTitle>
-            Zospace @{" "}
+            Front-End Engineer @{" "}
             <a
               href="https://htmlpreview.github.io/?https://github.com/theMVPshop/landingpage/blob/main/html/landing.html"
               target="_blank"
@@ -155,7 +154,7 @@ const SelectedWorkContent = (props: WorkProps) => {
               Zollege
             </a>
           </WorkTitle>
-          <WorkSubTitle>January - June 2022</WorkSubTitle>
+          <WorkSubTitle>Jan - Jun 2022</WorkSubTitle>
           <ChipRow>
             <DeadChip content={"Javascript"} />
             <DeadChip content={"HTML5"} />
@@ -164,26 +163,26 @@ const SelectedWorkContent = (props: WorkProps) => {
             <DeadChip content={"Bootstrap"} />
           </ChipRow>
           <WorkContent>
-            <ZollegeImage>
-              <img src={ZollegeBackground}></img>
-              <ImagePlaceholder />
-            </ZollegeImage>
-
             <WorkParagraphWrapper>
               <WorkParagraph>
-                Developed a fully responsive landing page and navigation bar
-                using HTML5, CSS3, Bootstrap, and Javascript
+                Collaborated on a team of 5 junior developers to develop a fully
+                responsive static website with HTML5, CSS3, Bootstrap, and
+                Javascript.
               </WorkParagraph>
-              <WorkParagraph>
-                Learned a new Javascript library (DHTMLX Gantt) to build a
-                customized Gantt chart that helps Zollege administrators track
-                class schedules.
+              {/* <WorkParagraph>
+                Implemented the DHTMLX Gantt library to build an interactable
+                online Gantt chart for teachers to track class schedules,
+                cohorts, and student bodies.
               </WorkParagraph>
               <WorkParagraph>
                 Utilized Git to manage version control + push changes in
                 collaboration with 5 other developers.
-              </WorkParagraph>
+              </WorkParagraph> */}
             </WorkParagraphWrapper>
+            <ZollegeImage>
+              <img src={ZollegeBackground}></img>
+              <ImagePlaceholder />
+            </ZollegeImage>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -197,7 +196,6 @@ const SelectedWorkContent = (props: WorkProps) => {
       >
         <WorkWrapper>
           <WorkTitle>
-            Capstone ACA Project{" "}
             <a
               href="https://elliot-smith-player.web.app/"
               target="_blank"
@@ -206,7 +204,7 @@ const SelectedWorkContent = (props: WorkProps) => {
               Elliot Smith Player
             </a>
           </WorkTitle>
-          <WorkSubTitle>October - December 2021</WorkSubTitle>
+          <WorkSubTitle>Oct - Dec 2021</WorkSubTitle>
           <ChipRow>
             <DeadChip content={"ReactJS"} />
             <DeadChip content={"Node.js"} />
@@ -216,29 +214,17 @@ const SelectedWorkContent = (props: WorkProps) => {
             <DeadChip content={"CSS3"} />
           </ChipRow>
           <WorkContent>
+            <WorkParagraphWrapper>
+              <WorkParagraph>
+                Designed and developed an online jukebox in React for Elliot
+                Smith's live performances, along with a mySQL database and
+                Express API in NodeJS. Users can listen to songs, create
+                accounts, save custom playlists, and search for albums.
+              </WorkParagraph>
+            </WorkParagraphWrapper>
             <ElliotImage>
               <img src={ElliotSmithPlayerBackground}></img>
             </ElliotImage>
-
-            <WorkParagraphWrapper>
-              <WorkParagraph>
-                Designed and built an online jukebox for Elliot Smith's music as
-                my capstone project at Austin Coding Academy. Key features
-                include creating accounts, creating &amp; saving custom
-                playlists, listening to songs, and browsing albums.
-              </WorkParagraph>
-              <WorkParagraph>
-                Engineered a fully-responsive front-end with React, using Redux
-                for state mangagement. Developed custom React hooks for fetching
-                and updating back-end data, utilizing JSON Web Tokens via Auth0
-                for web security.
-              </WorkParagraph>
-              <WorkParagraph>
-                Developed an Express REST API with Node.js for communication
-                with my MySQL database and React front-end. Wrote MySQL queries
-                to fetch, update, and delete data upon user request.
-              </WorkParagraph>
-            </WorkParagraphWrapper>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -261,7 +247,7 @@ const SelectedWorkContent = (props: WorkProps) => {
               Arboretum Creek
             </a>
           </WorkTitle>
-          <WorkSubTitle>January - June 2022</WorkSubTitle>
+          <WorkSubTitle>Jan - Jun 2022</WorkSubTitle>
           <ChipRow>
             <DeadChip content={"Javascript"} />
             <DeadChip content={"HTML5"} />
@@ -271,27 +257,17 @@ const SelectedWorkContent = (props: WorkProps) => {
             <DeadChip content={"Hosted"} />
           </ChipRow>
           <WorkContent>
+            <WorkParagraphWrapper>
+              <WorkParagraph>
+                Volunteered for a non-profit organization to design and develop
+                a static site in HTML, CSS, and Javascript that demonstrates the
+                ecological need to recreate a creek in the Seattle Arboretum
+                park to reduce flooding damage.
+              </WorkParagraph>
+            </WorkParagraphWrapper>
             <ElliotImage>
               <img src={ArboretumCreekBackground}></img>
             </ElliotImage>
-
-            <WorkParagraphWrapper>
-              <WorkParagraph>
-                Volunteered for a non-profit organization to design and build a
-                website that demonstrates the ecological need to recreate a
-                creek in the Seattle Arboretum park to reduce flooding damage.
-              </WorkParagraph>
-              <WorkParagraph>
-                Developed a fully responsive static website with HTML5, CSS3,
-                and Javascript. Built an interactive visionary image of the
-                future Arboretum Creek with SVG and Adobe Illustrator to teach
-                visitors about the types of life that could thrive in Arboretum
-                Creek.
-              </WorkParagraph>
-              <WorkParagraph>
-                Deployed and hosted the website via Bluehost.
-              </WorkParagraph>
-            </WorkParagraphWrapper>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -353,13 +329,15 @@ const WorkTitle = styled.h1`
   font-weight: 600;
   color: #d0cae6;
   margin: 0px;
-  padding-top: 5px;
+  font-family: Cardo;
   margin-bottom: 5px;
   span {
-    color: #5d42ff;
+    /* color: black; */
+    color: #d0cae6;
   }
   a {
-    color: #5d42ff;
+    color: ${(props) => props.theme.colors.purple};
+    /* color: #5d42ff; */
     text-decoration: none;
     :hover {
       text-decoration: underline;
@@ -377,8 +355,8 @@ const WorkTitle = styled.h1`
 
 const WorkSubTitle = styled.h2`
   display: flex;
-  font-family: Archivo;
-  color: #cfcde0;
+  font-family: Cardo;
+  color: ${(props) => props.theme.colors.grey};
   font-size: 16px;
   font-weight: 400;
   margin: 0px;
@@ -417,6 +395,7 @@ const ChipRow = styled(HorizontalWrapper)`
 
 const WorkContent = styled(VerticalWrapper)`
   width: 100%;
+  row-gap: 10px;
   @media screen and (max-width: 1200px) {
     width: 100%;
     justify-content: center;
@@ -425,10 +404,10 @@ const WorkContent = styled(VerticalWrapper)`
 
 const WorkParagraphWrapper = styled(VerticalWrapper)`
   position: relative;
-  max-width: 600px;
+  max-width: 550px;
   row-gap: 10px;
-  padding-top: 10px;
-  padding-left: 20px;
+  margin-top: 5px;
+
   word-wrap: break-word;
   @media screen and (max-width: 1200px) {
     max-width: 100%;
@@ -445,7 +424,8 @@ const WorkParagraphWrapper = styled(VerticalWrapper)`
 const WorkParagraph = styled.p`
   position: relative;
   word-wrap: break-word;
-  &:before {
+  font-family: Cardo;
+  /* &:before {
     position: absolute;
     content: "";
     top: 11px;
@@ -454,13 +434,12 @@ const WorkParagraph = styled.p`
     height: 8px;
     background-color: #4831d4;
     border-radius: 50%;
-  }
+  } */
   font-size: 16px;
   line-height: 25px;
   margin: 0px;
-
-  font-family: Archivo;
-  color: #cfcde0 !important;
+  margin-bottom: 5px;
+  color: ${(props) => props.theme.colors.white} !important;
 `;
 
 const AppleImage = styled.div`
@@ -469,15 +448,16 @@ const AppleImage = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 3px;
-
+  width: 550px;
   img {
-    width: 600px;
+    width: 550px;
     border-radius: 2px;
     z-index: 2;
+    filter: brightness(85%);
   }
   .logo {
     position: absolute;
-    height: 200px;
+    height: 180px;
     margin: 0px;
     z-index: 3;
     opacity: 100%;
@@ -512,7 +492,7 @@ const ZollegeImage = styled.div`
   border-radius: 3px;
   overflow: hidden;
   img {
-    width: 600px;
+    width: 550px;
     height: auto;
   }
   @media screen and (max-width: 1200px) {
@@ -534,8 +514,9 @@ const ZollegeImage = styled.div`
 const ElliotImage = styled.div`
   width: 100%;
   border-radius: 3px;
+  overflow: hidden;
   img {
-    width: 600px;
+    width: 550px;
     height: auto;
   }
   @media screen and (max-width: 1200px) {

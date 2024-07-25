@@ -17,15 +17,16 @@ const DeadChip = (props: DeadChipProps) => {
 export default DeadChip;
 
 const DeadChipWrapper = styled.div`
-  background-color: #37256b;
-  border: 2px solid #432d83;
+  /* background-color: #37256b;
+  border: 2px solid #432d83; */
+  background-color: ${(props) => props.theme.colors.opaque3};
   border-radius: 6px;
   padding: 5px 10px;
   white-space: nowrap;
   p {
-    font-family: Archivo;
-    color: #cfcde0 !important;
-    font-size: 16px;
+    font-family: Cardo;
+    color: ${(props) => props.theme.colors.white} !important;
+    font-size: 14px;
     margin: 0px !important;
   }
 `;

@@ -11,6 +11,12 @@ const NewLanding = () => {
         <CenterWrapper>
           <h1>Jason Cornish</h1>
           <h2>Front-End Engineer</h2>
+          <SubText>
+            <p>
+              I design and build elegant experiences for the web in React &
+              Typescript, with a soft spot for creative data visualization.
+            </p>
+          </SubText>
         </CenterWrapper>
       </BackgroundWrapper>
       <RingsOfLights />
@@ -31,6 +37,12 @@ const NewLandingWrapper = styled.div`
   overflow: hidden;
   justify-content: center;
   flex-direction: column;
+  @media screen and (max-width: 800px) {
+    .lights-background {
+      display: none;
+    }
+  }
+
   /* padding-top: 150px;
   padding-bottom: 150px; */
 `;
@@ -56,7 +68,7 @@ const BackgroundWrapper = styled.div`
   }
   h2 {
     font-family: Cardo;
-    color: #d0cae6;
+    color: ${(props) => props.theme.colors.purple};
     opacity: 1;
     font-size: 30px;
     font-weight: 500;
@@ -79,17 +91,31 @@ const CenterWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: rgba(208, 202, 230, 0.05);
-  border-radius: 6px;
-  padding: 50px;
+  /* box-shadow: 0 3px 7px 0 ${(props) => props.theme.colors.darkOpaque2},
+    0 1px 2px 0 ${(props) => props.theme.colors.darkOpaque2}; */
+  border-radius: 3px;
+  padding: 30px;
   transition: background-color, height 700ms ease-in-out;
-  height: 100px;
   cursor: pointer;
-  :hover {
+  /* :hover {
     background-color: rgba(208, 202, 230, 0.1);
     height: 500px;
-  }
+  } */
   .display-navigator {
     display: flex;
+  }
+`;
+
+const SubText = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-width: 300px;
+  text-align: center;
+  font-family: Cardo;
+  color: ${(props) => props.theme.colors.grey};
+  margin-top: 10px;
+  p {
+    margin: 0;
   }
 `;
 

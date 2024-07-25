@@ -39,17 +39,17 @@ const HeaderWrapper = styled.header`
   margin-top: 15px;
   /* padding: 10px 15px; */
   display: flex;
-  border-radius: 6px;
+  border-radius: 3px;
   justify-content: space-between;
   align-items: center;
-  color: #e0e3e7;
+  color: ${(props) => props.theme.colors.white};
   box-sizing: border-box;
   z-index: 3;
   pointer-events: none;
   h1 {
     font-size: 24px;
     margin: 0px;
-    color: #d0cae6;
+    color: ${(props) => props.theme.colors.white};
     font-family: Cardo;
     /* text-shadow: 3px 3px #6551db; */
     /* -webkit-text-stroke: 6px #432d83;
@@ -81,11 +81,11 @@ const Title = styled(HorizontalWrapper)`
   z-index: 5;
   transition: background-color 300ms ease-in-out;
   /* background-color: #432d83; */
-  background-color: rgba(208, 202, 230, 0.05);
-  border-radius: 6px;
+  background-color: ${(props) => props.theme.colors.opaque1};
+  border-radius: 3px;
   padding: 15px 20px;
   :hover {
-    background-color: rgba(208, 202, 230, 0.15);
+    background-color: ${(props) => props.theme.colors.purpleDark};
   }
 `;
 
@@ -101,20 +101,20 @@ const HeaderOptions = styled(HorizontalWrapper)`
   position: relative;
   pointer-events: auto;
   /* background-color: #432d83; */
-  background-color: rgba(208, 202, 230, 0.05);
+  background-color: ${(props) => props.theme.colors.opaque1};
   width: 40px;
   height: 30px;
   padding: 15px;
-  border-radius: 6px;
+  border-radius: 3px;
   box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.13), 0 1px 4px 0 rgba(0, 0, 0, 0.11);
   transition: all 300ms ease-in-out;
   cursor: pointer;
   :hover {
     #nav-icon3 span {
-      /* background-color: #f5f4fd;
-      fill: #f5f4fd; */
+      background-color: ${(props) => props.theme.colors.white};
+      fill: ${(props) => props.theme.colors.white};
     }
-    background-color: rgba(208, 202, 230, 0.1);
+    background-color: ${(props) => props.theme.colors.purpleDark};
   }
   @media screen and (max-width: 700px) {
     padding: 10px;

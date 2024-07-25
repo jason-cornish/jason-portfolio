@@ -25,7 +25,7 @@ const InnerRingWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: rotate 25s linear infinite;
+  /* animation: rotate 25s linear infinite; */
 
   .circle {
     position: absolute;

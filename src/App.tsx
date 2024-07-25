@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Landing from "./components/Landing";
 import AboutMe from "./components/AboutMe";
 import Work from "./components/Work";
@@ -10,6 +10,28 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ComponentsSection from "./components/ComponentsSections";
 import RingsOfLights from "./components/ring-of-lights/rings-of-lights";
 import NewLanding from "./components/new-landing";
+
+const theme = {
+  colors: {
+    grey: "#c2bcd7",
+    white: "#d0cae6",
+    purple: "#9f8ce1",
+    purpleDark: "#6550b8",
+    purpleDarker: "#51428e",
+    opaque1: "rgba(208, 202, 230, 0.05)",
+    opaque2: "rgba(208, 202, 230, 0.10)",
+    opaque3: "rgba(208, 202, 230, 0.15)",
+    opaque4: "rgba(208, 202, 230, 0.25)",
+    opaque5: "rgba(208, 202, 230, 0.30)",
+    opaque6: "rgba(208, 202, 230, 0.50)",
+    opaque7: "rgba(208, 202, 230, 0.70)",
+    darkOpaque1: "rgba(29, 26, 39, 0.1)",
+    darkOpaque2: "rgba(29, 26, 39, 0.2)",
+    darkOpaque3: "rgba(29, 26, 39, 0.4)",
+    darkOpaque4: "rgba(29, 26, 39, 0.5)",
+    darkOpaque5: "rgba(29, 26, 39, 0.75)",
+  },
+};
 
 function App() {
   const homeRef = useRef<any>(null);
@@ -38,29 +60,31 @@ function App() {
 
   return (
     <Application className="App">
-      <TransitionGroup component={TransitionWrapper}>
-        <CSSTransition timeout={400} classNames="transition">
-          <PreLoader className={loadingState ? "visible" : "hidden"}>
-            <RingsOfLights />
-            <h1>JASON CORNISH</h1>
-            <p>PORTFOLIO LOADING...</p>
-          </PreLoader>
-        </CSSTransition>
-      </TransitionGroup>
+      <ThemeProvider theme={theme}>
+        <TransitionGroup component={TransitionWrapper}>
+          <CSSTransition timeout={400} classNames="transition">
+            <PreLoader className={loadingState ? "visible" : "hidden"}>
+              {/* <RingsOfLights /> */}
+              <h1>JASON CORNISH</h1>
+              <p>PORTFOLIO LOADING...</p>
+            </PreLoader>
+          </CSSTransition>
+        </TransitionGroup>
 
-      <BodyWrapper>
-        <Header handleLinkClick={handleLinkClick} />
-        <Body>
-          <NewLanding />
-          {/* <Landing ref={homeRef} handleLinkClick={handleLinkClick} /> */}
-          {/* <AboutMe ref={aboutRef} /> */}
-          {/* <Work  /> */}
-          <ComponentsSection ref={workRef} />
-          <AboutMe ref={aboutRef} />
-          <ContactMe ref={contactRef} />
-          {/* <Footer /> */}
-        </Body>
-      </BodyWrapper>
+        <BodyWrapper>
+          <Header handleLinkClick={handleLinkClick} />
+          <Body>
+            <NewLanding />
+            {/* <Landing ref={homeRef} handleLinkClick={handleLinkClick} /> */}
+            {/* <AboutMe ref={aboutRef} /> */}
+            {/* <Work  /> */}
+            <ComponentsSection ref={workRef} />
+            {/* <AboutMe ref={aboutRef} /> */}
+            <ContactMe ref={contactRef} />
+            {/* <Footer /> */}
+          </Body>
+        </BodyWrapper>
+      </ThemeProvider>
     </Application>
   );
 }

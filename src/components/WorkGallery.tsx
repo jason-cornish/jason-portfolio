@@ -146,7 +146,6 @@ const WorkGalleryWrapper = styled.div`
   flex-direction: row;
   box-sizing: border-box;
   justify-content: center;
-  margin-top: 10px;
   column-gap: 25px;
   @media screen and (max-width: 1000px) {
     flex-direction: column;
@@ -162,13 +161,15 @@ const SelectedComponentWrapper = styled.div`
   overflow: contain;
   row-gap: 10px;
   max-width: 600px;
+  font-family: Cardo;
   h2 {
-    color: #d0cae6;
+    color: ${(props) => props.theme.colors.white};
     font-size: 28px;
     margin: 0px;
+    font-weight: 600;
   }
   p {
-    color: #dad8eb;
+    color: ${(props) => props.theme.colors.white};
     margin: 0px;
     font-size: 16px;
   }
@@ -202,33 +203,49 @@ const ViewSourceCodeButton = styled.div`
   margin-top: 5px;
   width: 100%;
   height: 50px;
-  background-color: #432d83;
+  background-color: ${(props) => props.theme.colors.opaque3};
+  /* background-color: #432d83; */
   border-radius: 3px;
   transition: all 300ms ease-in-out;
   column-gap: 10px;
   cursor: pointer;
   svg {
-    fill: #e7e4f9;
+    /* fill: #e7e4f9; */
+    fill: ${(props) => props.theme.colors.white};
     transition: all 300ms ease-in-out;
   }
   a {
     text-decoration: none;
-    color: #e7e4f9;
+    /* color: #e7e4f9; */
+    color: ${(props) => props.theme.colors.white};
     transition: all 300ms ease-in-out;
   }
   :hover {
-    background-color: #4831d4;
+    /* background-color: #4831d4; */
+    background-color: ${(props) => props.theme.colors.purpleDark};
     a {
-      color: #fff;
+      /* color: #fff; */
     }
     svg {
-      fill: #fff;
+      /* fill: #fff; */
     }
   }
 `;
 
+// const ComponentViewFinder = styled.div`
+//   background-color: #100a20;
+//   width: 100%;
+//   border-radius: 3px;
+//   height: 290px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   position: relative;
+//   border: 1px solid rgba(207, 205, 224, 0.2);
+// `;
+
 const ComponentViewFinder = styled.div`
-  background-color: #100a20;
+  background-color: ${(props) => props.theme.colors.darkOpaque5};
   width: 100%;
   border-radius: 3px;
   height: 290px;
@@ -236,7 +253,7 @@ const ComponentViewFinder = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  border: 1px solid rgba(207, 205, 224, 0.2);
+  border: 1px solid ${(props) => props.theme.colors.opaque3};
 `;
 
 const ComponentWrapper = styled.div`
@@ -263,7 +280,7 @@ const CheckerboardRow = styled.div`
 const CheckerboardCell = styled.div`
   width: 100%;
   height: 100%;
-  border: 1px solid #cfcde0;
+  border: 1px solid ${(props) => props.theme.colors.opaque7};
   opacity: 20%;
   margin-top: -1px;
   margin-left: -1px;
@@ -339,7 +356,7 @@ const WorkChips = styled(VerticalWrapper)`
 const Divider = styled.div`
   display: flex;
   width: 0px;
-  border: 1px solid rgba(207, 205, 224, 0.2);
+  border: 1px solid ${(props) => props.theme.colors.opaque2};
   border-radius: 3px;
   @media screen and (max-width: 1000px) {
     display: none;

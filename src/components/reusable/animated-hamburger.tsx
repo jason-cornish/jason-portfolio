@@ -67,7 +67,7 @@ const Hamburger = styled.div`
     position: absolute;
     height: 3px;
     width: 100%;
-    background: #d0cae6;
+    background: ${(props) => props.theme.colors.white};
     border-radius: 2px;
     opacity: 1;
     left: 0;

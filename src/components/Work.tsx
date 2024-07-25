@@ -67,7 +67,7 @@ const Work = forwardRef((props, workRef: any) => {
 export default Work;
 
 const WorkWrapper = styled.div`
-  padding: 15px;
+  /* padding: 15px; */
   width: 100%;
   display: flex;
   flex-direction: column;
