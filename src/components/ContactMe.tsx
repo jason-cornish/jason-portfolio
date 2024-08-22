@@ -149,7 +149,7 @@ const ContactMe = forwardRef((props, contactRef: any) => {
         </InputWrapper>
       </ContactForm>
       <SubmitButton onClick={submitForm}>
-        <p>Send</p>
+        <p>Shoot</p>
       </SubmitButton>
     </ContactMeWrapper>
   );
@@ -182,8 +182,12 @@ const ContactMeWrapper = styled(VerticalWrapper)`
   }
   .horizontal-wrapper {
     column-gap: 30px;
+    @media screen and (max-width: 1200px) {
+      row-gap: 30px;
+      flex-direction: column;
+    }
     @media screen and (max-width: 700px) {
-      row-gap: 40px;
+      row-gap: 30px;
       flex-direction: column;
     }
   }
@@ -194,8 +198,8 @@ const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   padding-top: 30px;
-  row-gap: 40px;
-  margin-bottom: 40px;
+  row-gap: 30px;
+  margin-bottom: 30px;
   .error {
     @keyframes shake {
       0% {
@@ -328,8 +332,8 @@ const SubmitButton = styled.button`
   position: relative;
   padding: 5px 50px;
   border-radius: 3px;
-  background-color: ${(props) => props.theme.colors.opaque3} !important;
-  border: 2px solid ${(props) => props.theme.colors.opaque3} !important;
+  background-color: ${(props) => props.theme.colors.purpleDarker} !important;
+  border: 2px solid ${(props) => props.theme.colors.purpleDarker} !important;
   background-color: transparent;
 
   p {
@@ -347,7 +351,7 @@ const SubmitButton = styled.button`
     position: absolute;
     left: 0;
     top: 0;
-    background-color: ${(props) => props.theme.colors.opaque4};
+    background-color: ${(props) => props.theme.colors.purpleDark};
     width: 0px;
     height: 100%;
     transition: all 0.3s;
@@ -357,7 +361,7 @@ const SubmitButton = styled.button`
     &:before {
       width: 100%;
     }
-    border: 2px solid #4831d4;
+    border: 2px solid ${(props) => props.theme.colors.purpleDark};
     color: #e0e3e7 !important;
     cursor: pointer;
   }

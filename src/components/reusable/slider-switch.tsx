@@ -80,6 +80,29 @@ const SliderSwitchWrapper = styled.div`
     left: 240px;
   }
 
+  @media screen and (max-width: 700px) {
+    .option-left {
+      width: 155px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+    .option-right {
+      width: 140px;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    .slider-left {
+      left: 5px;
+      width: 185px;
+    }
+
+    .slider-right {
+      width: 170px;
+      left: 190px;
+    }
+  }
+
   .unselected-option {
     p {
       /* color: #dad8eb; */
@@ -121,6 +144,9 @@ const OptionWrapper = styled.div`
   height: 25px;
   cursor: pointer;
   transition: all 300ms ease-in-out;
+  @media screen and (max-width: 700px) {
+    padding: 10px 15px;
+  }
 `;
 
 const Option = styled.p`

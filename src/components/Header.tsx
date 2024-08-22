@@ -36,7 +36,7 @@ const HeaderWrapper = styled.header`
   position: fixed;
   width: calc(100% - 30px);
   /* background-color: #4831d4; */
-  margin-top: 15px;
+  /* top: 50vh; */
   /* padding: 10px 15px; */
   display: flex;
   border-radius: 3px;
@@ -64,9 +64,10 @@ const HeaderWrapper = styled.header`
   }
 
   @media screen and (max-width: 700px) {
-    background: #4831d4;
+    /* background: #4831d4; */
+    background-color: ${(props) => props.theme.colors.opaque1};
     width: 95%;
-    padding: 15px 15px;
+    padding: 5px 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     h1 {
       font-size: 20px;

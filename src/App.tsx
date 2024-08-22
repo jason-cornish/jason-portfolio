@@ -16,6 +16,7 @@ const theme = {
     grey: "#c2bcd7",
     white: "#d0cae6",
     purple: "#9f8ce1",
+    purpleBright: "#aa97f1",
     purpleDark: "#6550b8",
     purpleDarker: "#51428e",
     opaque1: "rgba(208, 202, 230, 0.05)",

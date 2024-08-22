@@ -26,7 +26,12 @@ const DeadChipWrapper = styled.div`
   p {
     font-family: Cardo;
     color: ${(props) => props.theme.colors.white} !important;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0px !important;
+  }
+  @media screen and (max-width: 700px) {
+    p {
+      font-size: 14px;
+    }
   }
 `;

@@ -68,4 +68,7 @@ const LinkButtonWrapper = styled.button<{ isSelected: boolean }>`
     border: 2px solid ${(props) => props.theme.colors.opaque1};
     cursor: pointer;
   }
+  @media screen and (max-width: 1200px) {
+    padding: 3px 15px;
+  }
 `;

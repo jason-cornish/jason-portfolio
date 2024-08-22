@@ -8,7 +8,10 @@ const OuterRing = () => {
         return (
           <div className="circle" key={`circle-${i}`}>
             {/* <div className="circle-inner" /> */}
-            <div className="circle-glow" />
+            {/* <div className="circle-glow" /> */}
+            <svg width="100" height="100" className="circle-glow">
+              <circle cx="50" cy="50" r="40" stroke-width="0" />
+            </svg>
           </div>
         );
       })}
@@ -43,7 +46,7 @@ const OuterRingWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* animation: rotate 35s linear infinite; */
+  animation: rotate 35s linear infinite;
   animation-direction: reverse;
 
   /* .glow-wrapper {
@@ -55,11 +58,7 @@ const OuterRingWrapper = styled.div`
 
   .circle {
     position: absolute;
-    width: 500px;
-    height: 500px;
     border-radius: 50%;
-    left: calc(35% - 25px);
-    top: calc(20% - 25px);
     display: flex;
     align-items: center;
     justify-content: center;

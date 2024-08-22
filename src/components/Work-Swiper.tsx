@@ -11,8 +11,9 @@ import SelectedWorkContent from "./Mobile-Work-Swiper";
 import { useEffect } from "react";
 import CurveContainer from "./reusable/CurveContainer";
 import LinkButton from "./reusable/LinkButton";
+import MobileWorkSwiper from "./Mobile-Work-Swiper";
 
-const Work = forwardRef((props, workRef: any) => {
+const WorkSwiper = forwardRef((props, workRef: any) => {
   const [selectedWork, setSelectedWork] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -53,18 +54,25 @@ const Work = forwardRef((props, workRef: any) => {
             );
           })}
         </WorkChips> */}
-        <Divider />
-        <SelectedWorkContent
+        {/* <Divider /> */}
+        <MobileWorkSwiper
           selectedWork={workLinks[selectedWork]}
           workLinks={workLinks}
-        ></SelectedWorkContent>
+        />
       </ContentWrapper>
+      <SlideProgressTracker>
+        <ProgressDot className="activeDot" />
+        <ProgressDot className="inactiveDot" />
+        <ProgressDot className="inactiveDot" />
+        <ProgressDot className="inactiveDot" />
+        <ProgressDot className="inactiveDot" />
+      </SlideProgressTracker>
       {/* <CurveContainer fill={"#e0e3e7"} inverted={true} aligned={"bottom"} /> */}
     </WorkWrapper>
   );
 });
 
-export default Work;
+export default WorkSwiper;
 
 const WorkWrapper = styled.div`
   /* padding: 15px; */
@@ -75,6 +83,7 @@ const WorkWrapper = styled.div`
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
+  row-gap: 25px;
   overflow: contain;
   .WorkSectionTitle {
     display: flex;
@@ -87,10 +96,12 @@ const WorkWrapper = styled.div`
 const ContentWrapper = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   box-sizing: border-box;
   justify-content: center;
   column-gap: 25px;
+  padding: 0px 30px;
+  max-width: 100%;
   @media screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
@@ -99,11 +110,12 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const WorkChips = styled(VerticalWrapper)`
+const WorkChips = styled(HorizontalWrapper)`
   position: relative;
   row-gap: 15px;
   box-sizing: border-box;
-
+  width: 100%;
+  max-width: 565px;
   @media screen and (max-width: 1200px) {
     flex-direction: row;
     overflow-x: auto;
@@ -111,7 +123,7 @@ const WorkChips = styled(VerticalWrapper)`
     padding: 0;
     box-sizing: border-box;
     position: relative;
-    max-width: 565px;
+    /* max-width: 565px; */
     .WorkSectionTitleMobile {
       display: none;
     }
@@ -124,6 +136,26 @@ const WorkChips = styled(VerticalWrapper)`
     overflow-x: auto;
   }
 `;
+
+const SlideProgressTracker = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  .activeDot {
+    width: 15px;
+    height: 15px;
+    background-color: ${(props) => props.theme.colors.purpleBright};
+    border-radius: 50%;
+  }
+  .inactiveDot {
+    width: 10px;
+    height: 10px;
+    background-color: ${(props) => props.theme.colors.opaque6};
+    border-radius: 50%;
+  }
+`;
+
+const ProgressDot = styled.div``;
 
 const Divider = styled.div`
   display: flex;

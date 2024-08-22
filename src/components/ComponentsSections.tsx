@@ -1,7 +1,8 @@
 import { ReactNode, useState, forwardRef } from "react";
 import styled from "styled-components";
 import SliderSwitch from "./reusable/slider-switch";
-import Work from "./Work";
+// import Work from "./Work";
+import WorkSwiper from "./Work-Swiper";
 import WorkGallery from "./WorkGallery";
 
 const ComponentsSection = forwardRef((props: any, workRef: any) => {
@@ -51,7 +52,7 @@ const ComponentsSection = forwardRef((props: any, workRef: any) => {
               : "deselected-option-right"
           }
         >
-          <Work />
+          <WorkSwiper />
         </RightWrapper>
       </ContentWrapper>
     </ComponentsWrapper>
@@ -91,6 +92,9 @@ const ContentWrapper = styled.div`
     transform: translate(1000px, 0px);
     transition: all 300ms ease-in-out;
   }
+  @media screen and (max-width: 700px) {
+    max-width: 95%;
+  }
 `;
 
 const LeftWrapper = styled.div`
@@ -114,20 +118,9 @@ const ComponentsWrapper = styled.div`
   align-items: center;
   overflow: contain;
   margin-bottom: 250px;
-  @media screen and (max-width: 1200px) {
-    .WorkSectionTitle {
-      display: flex;
-    }
-    padding: 80px 0;
-    padding-bottom: 100px;
-  }
-
   @media screen and (max-width: 700px) {
-    align-items: center;
-    .WorkSectionTitle {
-      display: flex;
-      padding-left: 0;
-    }
+    padding: 15px;
+    max-width: 92.5%;
   }
 `;
 

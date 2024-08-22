@@ -315,12 +315,25 @@ const TransitionWrapper = styled.div`
 
   .transition-exit-active {
   }
+
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    justify-content: center;
+  }
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
+  }
 `;
 
 const WorkWrapper = styled(VerticalWrapper)`
   padding: 0px 0px;
-  @media screen and (max-width: 1200px) {
-    width: 70%;
+  @media screen and (max-width: 1000px) {
+    max-width: 650px;
+    /* justify-content: center; */
+  }
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
+    /* justify-content: center; */
   }
 `;
 
@@ -344,12 +357,10 @@ const WorkTitle = styled.h1`
     }
   }
   @media screen and (max-width: 1200px) {
-    margin-top: 10px;
-    padding: 0 10%;
   }
 
   @media screen and (max-width: 700px) {
-    padding: 0 5%;
+    font-size: 22px !important;
   }
 `;
 
@@ -362,13 +373,13 @@ const WorkSubTitle = styled.h2`
   margin: 0px;
   margin-bottom: 10px;
 
-  @media screen and (max-width: 1200px) {
+  /* @media screen and (max-width: 1200px) {
     padding-left: 10%;
   }
 
   @media screen and (max-width: 700px) {
     padding-left: 5%;
-  }
+  } */
 `;
 
 const ChipRow = styled(HorizontalWrapper)`
@@ -377,28 +388,31 @@ const ChipRow = styled(HorizontalWrapper)`
   margin-bottom: 10px;
   flex-wrap: wrap;
   row-gap: 5px;
+  font-size: 16px;
 
-  @media screen and (max-width: 1200px) {
+  /* @media screen and (max-width: 1200px) {
     padding: 0 10%;
     flex-wrap: wrap;
     column-gap: 5px;
     row-gap: 5px;
-  }
+  } */
 
-  @media screen and (max-width: 700px) {
+  /* @media screen and (max-width: 700px) {
     row-gap: 5px;
     flex-wrap: wrap;
     max-width: 100%;
     padding: 0 5%;
-  }
+  } */
 `;
 
 const WorkContent = styled(VerticalWrapper)`
-  width: 100%;
+  max-width: 100%;
   row-gap: 10px;
-  @media screen and (max-width: 1200px) {
-    width: 100%;
-    justify-content: center;
+  @media screen and (max-width: 1000px) {
+    max-width: 650px;
+  }
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
   }
 `;
 
@@ -409,7 +423,8 @@ const WorkParagraphWrapper = styled(VerticalWrapper)`
   margin-top: 5px;
 
   word-wrap: break-word;
-  @media screen and (max-width: 1200px) {
+
+  /* @media screen and (max-width: 1200px) {
     max-width: 100%;
     margin: auto auto;
     margin-top: 15px;
@@ -418,7 +433,7 @@ const WorkParagraphWrapper = styled(VerticalWrapper)`
 
   @media screen and (max-width: 700px) {
     padding: 0 calc(5% + 20px);
-  }
+  } */
 `;
 
 const WorkParagraph = styled.p`
@@ -440,6 +455,10 @@ const WorkParagraph = styled.p`
   margin: 0px;
   margin-bottom: 5px;
   color: ${(props) => props.theme.colors.white} !important;
+  @media screen and (max-width: 700px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 const AppleImage = styled.div`
@@ -463,25 +482,12 @@ const AppleImage = styled.div`
     opacity: 100%;
     fill: black;
   }
-  @media screen and (max-width: 1200px) {
-    height: auto;
-    img {
-      width: 80%;
-      height: auto;
-    }
-    .logo {
-      height: 150px;
-    }
-  }
-
   @media screen and (max-width: 700px) {
-    height: auto;
+    width: 100%;
+    max-width: 100%;
     img {
       width: 100%;
-      height: auto;
-    }
-    .logo {
-      height: 200px;
+      max-width: 100%;
     }
   }
 `;
@@ -495,7 +501,8 @@ const ZollegeImage = styled.div`
     width: 550px;
     height: auto;
   }
-  @media screen and (max-width: 1200px) {
+
+  /* @media screen and (max-width: 1200px) {
     display: flex;
     justify-content: center;
     img {
@@ -507,6 +514,12 @@ const ZollegeImage = styled.div`
     justify-content: center;
     img {
       width: 100%;
+    }
+  } */
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
+    img {
+      max-width: 100%;
     }
   }
 `;
@@ -516,21 +529,13 @@ const ElliotImage = styled.div`
   border-radius: 3px;
   overflow: hidden;
   img {
-    width: 550px;
+    max-width: 550px;
     height: auto;
   }
-  @media screen and (max-width: 1200px) {
-    display: flex;
-    justify-content: center;
-    img {
-      width: 80%;
-    }
-  }
   @media screen and (max-width: 700px) {
-    display: flex;
-    justify-content: center;
+    max-width: 100%;
     img {
-      width: 100%;
+      max-width: 100%;
     }
   }
 `;
