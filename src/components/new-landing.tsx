@@ -3,20 +3,22 @@ import styled from "styled-components";
 import RingsOfLights from "./ring-of-lights/rings-of-lights";
 import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
 import { ReactComponent as LinksCircle } from "../svg/links.svg";
+import JasonCard from "./Jason-Card";
 
 const NewLanding = () => {
   return (
     <NewLandingWrapper>
       <BackgroundWrapper>
         <CenterWrapper>
-          <h1>Jason Cornish</h1>
+          <JasonCard />
+          {/* <h1>Jason Cornish</h1>
           <h2>Front-End Engineer</h2>
           <SubText>
             <p>
-              I design and build elegant experiences for the web in React &
-              Typescript, with a soft spot for creative data visualization.
+              I design and build elegant, interactive, and highly responsive web
+              experiences in React & Typescript.
             </p>
-          </SubText>
+          </SubText> */}
         </CenterWrapper>
       </BackgroundWrapper>
       <RingsOfLights />
@@ -60,7 +62,7 @@ const BackgroundWrapper = styled.div`
 
   h1 {
     font-family: Cardo;
-    color: #d0cae6;
+    color: ${(props) => props.theme.colors.white};
     opacity: 1;
     font-size: 50px;
     font-weight: 500;
@@ -90,13 +92,13 @@ const CenterWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(208, 202, 230, 0.05);
+  /* background-color: rgba(208, 202, 230, 0.05); */
   /* box-shadow: 0 3px 7px 0 ${(props) => props.theme.colors.darkOpaque2},
     0 1px 2px 0 ${(props) => props.theme.colors.darkOpaque2}; */
   border-radius: 3px;
   padding: 30px;
   transition: background-color, height 700ms ease-in-out;
-  cursor: pointer;
+  /* cursor: pointer; */
   /* :hover {
     background-color: rgba(208, 202, 230, 0.1);
     height: 500px;

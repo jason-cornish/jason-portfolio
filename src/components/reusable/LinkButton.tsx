@@ -38,6 +38,7 @@ const LinkButtonWrapper = styled.button<{ isSelected: boolean }>`
     props.isSelected
       ? `2px solid ${props.theme.colors.purpleDark}`
       : `2px solid transparent`};
+  /* filter: blur(0,5px); */
   /* background-color: transparent; */
   white-space: nowrap;
   p {
@@ -70,5 +71,9 @@ const LinkButtonWrapper = styled.button<{ isSelected: boolean }>`
   }
   @media screen and (max-width: 1200px) {
     padding: 3px 15px;
+  }
+  svg {
+    width: 100%;
+    height: 100%;
   }
 `;

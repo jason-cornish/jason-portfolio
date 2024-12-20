@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 450 300" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
+<g clip-path="url(#clip0_426_1014)">
+<path d="M0 0H450V300H0V0Z" fill="#BF0D3E"></path>
+<path d="M0 0H450V150H0V0Z" fill="white"></path>
+<path d="M0 0H150V300H0V0Z" fill="#00205B"></path>
+<path d="M75 93.75L57.6178 147.247L81.3942 154.972" fill="white"></path>
+<path d="M75 93.75L92.3822 147.247L68.6058 154.972" fill="white"></path>
+<path d="M128.497 132.618H72.2471V157.618" fill="white"></path>
+<path d="M128.497 132.618L82.9898 165.681L68.2952 145.455" fill="white"></path>
+<path d="M108.063 195.507L90.6813 142.01L66.9049 149.736" fill="white"></path>
+<path d="M108.063 195.507L62.5563 162.444L77.2509 142.219" fill="white"></path>
+<path d="M41.9375 195.507L87.4447 162.444L72.7501 142.219" fill="white"></path>
+<path d="M41.9375 195.507L59.3197 142.01L83.0961 149.736" fill="white"></path>
+<path d="M21.5039 132.618L67.0111 165.681L81.7058 145.455" fill="white"></path>
+<path d="M21.5039 132.618H77.7539V157.618" fill="white"></path>
+</g>
+<defs>
+<clipPath id="clip0_426_1014">
+<rect width="450" height="300" fill="white"></rect>
+</clipPath>
+</defs>
+</svg>

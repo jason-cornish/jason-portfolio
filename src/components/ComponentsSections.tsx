@@ -34,7 +34,6 @@ const ComponentsSection = forwardRef((props: any, workRef: any) => {
         />
       </SectionHeader>
       <HorizontalDivider />
-      {/* {workTypeMapping[selectedWorkType].viewToRender} */}
       <ContentWrapper>
         <LeftWrapper
           className={
@@ -84,12 +83,12 @@ const ContentWrapper = styled.div`
 
   .selected-option-right {
     position: relative;
-    transform: translate(0px, 0px);
+    transform: translate(1200px, 0px);
     transition: all 300ms ease-in-out;
   }
   .deselected-option-right {
     position: absolute;
-    transform: translate(1000px, 0px);
+    transform: translate(1950px, 0px);
     transition: all 300ms ease-in-out;
   }
   @media screen and (max-width: 700px) {

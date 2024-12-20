@@ -259,6 +259,7 @@ export default MobileWorkSwiper;
 const TransitionWrapper = styled.div`
   overflow: hidden;
   display: flex;
+  flex-direction: row;
   width: 100%;
   align-items: center;
   column-gap: 50px;
@@ -282,8 +283,7 @@ const TransitionWrapper = styled.div`
 
 const WorkWrapper = styled(VerticalWrapper)`
   padding: 30px;
-  background-color: ${(props) => props.theme.colors.opaque1};
-  max-width: 500px;
+  max-width: 1500px;
   @media screen and (max-width: 1000px) {
     max-width: 650px;
     /* justify-content: center; */

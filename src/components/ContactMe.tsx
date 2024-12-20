@@ -167,7 +167,7 @@ const ContactMeWrapper = styled(VerticalWrapper)`
 
   h1 {
     font-size: 35px;
-    color: #d0cae6;
+    color: ${(props) => props.theme.colors.white};
     margin-bottom: 10px;
     text-align: center;
     font-family: Cardo;
@@ -278,12 +278,12 @@ const Input = styled.input`
   border-radius: 6px;
   /* border-bottom: 1px solid #e64848; */
   caret-color: ${(props) => props.theme.colors.white};
-  color: ${(props) => props.theme.colors.grey};
+  color: ${(props) => props.theme.colors.white};
   padding: 10px;
   position: relative;
   transition: all 300ms ease-in-out;
   ::placeholder {
-    color: #918da1;
+    color: ${(props) => props.theme.colors.grey};
   }
   :focus {
     background-color: ${(props) => props.theme.colors.opaque4};
@@ -291,7 +291,7 @@ const Input = styled.input`
     outline: none;
     /* border-bottom: 1px solid #f6f7f8; */
     ::placeholder {
-      color: #918da1;
+      color: ${(props) => props.theme.colors.grey};
     }
   }
   @media screen and (max-width: 700px) {
@@ -317,13 +317,13 @@ const MessageInput = styled.textarea`
   resize: none;
   transition: all 300ms ease-in-out;
   ::placeholder {
-    color: #918da1;
+    color: ${(props) => props.theme.colors.grey};
   }
   :focus {
     background-color: ${(props) => props.theme.colors.opaque4};
     outline: none;
     ::placeholder {
-      color: #a6a1b8;
+      color: ${(props) => props.theme.colors.grey};
     }
   }
 `;
@@ -361,7 +361,7 @@ const SubmitButton = styled.button`
     &:before {
       width: 100%;
     }
-    border: 2px solid ${(props) => props.theme.colors.purpleDark};
+    border: 2px solid ${(props) => props.theme.colors.purple};
     color: #e0e3e7 !important;
     cursor: pointer;
   }

@@ -45,6 +45,7 @@ const HeaderWrapper = styled.header`
   color: ${(props) => props.theme.colors.white};
   box-sizing: border-box;
   z-index: 3;
+  padding: 20px 5px;
   pointer-events: none;
   h1 {
     font-size: 24px;

@@ -13,19 +13,20 @@ import NewLanding from "./components/new-landing";
 
 const theme = {
   colors: {
-    grey: "#c2bcd7",
-    white: "#d0cae6",
-    purple: "#9f8ce1",
-    purpleBright: "#aa97f1",
-    purpleDark: "#6550b8",
-    purpleDarker: "#51428e",
-    opaque1: "rgba(208, 202, 230, 0.05)",
+    grey: "#c3a8a1",
+    white: "#e5d7d7",
+    purple: "#c83e3e",
+    purpleBright: "#de2626",
+    // purpleDark: "#790d0d",
+    purpleDark: "#6c0101",
+    purpleDarker: "#690b0b",
+    opaque1: "rgba(230, 202, 202, 0.05)",
     opaque2: "rgba(208, 202, 230, 0.10)",
-    opaque3: "rgba(208, 202, 230, 0.15)",
-    opaque4: "rgba(208, 202, 230, 0.25)",
-    opaque5: "rgba(208, 202, 230, 0.30)",
-    opaque6: "rgba(208, 202, 230, 0.50)",
-    opaque7: "rgba(208, 202, 230, 0.70)",
+    opaque3: "rgba(230, 202, 202, 0.15)",
+    opaque4: "rgba(230, 202, 202, 0.25)",
+    opaque5: "rgba(230, 202, 202, 0.30)",
+    opaque6: "rgba(230, 202, 202, 0.50)",
+    opaque7: "rgba(230, 202, 202, 0.70)",
     darkOpaque1: "rgba(29, 26, 39, 0.1)",
     darkOpaque2: "rgba(29, 26, 39, 0.2)",
     darkOpaque3: "rgba(29, 26, 39, 0.4)",
@@ -147,7 +148,7 @@ const PreLoader = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 10;
-  background-color: #150e2b;
+  background-color: #2d0000;
   h1 {
     text-align: center;
     font-family: Archivo;
@@ -203,7 +204,15 @@ const BodyWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   font-family: Roboto;
-  background-color: #150e2b;
+  /* background-color: #2d0000; */
+  background-color: #0a0614;
+  background: rgb(38, 30, 61);
+  background: radial-gradient(
+    circle,
+    rgba(38, 30, 61, 1) 10%,
+    rgba(10, 6, 20, 1) 47%,
+    rgba(38, 30, 61, 1) 99%
+  );
 `;
 
 const Body = styled.section`

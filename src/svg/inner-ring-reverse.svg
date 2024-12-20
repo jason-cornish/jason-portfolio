@@ -1,0 +1,27 @@
+<svg width="5164" height="5200" viewBox="0 0 5164 5200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_14_11)">
+<ellipse cx="3372.24" cy="3588.94" rx="633.107" ry="595.825" transform="rotate(51.3839 3372.24 3588.94)" fill="#5B0101" fill-opacity="0.7"/>
+<ellipse cx="2482.41" cy="3825.04" rx="633.107" ry="595.825" transform="rotate(51.3839 2482.41 3825.04)" fill="#2D0000"/>
+<ellipse cx="1650.91" cy="3343.29" rx="633.107" ry="595.825" transform="rotate(51.3839 1650.91 3343.29)" fill="#670000" fill-opacity="0.5"/>
+<ellipse cx="1364.83" cy="2425.89" rx="633.107" ry="595.825" transform="rotate(51.3839 1364.83 2425.89)" fill="#4F0203" fill-opacity="0.7"/>
+<ellipse cx="1791.76" cy="1610.24" rx="633.107" ry="595.825" transform="rotate(51.3839 1791.76 1610.24)" fill="#3C0000"/>
+<ellipse cx="2681.59" cy="1374.13" rx="633.107" ry="595.825" transform="rotate(51.3839 2681.59 1374.13)" fill="#620C0C" fill-opacity="0.5"/>
+<ellipse cx="3513.09" cy="1855.88" rx="633.107" ry="595.825" transform="rotate(51.3839 3513.09 1855.88)" fill="#300101"/>
+<g filter="url(#filter1_b_14_11)">
+<ellipse cx="3799.17" cy="2773.28" rx="633.107" ry="595.825" transform="rotate(51.3839 3799.17 2773.28)" fill="#3F0104"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_14_11" x="354.204" y="355.241" width="4455.59" height="4488.69" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_14_11"/>
+</filter>
+<filter id="filter1_b_14_11" x="-196811" y="-197846" width="401221" height="401238" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="100000"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_14_11"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_14_11" result="shape"/>
+</filter>
+</defs>
+</svg>
