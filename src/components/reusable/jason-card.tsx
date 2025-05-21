@@ -1,91 +1,113 @@
 import RotateRightIcon from "@mui/icons-material/RotateRight";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useMemo } from "react";
 import styled from "styled-components";
-import JasonBeachImage from "../images/jason-beach.jpg";
-import { ReactComponent as TXFlag } from "../svg/tx-flag.svg";
-import CardBackside from "./reusable/card-backside";
-import GlowingCardOutline from "./reusable/glowing-card-outline";
+import JasonBeachImage from "../../images/jason-beach.jpg";
+import { ReactComponent as TXFlag } from "../../svg/tx-flag.svg";
+import CardBackside from "./card-backside";
+import GlowingCardOutline from "./glowing-card-outline";
 
-const JasonCard = () => {
+interface PropsInterface {
+  isFrontSideUp: boolean;
+  isCardDrawn: boolean;
+}
+
+const JasonCard = (props: PropsInterface) => {
+  const { isFrontSideUp, isCardDrawn } = props;
   const [isInitialRender, setIsInitialRender] = useState(true);
-  const [selectedSideOfCard, setSeletedSideOfCard] = useState("front");
+  const [isFrontSideVisible, setIsFrontSideVisible] = useState(isFrontSideUp);
+  const [isCardBeingExamined, setIsCardBeingExamined] = useState(false);
   const [isCardTapped, setIsCardTapped] = useState(false);
 
   const handleCardClick = () => {
-    setIsCardTapped(!isCardTapped);
+    // setIsCardTapped(!isCardTapped);
+    if (!isCardDrawn) {
+      console.log("seting to is true");
+      setIsFrontSideVisible(true);
+      setIsCardBeingExamined(true);
+    }
   };
+
+  const cardClassName = useMemo(() => {
+    if (!isCardDrawn) {
+      return "library card";
+    } else
+      return isCardTapped
+        ? "tapped-front-card card"
+        : "untapped-front-card card";
+  }, [isCardDrawn, isCardTapped]);
 
   return (
     <JasonCardWrapper>
-      <Card
-        className={
-          isCardTapped ? "tapped-front-card card" : "untapped-front-card card"
-        }
-        onClick={handleCardClick}
-      >
-        <CardTitleRow>
-          <InsetCardTitleRow>
-            <LeftColumn>
-              <CardTitle>Jason Cornish</CardTitle>
-            </LeftColumn>
-            <RightColumn>
-              <Chip>
-                <p className="numerical-text">3</p>
-              </Chip>
-              <Chip>
-                <p>YR</p>
-              </Chip>
-              <Chip>
-                <p>XP</p>
-              </Chip>
-            </RightColumn>
-          </InsetCardTitleRow>
-        </CardTitleRow>
-        <CardBackground>
-          <OpaqueLayer></OpaqueLayer>
-          <img
-            src={JasonBeachImage}
-            alt="Jason Cornish standing before a Mexican beach at sunset."
-          ></img>
-        </CardBackground>
-        <CardDescriptionSection>
-          <CharacterDescriptionWrapper>
-            <CharacterDescriptionInset>
-              <LeftColumn>
-                <h1>
-                  Sr. Front-End Engineer <span className="hyphen" /> UI/UX
-                  Designer
-                </h1>
-              </LeftColumn>
-              <RightColumn>
-                <TXFlag />
-              </RightColumn>
-            </CharacterDescriptionInset>
-          </CharacterDescriptionWrapper>
-          <DescriptionBodyWrapper>
-            <p>React, ES6 Javascript, Typescript, CSS3, HTML5</p>
-            <p>
-              Upon joining the team, Jason Cornish adds 3 years of experience
-              designing and developing responsive, intuitive, and elegant online
-              experiences.{" "}
-            </p>
-            <TapAbility>
-              <RotateIconWrapper>
-                <RotateRightIcon className="rotate-icon" />
-              </RotateIconWrapper>
-              <p>: Tap to reveal experience and component library</p>
-            </TapAbility>
-          </DescriptionBodyWrapper>
-        </CardDescriptionSection>
-        <BottomOverlay></BottomOverlay>
-        <GlowingCardOutline />
-      </Card>
+      <Card className={cardClassName} onClick={handleCardClick}>
+        <CardWrapper>
+          <CardFrontSide
+            className={isFrontSideVisible ? "front-visible" : "front-hidden"}
+          >
+            <CardTitleRow>
+              <InsetCardTitleRow>
+                <LeftColumn>
+                  <CardTitle>Jason Cornish</CardTitle>
+                </LeftColumn>
+                <RightColumn>
+                  <Chip>
+                    <p className="numerical-text">3</p>
+                  </Chip>
+                  <Chip>
+                    <p>YR</p>
+                  </Chip>
+                  <Chip>
+                    <p>XP</p>
+                  </Chip>
+                </RightColumn>
+              </InsetCardTitleRow>
+            </CardTitleRow>
+            <CardBackground>
+              <OpaqueLayer></OpaqueLayer>
+              <img
+                src={JasonBeachImage}
+                alt="Jason Cornish standing before a Mexican beach at sunset."
+              ></img>
+            </CardBackground>
+            <CardDescriptionSection>
+              <CharacterDescriptionWrapper>
+                <CharacterDescriptionInset>
+                  <LeftColumn>
+                    <h1>
+                      Sr. Front-End Engineer <span className="hyphen" /> UI/UX
+                      Designer
+                    </h1>
+                  </LeftColumn>
+                  <RightColumn>
+                    <TXFlag />
+                  </RightColumn>
+                </CharacterDescriptionInset>
+              </CharacterDescriptionWrapper>
+              <DescriptionBodyWrapper>
+                <p>React, ES6 Javascript, Typescript, CSS3, HTML5</p>
+                <p>
+                  Upon joining the team, Jason Cornish adds 3 years of expertise
+                  designing and developing responsive, intuitive, and elegant
+                  online experiences.
+                </p>
+                <TapAbility>
+                  <RotateIconWrapper>
+                    <RotateRightIcon className="rotate-icon" />
+                  </RotateIconWrapper>
+                  <p>Tap to reveal experience and component library</p>
+                </TapAbility>
+              </DescriptionBodyWrapper>
+            </CardDescriptionSection>
+          </CardFrontSide>
+          <CardBackside
+            className={isFrontSideVisible ? "back-hidden" : "back-visible"}
+            isCardTapped={isCardTapped}
+            clickHandler={handleCardClick}
+          ></CardBackside>
+        </CardWrapper>
 
-      {/* <CardBackside
-        isCardTapped={isCardTapped}
-        selectedSideOfCard={selectedSideOfCard}
-        clickHandler={handleCardClick}
-      ></CardBackside> */}
+        {/* <BottomOverlay></BottomOverlay> */}
+        {/* <GlowingCardOutline /> */}
+      </Card>
     </JasonCardWrapper>
   );
 };
@@ -97,20 +119,18 @@ const JasonCardWrapper = styled.div`
   width: 100%;
   height: 100%;
   border: 0;
-  perspective: 1000px;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  height: 650px;
-  width: 470px;
-  transform: scale(0.8);
-
+  /* height: 650px;
+  width: 470px; */
+  z-index: 5;
+  transform: rotateX(5deg) translateY(-400px);
+  transition: 2s transform ease-in-out;
   .card {
-    top: 0;
-    display: flex;
-    backface-visibility: hidden;
-    transform: rotateX(10deg);
+    top: 0px;
   }
-  .tapped-front-card {
+  /* .library {
+    transform: rotate(0deg) rotateX(10deg);
+  } */
+  /* .tapped-front-card {
     animation: 0.8s ease-out 0s rotateCard;
     //0.3s linear 0.5s flipcard
     animation-fill-mode: forwards;
@@ -140,9 +160,9 @@ const JasonCardWrapper = styled.div`
         transform: rotate(90deg) rotateX(0deg);
       }
     }
-  }
+  } */
 
-  .tapped-back-card {
+  /* .tapped-back-card {
     position: absolute;
     animation: 0.5s ease-out 0s rotateBackCard;
     //0.5s linear 0.5s flipBackCard
@@ -173,10 +193,10 @@ const JasonCardWrapper = styled.div`
         transform: rotate(90deg) rotateX(10deg);
       }
     }
-  }
+  } */
 
   .untapped-front-card {
-    transform: rotate(0deg) 1s linear rotateX(10deg);
+    transform: rotateY(0deg) 1s linear rotateX(10deg);
     animation: float 5s cubic-bezier(0.25, 0.5, 1, 1) infinite;
 
     @keyframes float {
@@ -191,8 +211,8 @@ const JasonCardWrapper = styled.div`
       }
     }
     :hover {
-      /* transform: translate(0px, 0px) 1s;
-      animation-play-state: paused; */
+      // transform: translate(0px, 0px) 1s;
+      //animation-play-state: paused;
       outline: 3px solid #cfcdcd;
       transition: outline 0.3s;
     }
@@ -200,23 +220,75 @@ const JasonCardWrapper = styled.div`
 `;
 
 const Card = styled.div`
-  display: flex;
-  backface-visibility: hidden;
-  flex-direction: column;
   position: relative;
   cursor: pointer;
-  justify-content: space-between;
   border-radius: 22px;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.theme.colors.opaque2};
   background-color: rgba(20, 13, 39, 0.5);
-  padding: 30px 25px 25px 20px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   translate: 0px 0px;
+  padding: 0px;
+`;
+
+const CardWrapper = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .front-visible {
+    transform: rotate(0deg);
+    /* animation: 0.8s ease-out 0s rotateCard; */
+    /* animation: 0.3s linear 0.5s flipcard;
+    animation-fill-mode: forwards;
+    @keyframes flipcard {
+      0% {
+        transform: rotateY(-180deg);
+      }
+      100% {
+        transform: rotateY(0deg);
+      }
+    } */
+  }
+  .front-hidden {
+    transform: rotateY(-180deg);
+  }
+  .back-visible {
+    transform: rotateX(0deg);
+  }
+  .back-hidden {
+    display: none;
+    transform: rotate(-180deg);
+    backface-visibility: hidden;
+    /* display: none;
+    animation: 0.3s linear 0.5s flipcard;
+    animation-fill-mode: forwards;
+    @keyframes flipcard {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(-180deg);
+      }
+    } */
+  }
+`;
+
+const CardFrontSide = styled.div`
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-top: 10px;
+  /* padding: 30px 25px 25px 20px; */
 `;
 
 const CardTitleRow = styled.div`
@@ -224,13 +296,17 @@ const CardTitleRow = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  border: 3px solid #6b5d92;
-  outline: 1px solid rgba(20, 13, 39, 0.9);
+  width: 205px;
+  left: 0px;
+  top: 0px;
+  border: 2px solid #6b5d92;
+  outline: 0.8px solid rgba(20, 13, 39, 0.9);
   z-index: 3;
   opacity: 100%;
-  border-radius: 12px / 22px;
-  opacity: 90%;
+  border-radius: 8px / 16px;
+  /* opacity: 90%; */
+  font-size: 10%;
+  /* transform: scale(0.5); */
   background-color: rgba(20, 13, 39, 0.45);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
@@ -255,21 +331,20 @@ const InsetCardTitleRow = styled.div`
   -moz-box-shadow: inset 0px 5px 4px -4px rgba(190, 184, 207, 0.78);
   box-shadow: inset 0px 5px 4px -4px rgba(190, 184, 207, 0.78);
   border: 1px #000 solid;
-  opacity: 90%;
+  /* opacity: 90%; */
   border-radius: 11px / 21px;
   /* border-top-left-radius: 10px 20px;
   border-bottom-left-radius: 10px 20px; */
-
   box-sizing: border-box;
-  padding: 7px;
-  padding-left: 20px;
+  padding: 3px 5px 3px 10px;
 `;
 
 const CardTitle = styled.h1`
   font-family: Cardo;
-  font-size: 20px !important;
+  font-size: 10px;
   margin: 0px;
   font-weight: 600;
+  white-space: nowrap;
   color: ${(props) => props.theme.colors.white};
 `;
 
@@ -283,9 +358,9 @@ const LeftColumn = styled.div`
     white-space: nowrap;
     :after {
       display: inline-block;
-      height: 2px;
-      width: 15px;
-      margin: 2px 3px;
+      height: 1px;
+      width: 8px;
+      margin: 1px 1px;
       background-color: ${(props) => props.theme.colors.white};
       border-radius: 1px;
       content: "";
@@ -298,7 +373,7 @@ const RightColumn = styled.div`
   column-gap: 5px;
   svg {
     margin-right: 5px;
-    width: 25px;
+    width: 15px;
     height: auto;
   }
 `;
@@ -309,17 +384,17 @@ const Chip = styled.div`
   background: rgb(135, 121, 172);
   background: radial-gradient(circle, #988bbd 23%, #493972 59%, #8d81b1 99%);
   padding: 2px;
-  font-size: 13px;
+  font-size: 9px;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   font-family: Cardo;
   color: #0a0614;
   padding-left: 3px;
   .numerical-text {
-    font-size: 18px;
+    font-size: 13px;
   }
   /* border: 2px solid #6b5d92; */
   outline: 1px solid rgba(20, 13, 39, 0.8);
@@ -338,10 +413,9 @@ const CardBackground = styled.div`
   img {
     position: relative;
     z-index: 1;
-    width: 550px;
+    width: 350px;
     height: auto;
     object-fit: cover;
-    margin-bottom: 50px;
     opacity: 100%;
     filter: blur(0.2px);
   }
@@ -357,17 +431,17 @@ const OpaqueLayer = styled.div`
 `;
 
 const CardDescriptionSection = styled.div`
+  /* transform: scale(0.5); */
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 3;
-  bottom: 0px;
-  width: 100%;
-  height: 200px;
+  width: 195px;
+  height: 100px;
   margin-bottom: 10px;
   background-color: rgba(20, 13, 39, 0.5);
   border-radius: 10px;
-  border: 3px solid #6b5d92;
+  border: 2px solid #6b5d92;
   outline: 1px solid rgba(20, 13, 39, 0.9);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -375,14 +449,15 @@ const CardDescriptionSection = styled.div`
 
 const CharacterDescriptionWrapper = styled(CardTitleRow)`
   position: relative;
-  top: -42px;
+  top: -27px;
   left: -10px;
-  width: calc(100% + 15px);
+  width: 210px;
 `;
 
 const CharacterDescriptionInset = styled(InsetCardTitleRow)`
+  padding: 5px 5px 5px 5px;
   h1 {
-    font-size: 16px !important;
+    font-size: 8px !important;
     font-weight: bold;
     color: ${(props) => props.theme.colors.white};
     font-family: Cardo;
@@ -395,25 +470,28 @@ const DescriptionBodyWrapper = styled.div`
   top: 0px;
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
-  opacity: 85%;
-  padding: 15px;
+  row-gap: 5px;
+  bottom: 0px;
+  /* opacity: 85%; */
+  padding: 5px;
   p {
     margin: 0px;
     color: ${(props) => props.theme.colors.white};
     font-family: Cardio;
-    font-size: 18px;
+    font-size: 9px;
   }
 `;
 
 const TapAbility = styled.div`
   display: flex;
-  column-gap: 5px;
+  column-gap: 7px;
+  padding-left: 2px;
+  align-items: center;
 `;
 
 const RotateIconWrapper = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -421,8 +499,8 @@ const RotateIconWrapper = styled.div`
   border-radius: 50%;
   svg {
     position: relative;
-    height: 18px;
-    width: 18px;
+    height: 13px;
+    width: 13px;
   }
 `;
 

@@ -31,8 +31,8 @@ const RingsOfLights = () => {
         <InnerRing />
       </canvas> */}
       {/* <InnerCircle /> */}
-      <InnerRing />
-      <InnerRingReverse />
+      {/* <InnerRing />
+      <InnerRingReverse /> */}
       {/* <OuterRing />*/}
     </RingsOfLightsWrapper>
   );

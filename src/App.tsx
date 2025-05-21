@@ -10,10 +10,11 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ComponentsSection from "./components/ComponentsSections";
 import RingsOfLights from "./components/ring-of-lights/rings-of-lights";
 import NewLanding from "./components/new-landing";
+import Board from "./components/board";
 
 const theme = {
   colors: {
-    grey: "#c3a8a1",
+    grey: "#a3a1c3",
     white: "#e5d7d7",
     purple: "#c83e3e",
     purpleBright: "#de2626",
@@ -63,26 +64,27 @@ function App() {
   return (
     <Application className="App">
       <ThemeProvider theme={theme}>
-        <TransitionGroup component={TransitionWrapper}>
+        {/* <TransitionGroup component={TransitionWrapper}>
           <CSSTransition timeout={400} classNames="transition">
             <PreLoader className={loadingState ? "visible" : "hidden"}>
-              {/* <RingsOfLights /> */}
+              
               <h1>JASON CORNISH</h1>
               <p>PORTFOLIO LOADING...</p>
             </PreLoader>
           </CSSTransition>
-        </TransitionGroup>
+        </TransitionGroup> */}
 
         <BodyWrapper>
           <Header handleLinkClick={handleLinkClick} />
           <Body>
-            <NewLanding />
+            <Board />
+            {/* <NewLanding /> */}
             {/* <Landing ref={homeRef} handleLinkClick={handleLinkClick} /> */}
             {/* <AboutMe ref={aboutRef} /> */}
             {/* <Work  /> */}
-            <ComponentsSection ref={workRef} />
+            {/* <ComponentsSection ref={workRef} /> */}
             {/* <AboutMe ref={aboutRef} /> */}
-            <ContactMe ref={contactRef} />
+            {/* <ContactMe ref={contactRef} /> */}
             {/* <Footer /> */}
           </Body>
         </BodyWrapper>
@@ -205,13 +207,14 @@ const BodyWrapper = styled.div`
   justify-content: space-between;
   font-family: Roboto;
   /* background-color: #2d0000; */
-  background-color: #0a0614;
+  /* background-color: #0a0614; */
+  /* background-color: #1a132c; */
   background: rgb(38, 30, 61);
   background: radial-gradient(
     circle,
     rgba(38, 30, 61, 1) 10%,
-    rgba(10, 6, 20, 1) 47%,
-    rgba(38, 30, 61, 1) 99%
+    rgba(10, 6, 20, 1) 65%,
+    rgba(10, 6, 20, 1) 99%
   );
 `;
 

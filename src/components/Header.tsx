@@ -13,7 +13,7 @@ const Header = (props: any) => {
   return (
     <HeaderWrapper>
       <Title onClick={() => props.handleLinkClick("home")}>
-        <h1>JC</h1>
+        <h1>JasonCornish</h1>
       </Title>
       <HeaderOptions>
         <HamburgerWrapper>

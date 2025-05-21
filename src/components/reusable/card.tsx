@@ -3,30 +3,26 @@ import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import JasonBeachImage from "../images/jason-beach.jpg";
 import { ReactComponent as TXFlag } from "../svg/tx-flag.svg";
-import CardBackside from "./reusable/card-backside";
-import GlowingCardOutline from "./reusable/glowing-card-outline";
+import CardBackside from "./card-backside";
+import GlowingCardOutline from "./glowing-card-outline";
 
-const JasonCard = () => {
+const Card = () => {
   const [isInitialRender, setIsInitialRender] = useState(true);
   const [selectedSideOfCard, setSeletedSideOfCard] = useState("front");
   const [isCardTapped, setIsCardTapped] = useState(false);
 
-  const handleCardClick = () => {
-    setIsCardTapped(!isCardTapped);
-  };
-
   return (
-    <JasonCardWrapper>
-      <Card
+    <CardWrapper>
+      <CardContent
         className={
           isCardTapped ? "tapped-front-card card" : "untapped-front-card card"
         }
-        onClick={handleCardClick}
+        onClick={() => {}}
       >
         <CardTitleRow>
           <InsetCardTitleRow>
             <LeftColumn>
-              <CardTitle>Jason Cornish</CardTitle>
+              <h1>Jason Cornish</h1>
             </LeftColumn>
             <RightColumn>
               <Chip>
@@ -79,20 +75,20 @@ const JasonCard = () => {
         </CardDescriptionSection>
         <BottomOverlay></BottomOverlay>
         <GlowingCardOutline />
-      </Card>
+      </CardContent>
 
       {/* <CardBackside
         isCardTapped={isCardTapped}
         selectedSideOfCard={selectedSideOfCard}
         clickHandler={handleCardClick}
       ></CardBackside> */}
-    </JasonCardWrapper>
+    </CardWrapper>
   );
 };
 
-export default JasonCard;
+export default Card;
 
-const JasonCardWrapper = styled.div`
+const CardWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
@@ -199,7 +195,7 @@ const JasonCardWrapper = styled.div`
   }
 `;
 
-const Card = styled.div`
+const CardContent = styled.div`
   display: flex;
   backface-visibility: hidden;
   flex-direction: column;
@@ -263,14 +259,11 @@ const InsetCardTitleRow = styled.div`
   box-sizing: border-box;
   padding: 7px;
   padding-left: 20px;
-`;
-
-const CardTitle = styled.h1`
-  font-family: Cardo;
-  font-size: 20px !important;
-  margin: 0px;
-  font-weight: 600;
-  color: ${(props) => props.theme.colors.white};
+  h1 {
+    font-size: 20px !important;
+    margin: 0px;
+    font-weight: 600;
+  }
 `;
 
 const LeftColumn = styled.div`
@@ -384,9 +377,6 @@ const CharacterDescriptionInset = styled(InsetCardTitleRow)`
   h1 {
     font-size: 16px !important;
     font-weight: bold;
-    color: ${(props) => props.theme.colors.white};
-    font-family: Cardo;
-    margin: 0px;
   }
 `;
 
