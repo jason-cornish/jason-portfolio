@@ -33,31 +33,36 @@ const Work = forwardRef((props, workRef: any) => {
   return (
     <WorkWrapper ref={workRef}>
       <ContentWrapper>
-        <WorkChips>
-          {workLinks.map((work, idx) => {
-            const selected = idx === selectedWork;
-            return (
-              <LinkButton
-                key={`chip-${idx}`}
-                content={work}
-                handleClick={() => setSelectedWork(idx)}
-                destination={work}
-                isSelected={selected}
-              />
-              // <Chip
-              //   key={`chip-${idx}`}
-              //   selected={selected}
-              //   content={work}
-              //   customClickEvent={() => setSelectedWork(idx)}
-              // />
-            );
-          })}
-        </WorkChips>
+        <OpaqueWrapper>
+          <WorkChips>
+            {workLinks.map((work, idx) => {
+              const selected = idx === selectedWork;
+              return (
+                <LinkButton
+                  key={`chip-${idx}`}
+                  content={work}
+                  handleClick={() => setSelectedWork(idx)}
+                  destination={work}
+                  isSelected={selected}
+                />
+                // <Chip
+                //   key={`chip-${idx}`}
+                //   selected={selected}
+                //   content={work}
+                //   customClickEvent={() => setSelectedWork(idx)}
+                // />
+              );
+            })}
+          </WorkChips>
+        </OpaqueWrapper>
         <Divider />
-        <SelectedWorkContent
+        <OpaqueWrapper>
+<SelectedWorkContent
           selectedWork={workLinks[selectedWork]}
           workLinks={workLinks}
         ></SelectedWorkContent>
+        </OpaqueWrapper>
+        
       </ContentWrapper>
       {/* <CurveContainer fill={"#e0e3e7"} inverted={true} aligned={"bottom"} /> */}
     </WorkWrapper>
@@ -105,13 +110,21 @@ const ContentWrapper = styled.div`
   flex-direction: row;
   box-sizing: border-box;
   justify-content: center;
-  column-gap: 25px;
+  /* column-gap: 15px; */
   @media screen and (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 `;
+
+const OpaqueWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  /* background-color: ${(props) => props.theme.colors.opaque1}; */
+  padding: 0 20px;
+  border-radius: 3px;
+`
 
 const WorkChips = styled(VerticalWrapper)`
   position: relative;
@@ -160,7 +173,7 @@ const WorkChips = styled(VerticalWrapper)`
 const Divider = styled.div`
   display: flex;
   width: 0px;
-  border: 1px solid rgba(207, 205, 224, 0.2);
+  border: 1px solid ${(props) => props.theme.colors.opaque2};
   border-radius: 3px;
   @media screen and (max-width: 1200px) {
     display: none;

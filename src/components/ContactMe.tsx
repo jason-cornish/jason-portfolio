@@ -94,7 +94,7 @@ const ContactMe = forwardRef((props, contactRef: any) => {
     <ContactMeWrapper ref={contactRef}>
       {/* <CurveContainer inverted={true} fill={"#1b1236"} aligned={"top"} /> */}
       <SectionTitle>Inquire</SectionTitle>
-      <SubHeader>Interested in working together? Shoot me a message.</SubHeader>
+      <SubHeader>Like what you see? Shoot me a message.</SubHeader>
       <ContactForm noValidate>
         <HorizontalWrapper className="horizontal-wrapper">
           <InputWrapper
@@ -162,7 +162,6 @@ const ContactMeWrapper = styled(VerticalWrapper)`
   background-color: ${(props) => props.theme.colors.opaque1};
   border-radius: 3px;
   padding: 30px;
-  margin-bottom: 150px;
   align-items: center;
 
   h1 {

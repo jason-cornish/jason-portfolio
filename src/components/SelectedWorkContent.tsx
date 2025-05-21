@@ -31,8 +31,8 @@ const SelectedWorkContent = (props: WorkProps) => {
         className={selectedWork === workLinks[0] ? "visible" : "hidden"}
       >
         <WorkWrapper>
-          <WorkTitle>Full-Stack Developer @ Apple</WorkTitle>
-          <WorkSubTitle>Jun 2022 - Present</WorkSubTitle>
+          <WorkTitle>Senior Front-End Engineer</WorkTitle>
+          <WorkSubTitle>June 2022 - Present at <span>&nbsp;Apple</span></WorkSubTitle>
           <ChipRow>
             <DeadChip content={"ReactJS"} />
             <DeadChip content={"Typescript"} />
@@ -68,11 +68,13 @@ const SelectedWorkContent = (props: WorkProps) => {
                 code.
               </WorkParagraph> */}
             </WorkParagraphWrapper>
+            <ImageWrapper>
             <AppleImage>
               <AppleMapsLogo className="logo" />
               <img src={AppleMapsBackground} alt="Apple Maps"></img>
               <ImagePlaceholder />
             </AppleImage>
+            </ImageWrapper>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -86,16 +88,16 @@ const SelectedWorkContent = (props: WorkProps) => {
       >
         <WorkWrapper>
           <WorkTitle>
-            Lead Engineer & Designer @{" "}
-            <a
+            Lead Engineer & Designer
+            
+          </WorkTitle>
+          <WorkSubTitle>November 2023 - April 2024 at&nbsp;<a
               href="https://myco-tex.web.app/landing"
               target="_blank"
               rel="noreferrer"
             >
               Myco-Tex
-            </a>
-          </WorkTitle>
-          <WorkSubTitle>Nov 2023 - Apr 2024</WorkSubTitle>
+            </a></WorkSubTitle>
           <ChipRow>
             <DeadChip content={"ReactJS"} />
             <DeadChip content={"Typescript"} />
@@ -124,6 +126,9 @@ const SelectedWorkContent = (props: WorkProps) => {
                 protected endpoints on a Node.js REST API.
               </WorkParagraph> */}
             </WorkParagraphWrapper>
+            <ImageWrapper>
+
+            
             <ZollegeImage>
               <img
                 src={MycoTex}
@@ -132,6 +137,7 @@ const SelectedWorkContent = (props: WorkProps) => {
               ></img>
               <ImagePlaceholder />
             </ZollegeImage>
+            </ImageWrapper>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -145,16 +151,16 @@ const SelectedWorkContent = (props: WorkProps) => {
       >
         <WorkWrapper>
           <WorkTitle>
-            Front-End Engineer @{" "}
-            <a
+            Front-End Engineer
+            
+          </WorkTitle>
+          <WorkSubTitle>January - June 2022 at&nbsp;<a
               href="https://htmlpreview.github.io/?https://github.com/theMVPshop/landingpage/blob/main/html/landing.html"
               target="_blank"
               rel="noreferrer"
             >
               Zollege
-            </a>
-          </WorkTitle>
-          <WorkSubTitle>Jan - Jun 2022</WorkSubTitle>
+            </a></WorkSubTitle>
           <ChipRow>
             <DeadChip content={"Javascript"} />
             <DeadChip content={"HTML5"} />
@@ -179,10 +185,12 @@ const SelectedWorkContent = (props: WorkProps) => {
                 collaboration with 5 other developers.
               </WorkParagraph> */}
             </WorkParagraphWrapper>
+            <ImageWrapper>
             <ZollegeImage>
               <img src={ZollegeBackground}></img>
               <ImagePlaceholder />
             </ZollegeImage>
+            </ImageWrapper>
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -196,15 +204,15 @@ const SelectedWorkContent = (props: WorkProps) => {
       >
         <WorkWrapper>
           <WorkTitle>
-            <a
+            Creator & Full-Stack Developer
+          </WorkTitle>
+          <WorkSubTitle>October - December 2021 at &nbsp; <a
               href="https://elliot-smith-player.web.app/"
               target="_blank"
               rel="noreferrer"
             >
               Elliot Smith Player
-            </a>
-          </WorkTitle>
-          <WorkSubTitle>Oct - Dec 2021</WorkSubTitle>
+            </a></WorkSubTitle>
           <ChipRow>
             <DeadChip content={"ReactJS"} />
             <DeadChip content={"Node.js"} />
@@ -222,9 +230,10 @@ const SelectedWorkContent = (props: WorkProps) => {
                 accounts, save custom playlists, and search for albums.
               </WorkParagraph>
             </WorkParagraphWrapper>
-            <ElliotImage>
+            <ImageWrapper><ElliotImage>
               <img src={ElliotSmithPlayerBackground}></img>
-            </ElliotImage>
+            </ElliotImage></ImageWrapper>
+            
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -238,16 +247,16 @@ const SelectedWorkContent = (props: WorkProps) => {
       >
         <WorkWrapper>
           <WorkTitle>
-            Lead Developer @{" "}
-            <a
+            Lead Developer
+            
+          </WorkTitle>
+          <WorkSubTitle>January - June 2022 at&nbsp;<a
               href="https://arboretumcreek.org"
               target="_blank"
               rel="noreferrer"
             >
-              Arboretum Creek
-            </a>
-          </WorkTitle>
-          <WorkSubTitle>Jan - Jun 2022</WorkSubTitle>
+              ArboretumCreek.org
+            </a></WorkSubTitle>
           <ChipRow>
             <DeadChip content={"Javascript"} />
             <DeadChip content={"HTML5"} />
@@ -256,6 +265,7 @@ const SelectedWorkContent = (props: WorkProps) => {
             <DeadChip content={"Web Design"} />
             <DeadChip content={"Hosted"} />
           </ChipRow>
+          
           <WorkContent>
             <WorkParagraphWrapper>
               <WorkParagraph>
@@ -265,9 +275,10 @@ const SelectedWorkContent = (props: WorkProps) => {
                 park to reduce flooding damage.
               </WorkParagraph>
             </WorkParagraphWrapper>
-            <ElliotImage>
+            <ImageWrapper><ElliotImage>
               <img src={ArboretumCreekBackground}></img>
-            </ElliotImage>
+            </ElliotImage></ImageWrapper>
+            
           </WorkContent>
         </WorkWrapper>
       </CSSTransition>
@@ -335,14 +346,7 @@ const WorkTitle = styled.h1`
     /* color: black; */
     color: #d0cae6;
   }
-  a {
-    color: ${(props) => props.theme.colors.purple};
-    /* color: #5d42ff; */
-    text-decoration: none;
-    :hover {
-      text-decoration: underline;
-    }
-  }
+  
   @media screen and (max-width: 1200px) {
     margin-top: 10px;
     padding: 0 10%;
@@ -361,6 +365,19 @@ const WorkSubTitle = styled.h2`
   font-weight: 400;
   margin: 0px;
   margin-bottom: 10px;
+  a {
+    color: ${(props) => props.theme.colors.highlight};
+    /* color: #5d42ff; */
+    text-decoration: none;
+    text-decoration: underline;
+    transition: color 300ms ease-in-out;
+    :hover {
+      color: #9ac608;
+    }
+  }
+  span {
+    color: ${(props) => props.theme.colors.highlight};
+  }
 
   @media screen and (max-width: 1200px) {
     padding-left: 10%;
@@ -441,6 +458,12 @@ const WorkParagraph = styled.p`
   margin-bottom: 5px;
   color: ${(props) => props.theme.colors.white} !important;
 `;
+
+const ImageWrapper = styled.div`
+  background-color: ${(props) => props.theme.colors.opaque2}  ;
+  padding: 15px;
+  border-radius: 3px;
+`
 
 const AppleImage = styled.div`
   position: relative;

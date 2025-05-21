@@ -10,12 +10,38 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ComponentsSection from "./components/ComponentsSections";
 import RingsOfLights from "./components/ring-of-lights/rings-of-lights";
 import NewLanding from "./components/new-landing";
+import Footer from "./components/Footer";
+
+// const theme = {
+//   colors: {
+//     grey: "#c2bcd7",
+//     white: "#d0cae6",
+//     purple: "#9f8ce1",
+//     purpleDark: "#6550b8",
+//     purpleDarker: "#51428e",
+//     opaque1: "rgba(208, 202, 230, 0.05)",
+//     opaque2: "rgba(208, 202, 230, 0.10)",
+//     opaque3: "rgba(208, 202, 230, 0.15)",
+//     opaque4: "rgba(208, 202, 230, 0.25)",
+//     opaque5: "rgba(208, 202, 230, 0.30)",
+//     opaque6: "rgba(208, 202, 230, 0.50)",
+//     opaque7: "rgba(208, 202, 230, 0.70)",
+//     darkOpaque1: "rgba(29, 26, 39, 0.1)",
+//     darkOpaque2: "rgba(29, 26, 39, 0.2)",
+//     darkOpaque3: "rgba(29, 26, 39, 0.4)",
+//     darkOpaque4: "rgba(29, 26, 39, 0.5)",
+//     darkOpaque5: "rgba(29, 26, 39, 0.75)",
+//   },
+// };
 
 const theme = {
   colors: {
     grey: "#c2bcd7",
     white: "#d0cae6",
-    purple: "#9f8ce1",
+    greenWhite : "#d0e6ca",
+    purple: "#C1F80A",
+    highlight: "#c1f80a",
+    darkerHighlight : "#acdd0a",
     purpleDark: "#6550b8",
     purpleDarker: "#51428e",
     opaque1: "rgba(208, 202, 230, 0.05)",
@@ -73,15 +99,18 @@ function App() {
 
         <BodyWrapper>
           <Header handleLinkClick={handleLinkClick} />
+          <RingsOfLights/>
           <Body>
+            {/* <SideBody>
+              <NewLanding />
+            </SideBody> */}
+          {/* <ScrollableBody> */}
             <NewLanding />
-            {/* <Landing ref={homeRef} handleLinkClick={handleLinkClick} /> */}
-            {/* <AboutMe ref={aboutRef} /> */}
-            {/* <Work  /> */}
+            <AboutMe ref={aboutRef} />
             <ComponentsSection ref={workRef} />
-            {/* <AboutMe ref={aboutRef} /> */}
             <ContactMe ref={contactRef} />
-            {/* <Footer /> */}
+            {/* <Footer/> */}
+          {/* </ScrollableBody> */}
           </Body>
         </BodyWrapper>
       </ThemeProvider>
@@ -206,11 +235,27 @@ const BodyWrapper = styled.div`
 `;
 
 const Body = styled.section`
-  width: 100%;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  row-gap: 400px;
+  position: relative;
+  padding-bottom: 400px;
 `;
+
+const SideBody = styled.div`
+  height: calc(100vh - 90px);
+  overflow: contain;
+  position: fixed;
+`
+
+const ScrollableBody = styled.div`
+display: flex;
+flex-direction: column;
+overflow-y: auto;
+padding-left: 390px;
+row-gap: 30px;
+`
 
 // const Footer = styled.footer`
 //   position: absolute;

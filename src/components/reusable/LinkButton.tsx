@@ -32,12 +32,14 @@ const LinkButtonWrapper = styled.button<{ isSelected: boolean }>`
     props.isSelected ? "2px solid #4831d4" : "2px solid #432d83"}; */
   background-color: ${(props) =>
     props.isSelected
-      ? props.theme.colors.purpleDark
+      ? props.theme.colors.opaque5
       : props.theme.colors.opaque1};
-  border: ${(props) =>
+  /* border: ${(props) =>
     props.isSelected
-      ? `2px solid ${props.theme.colors.purpleDark}`
-      : `2px solid transparent`};
+      ? `2px solid ${props.theme.colors.opaque5}`
+      : `2px solid  ${props.theme.colors.opaque1}`}; */
+      border: 0px solid transparent;
+  transition: background-color 300ms ease-in-out;
   /* background-color: transparent; */
   white-space: nowrap;
   p {
@@ -50,22 +52,26 @@ const LinkButtonWrapper = styled.button<{ isSelected: boolean }>`
     line-height: 40px;
     transition: color 300ms ease-in-out;
   }
-  &:before {
+  :hover {
+    background-color: ${(props) => props.theme.colors.opaque3};
+    cursor: pointer;
+  }
+  /* &:before {
     content: "";
     position: absolute;
     left: 0;
     top: 0;
-    background-color: ${(props) => props.theme.colors.purpleDark};
+    background-color: ${(props) => props.theme.colors.opaque5};
     width: ${(props) => (props.isSelected ? "100%" : "0px")};
     height: 100%;
     transition: all 0.3s;
-  }
+  } */
 
-  :hover {
+  /* :hover {
     &:before {
       width: 100%;
-    }
-    border: 2px solid ${(props) => props.theme.colors.opaque1};
-    cursor: pointer;
-  }
+    } */
+    /* border: 2px solid ${(props) => props.theme.colors.opaque1}; */
+    /* cursor: pointer;
+  } */
 `;

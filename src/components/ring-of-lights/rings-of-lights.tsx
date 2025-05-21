@@ -18,7 +18,7 @@ export default RingsOfLights;
 const RingsOfLightsWrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  opacity: 0.65;
+  opacity: 0.1;
   left: 0;
   top: 0;
   position: fixed;

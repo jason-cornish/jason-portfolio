@@ -25,7 +25,7 @@ const DeadChipWrapper = styled.div`
   white-space: nowrap;
   p {
     font-family: Cardo;
-    color: ${(props) => props.theme.colors.white} !important;
+    color: #c1f80a !important;
     font-size: 14px;
     margin: 0px !important;
   }

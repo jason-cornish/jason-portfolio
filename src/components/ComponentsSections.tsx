@@ -25,12 +25,13 @@ const ComponentsSection = forwardRef((props: any, workRef: any) => {
             minus!
           </p>
         </SectionDescription> */}
-        <SliderSwitch
-          optionLeft={"Component Gallery"}
-          optionRight={"Work Experience"}
-          selected={selectedWorkType}
-          handleSelect={handleWorkTypeSelection}
-        />
+          <SliderSwitch
+            optionLeft={"Component Gallery"}
+            optionRight={"Work Experience"}
+            selected={selectedWorkType}
+            handleSelect={handleWorkTypeSelection}
+          />
+        
       </SectionHeader>
       <HorizontalDivider />
       {/* {workTypeMapping[selectedWorkType].viewToRender} */}
@@ -101,6 +102,17 @@ const RightWrapper = styled.div`
   /* overflow: hidden; */
 `;
 
+const OpaqueWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) => props.theme.colors.opaque1};
+  padding: 15px;
+  border-radius: 3px;
+`
+
 const ComponentsWrapper = styled.div`
   padding: 30px;
   display: flex;
@@ -113,7 +125,6 @@ const ComponentsWrapper = styled.div`
 
   align-items: center;
   overflow: contain;
-  margin-bottom: 250px;
   @media screen and (max-width: 1200px) {
     .WorkSectionTitle {
       display: flex;

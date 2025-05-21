@@ -13,7 +13,7 @@ const Header = (props: any) => {
   return (
     <HeaderWrapper>
       <Title onClick={() => props.handleLinkClick("home")}>
-        <h1>JC</h1>
+        <h1>J<span>ason</span>C<span>ornish</span></h1>
       </Title>
       <HeaderOptions>
         <HamburgerWrapper>
@@ -51,6 +51,10 @@ const HeaderWrapper = styled.header`
     margin: 0px;
     color: ${(props) => props.theme.colors.white};
     font-family: Cardo;
+    span {
+      font-size: 18px;
+      ${(props) => props.theme.colors.grey};
+    }
     /* text-shadow: 3px 3px #6551db; */
     /* -webkit-text-stroke: 6px #432d83;
     paint-order: stroke fill; */

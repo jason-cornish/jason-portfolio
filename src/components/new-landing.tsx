@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import RingsOfLights from "./ring-of-lights/rings-of-lights";
 import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
 import { ReactComponent as LinksCircle } from "../svg/links.svg";
+import Icon from "@mui/material/Icon";
 
 const NewLanding = () => {
   return (
@@ -13,13 +17,28 @@ const NewLanding = () => {
           <h2>Front-End Engineer</h2>
           <SubText>
             <p>
-              I design and build elegant experiences for the web in React &
+              I design and engineer innovative web experiences in React &
               Typescript, with a soft spot for creative data visualization.
             </p>
           </SubText>
+          <Links>
+            <LinkWrapper>
+              <LinkedInIcon fontSize="large"/>
+            </LinkWrapper>
+            <LinkWrapper>
+              <GitHubIcon fontSize="large"/>
+            </LinkWrapper>
+            <LinkWrapper>
+              <EmailIcon fontSize="large"/>
+            </LinkWrapper>
+          </Links>
         </CenterWrapper>
+        {/* <Nav>
+          <NavItem><p>About</p></NavItem>
+          <NavItem><p>Work</p></NavItem>
+          <NavItem><p>Contact</p></NavItem>
+        </Nav> */}
       </BackgroundWrapper>
-      <RingsOfLights />
     </NewLandingWrapper>
   );
 };
@@ -28,8 +47,7 @@ export default NewLanding;
 
 const NewLandingWrapper = styled.div`
   width: 100%;
-  min-height: 550px;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   position: relative;
   box-sizing: border-box;
@@ -53,10 +71,9 @@ const BackgroundWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 85%;
-  padding: 30px;
   opacity: 1;
   z-index: 5;
+  row-gap: 30px;
 
   h1 {
     font-family: Cardo;
@@ -106,6 +123,31 @@ const CenterWrapper = styled.div`
   }
 `;
 
+const Links = styled.div`
+width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+`
+const LinkWrapper = styled.div`
+  border-radius: 3px;
+  background-color: ${(props)  => props.theme.colors.opaque3};
+  padding: 5px 10px;
+  transition: background-color 300ms ease-in-out;
+  cursor: pointer;
+  svg {
+    transition: color 300ms ease-in-out;
+    color: ${(props)  => props.theme.colors.grey};
+    margin-top: 3px;
+  }
+  :hover {
+    background-color: ${(props)  => props.theme.colors.opaque4};
+    svg {
+      color: ${(props)  => props.theme.colors.white};
+    }
+  }
+`
+
 const SubText = styled.div`
   display: flex;
   flex-direction: row;
@@ -124,3 +166,21 @@ const SVGWrapper = styled.div`
   z-index: 5;
   width: 1200px;
 `;
+
+const Nav = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+`
+
+const NavItem = styled.div`
+  padding: 15px 25px;
+  background-color: ${(props)  => props.theme.colors.opaque3};
+  border-radius: 3px;
+  p {
+    margin: 0px;
+    color: ${(props)  => props.theme.colors.grey};
+    font-family: Cardo;
+    font-size: 18px;
+  }
+`
