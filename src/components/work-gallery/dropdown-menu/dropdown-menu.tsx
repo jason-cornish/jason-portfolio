@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+interface HasErrorType {
+    hasError : boolean;
+    errorMessage : string;
+};
+
 const DropdownMenu = () => {
-  return <DropdownMenuWrapper></DropdownMenuWrapper>;
+    const [isOpen, setIsOpen] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
+    const [hasError, setHasError] = useState<HasErrorType>({hasError : false, errorMessage : ""})
+
+  return <DropdownMenuWrapper>
+    
+  </DropdownMenuWrapper>;
 };
 
 export default DropdownMenu;
