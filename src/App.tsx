@@ -38,10 +38,10 @@ const theme = {
   colors: {
     grey: "#c2bcd7",
     white: "#d0cae6",
-    greenWhite : "#d0e6ca",
+    greenWhite: "#d0e6ca",
     purple: "#C1F80A",
     highlight: "#c1f80a",
-    darkerHighlight : "#acdd0a",
+    darkerHighlight: "#acdd0a",
     purpleDark: "#6550b8",
     purpleDarker: "#51428e",
     opaque1: "rgba(208, 202, 230, 0.05)",
@@ -99,18 +99,18 @@ function App() {
 
         <BodyWrapper>
           <Header handleLinkClick={handleLinkClick} />
-          <RingsOfLights/>
+          <RingsOfLights />
           <Body>
             {/* <SideBody>
               <NewLanding />
             </SideBody> */}
-          {/* <ScrollableBody> */}
+            {/* <ScrollableBody> */}
             <NewLanding />
             <AboutMe ref={aboutRef} />
             <ComponentsSection ref={workRef} />
             <ContactMe ref={contactRef} />
-            {/* <Footer/> */}
-          {/* </ScrollableBody> */}
+
+            {/* </ScrollableBody> */}
           </Body>
         </BodyWrapper>
       </ThemeProvider>
@@ -238,24 +238,24 @@ const Body = styled.section`
   max-height: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 400px;
+  row-gap: 250px;
+  padding-bottom: 250px;
   position: relative;
-  padding-bottom: 400px;
 `;
 
 const SideBody = styled.div`
   height: calc(100vh - 90px);
   overflow: contain;
   position: fixed;
-`
+`;
 
 const ScrollableBody = styled.div`
-display: flex;
-flex-direction: column;
-overflow-y: auto;
-padding-left: 390px;
-row-gap: 30px;
-`
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-left: 390px;
+  row-gap: 30px;
+`;
 
 // const Footer = styled.footer`
 //   position: absolute;

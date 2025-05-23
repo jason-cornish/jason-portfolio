@@ -14,12 +14,21 @@ const AboutMe = forwardRef((props, aboutRef: any) => {
         </ImageSection>
         <TextSection>
           <Heading>Over the years,</Heading>
-          <p>I've designed and engineered web applications for a diverse smattering of use cases and projects including an online jukebox, web-based Gantt chart, workforce management dashboard, and more.</p>
-          <br/>
           <p>
-            Having powered dozens of applications with <span>React</span> & <span>Typescript</span>, I can admit to being a bit <span>React</span> obsessed. While I'm most excited about these Front-End technologies,  I also have experience working with <span>NodeJS</span>, <span>Express.JS</span>, and <span>PostgreSQL</span>.
+            I've designed and engineered web applications for a diverse array of
+            use cases and projects including an online jukebox, web-based Gantt
+            chart, workforce management dashboard, and more.
           </p>
-          
+          <br />
+          <p>
+            Having powered dozens of applications with <span>React</span> &{" "}
+            <span>Typescript</span>, I can admit to being a bit{" "}
+            <span>React</span> obsessed. While I'm most excited about these
+            Front-End technologies, I also have experience working with{" "}
+            <span>NodeJS</span>, <span>Express.JS</span>, and{" "}
+            <span>PostgreSQL</span>.
+          </p>
+
           {/* <p>
             I've come to love the intersection of creativity and engineering offered
             by the front-end. By embarking on 
@@ -32,12 +41,17 @@ const AboutMe = forwardRef((props, aboutRef: any) => {
             projects, and am adept at communicating and collaborating with both
             audiences.
           </p> */}
-          <br/>
+          <br />
           <p>
-            I'm currently leading the UI design and front-end development of a Learning & Development dashboard at <span>Apple Maps</span>, but my ears are always open to exciting opportunities. 
+            I'm currently leading the UI design and front-end development of a
+            Learning & Development dashboard at <span>Apple Maps</span>, but my
+            ears are always open to exciting opportunities.
           </p>
-          <br/>
-          <p>In my free time you can find me rock climbing, painting a still life in oil, sewing, or performing Townes Van Zandt covers on my guitar.</p>
+          <br />
+          <p>
+            In my free time you can find me rock climbing, painting still lifes,
+            or performing Townes Van Zandt covers.
+          </p>
           {/* <p>
             I've sharpened my skills in front-end development and UI/UX design
             across projects of diverse use-cases and client needs. I've
@@ -85,7 +99,7 @@ const AboutMeWrapper = styled(HorizontalWrapper)`
 const ContentWrapper = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.colors.opaque1};
-  
+
   border-radius: 3px;
 `;
 
@@ -94,22 +108,21 @@ const TextSection = styled.div`
   font-family: Cardo;
   max-width: 500px;
   p {
-  margin: 0px;
-  color: ${(props) => props.theme.colors.grey} !important;
-  span {
-    color: ${(props) => props.theme.colors.darkerHighlight};
-    font-weight: 600;
+    margin: 0px;
+    color: ${(props) => props.theme.colors.grey} !important;
+    span {
+      color: ${(props) => props.theme.colors.darkerHighlight};
+      font-weight: 600;
+    }
   }
-  }
-
 `;
 
 const Heading = styled.h1`
- margin: 0px;
- font-size: 28px;
+  margin: 0px;
+  font-size: 28px;
   color: ${(props) => props.theme.colors.white} !important;
   margin-bottom: 10px;
-`
+`;
 
 const ImageSection = styled.div`
   display: flex;
@@ -118,16 +131,18 @@ const ImageSection = styled.div`
   height: 100%;
   padding-left: 50px;
   padding-top: 20px;
+  width: 500px;
   overflow: hidden;
   max-width: 400px;
-  max-height: 400px;
+  max-height: 405px;
   border-radius: 3px;
   padding: 15px;
   img {
+    padding: 15px;
     width: 500px;
-    zoom: 115%;
+    zoom: 125%;
     opacity: 80%;
-    
+
     margin-right: 00px;
   }
   @media screen and (max-width: 1100px) {

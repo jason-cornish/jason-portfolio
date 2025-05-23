@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import RingsOfLights from "./ring-of-lights/rings-of-lights";
 import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 import { ReactComponent as LinksCircle } from "../svg/links.svg";
 import Icon from "@mui/material/Icon";
 
@@ -23,13 +23,13 @@ const NewLanding = () => {
           </SubText>
           <Links>
             <LinkWrapper>
-              <LinkedInIcon fontSize="large"/>
+              <LinkedInIcon fontSize="large" />
             </LinkWrapper>
             <LinkWrapper>
-              <GitHubIcon fontSize="large"/>
+              <GitHubIcon fontSize="large" />
             </LinkWrapper>
             <LinkWrapper>
-              <EmailIcon fontSize="large"/>
+              <EmailIcon fontSize="large" />
             </LinkWrapper>
           </Links>
         </CenterWrapper>
@@ -55,6 +55,7 @@ const NewLandingWrapper = styled.div`
   overflow: hidden;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 150px;
   @media screen and (max-width: 800px) {
     .lights-background {
       display: none;
@@ -113,7 +114,7 @@ const CenterWrapper = styled.div`
   border-radius: 3px;
   padding: 30px;
   transition: background-color, height 700ms ease-in-out;
-  cursor: pointer;
+
   /* :hover {
     background-color: rgba(208, 202, 230, 0.1);
     height: 500px;
@@ -124,29 +125,29 @@ const CenterWrapper = styled.div`
 `;
 
 const Links = styled.div`
-width: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
-`
+`;
 const LinkWrapper = styled.div`
   border-radius: 3px;
-  background-color: ${(props)  => props.theme.colors.opaque3};
+  background-color: ${(props) => props.theme.colors.opaque3};
   padding: 5px 10px;
   transition: background-color 300ms ease-in-out;
   cursor: pointer;
   svg {
     transition: color 300ms ease-in-out;
-    color: ${(props)  => props.theme.colors.grey};
+    color: ${(props) => props.theme.colors.grey};
     margin-top: 3px;
   }
   :hover {
-    background-color: ${(props)  => props.theme.colors.opaque4};
+    background-color: ${(props) => props.theme.colors.opaque5};
     svg {
-      color: ${(props)  => props.theme.colors.white};
+      color: ${(props) => props.theme.colors.white};
     }
   }
-`
+`;
 
 const SubText = styled.div`
   display: flex;
@@ -171,16 +172,16 @@ const Nav = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-`
+`;
 
 const NavItem = styled.div`
   padding: 15px 25px;
-  background-color: ${(props)  => props.theme.colors.opaque3};
+  background-color: ${(props) => props.theme.colors.opaque3};
   border-radius: 3px;
   p {
     margin: 0px;
-    color: ${(props)  => props.theme.colors.grey};
+    color: ${(props) => props.theme.colors.grey};
     font-family: Cardo;
     font-size: 18px;
   }
-`
+`;

@@ -17,34 +17,34 @@ interface ComponentInterface {
 }
 
 const WorkGallery = () => {
-  const [selected, setSelected] = useState("smart-calendar");
+  const [selected, setSelected] = useState("accordion-menu");
 
   const componentsList: ComponentInterface = {
-    "smart-calendar": {
-      title: "Smart Calendar",
-      subText:
-        "I built this smart-calendar UI component to allow users to filter data within a time range while visualizing the results. A possible use case could be visualizing # of incidents per day, for example.",
-      stateString: "smart-calendar",
-      component: (
-        <LinkButton
-          handleClick={() => {}}
-          destination={"click me"}
-          isSelected={false}
-          content={"Click Me"}
-        />
-      ),
-      chips: ["ReactJS", "Typescript", "Styled-Components", "BlueprintJS"],
-      propsToggles: <TogglesWrapper>{/* <SliderToggle /> */}</TogglesWrapper>,
-    },
-    "smart-filters": {
-      title: "Smart Filters",
-      subText:
-        "I built this smart-calendar UI component to allow users to filter data within a time range while visualizing the results. A possible use case could be visualizing # of incidents per day, for example.",
-      stateString: "smart-filters",
-      component: <div />,
-      chips: ["ReactJS", "Typescript", "Styled-Components", "BlueprintJS"],
-      propsToggles: <TogglesWrapper></TogglesWrapper>,
-    },
+    // "smart-calendar": {
+    //   title: "Smart Calendar",
+    //   subText:
+    //     "I built this smart-calendar UI component to allow users to filter data within a time range while visualizing the results. A possible use case could be visualizing # of incidents per day, for example.",
+    //   stateString: "smart-calendar",
+    //   component: (
+    //     <LinkButton
+    //       handleClick={() => {}}
+    //       destination={"click me"}
+    //       isSelected={false}
+    //       content={"Click Me"}
+    //     />
+    //   ),
+    //   chips: ["ReactJS", "Typescript", "Styled-Components", "BlueprintJS"],
+    //   propsToggles: <TogglesWrapper>{/* <SliderToggle /> */}</TogglesWrapper>,
+    // },
+    // "smart-filters": {
+    //   title: "Smart Filters",
+    //   subText:
+    //     "I built this smart-calendar UI component to allow users to filter data within a time range while visualizing the results. A possible use case could be visualizing # of incidents per day, for example.",
+    //   stateString: "smart-filters",
+    //   component: <div />,
+    //   chips: ["ReactJS", "Typescript", "Styled-Components", "BlueprintJS"],
+    //   propsToggles: <TogglesWrapper></TogglesWrapper>,
+    // },
     "accordion-menu": {
       title: "Accordion Menu",
       subText:

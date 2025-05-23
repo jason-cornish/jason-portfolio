@@ -31,13 +31,12 @@ export default Footer;
 const FooterWrapper = styled(VerticalWrapper)`
   width: 100%;
   align-items: center;
-
-  background-color: #4831d4;
-  padding: 50px 0 50px 0;
+  font-family: Cardo;
+  background-color: ${(props) => props.theme.colors.opaque1};
 `;
 
 const ContentWrapper = styled(HorizontalWrapper)`
-  width: 80%;
+  max-width: 986px;
   position: relative;
   column-gap: 60px;
   margin-bottom: 15px;
@@ -50,19 +49,19 @@ const Column = styled.div`
 const HeaderRow = styled.div`
   font-size: 22px;
   font-weight: 600;
-  color: #e0e3e7;
+  color: ${(props) => props.theme.colors.white};
   margin-bottom: 15px;
 `;
 
 const ContentRow = styled.div`
   font-size: 18px;
-  color: #e0e3e7;
+  color: ${(props) => props.theme.colors.white};
   margin-bottom: 10px;
 `;
 
 const Divider = styled.div`
   height: 1px;
   width: 80%;
-  background-color: white;
+  background-color: ${(props) => props.theme.colors.opaque3};
   border-radius: 3px;
 `;
