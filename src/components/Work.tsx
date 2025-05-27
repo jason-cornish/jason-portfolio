@@ -57,12 +57,11 @@ const Work = forwardRef((props, workRef: any) => {
         </OpaqueWrapper>
         <Divider />
         <OpaqueWrapper>
-<SelectedWorkContent
-          selectedWork={workLinks[selectedWork]}
-          workLinks={workLinks}
-        ></SelectedWorkContent>
+          <SelectedWorkContent
+            selectedWork={workLinks[selectedWork]}
+            workLinks={workLinks}
+          ></SelectedWorkContent>
         </OpaqueWrapper>
-        
       </ContentWrapper>
       {/* <CurveContainer fill={"#e0e3e7"} inverted={true} aligned={"bottom"} /> */}
     </WorkWrapper>
@@ -95,12 +94,9 @@ const WorkWrapper = styled.div`
     padding-bottom: 100px;
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 800px) {
     align-items: center;
-    .WorkSectionTitle {
-      display: flex;
-      padding-left: 0;
-    }
+    padding: 0px;
   }
 `;
 
@@ -124,7 +120,7 @@ const OpaqueWrapper = styled.div`
   /* background-color: ${(props) => props.theme.colors.opaque1}; */
   padding: 0 20px;
   border-radius: 3px;
-`
+`;
 
 const WorkChips = styled(VerticalWrapper)`
   position: relative;

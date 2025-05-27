@@ -10,6 +10,8 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ComponentsSection from "./components/ComponentsSections";
 import RingsOfLights from "./components/ring-of-lights/rings-of-lights";
 import NewLanding from "./components/new-landing";
+import PlumbingIcon from "@mui/icons-material/Plumbing";
+import CarpenterIcon from "@mui/icons-material/Carpenter";
 import Footer from "./components/Footer";
 
 // const theme = {
@@ -37,11 +39,14 @@ import Footer from "./components/Footer";
 const theme = {
   colors: {
     grey: "#c2bcd7",
+    greyer: "#a7a1be",
     white: "#d0cae6",
+    brightWhite: "#e4dff3",
     greenWhite: "#d0e6ca",
     purple: "#C1F80A",
     highlight: "#c1f80a",
     darkerHighlight: "#acdd0a",
+    purpleBright: "#6f53e0",
     purpleDark: "#6550b8",
     purpleDarker: "#51428e",
     opaque1: "rgba(208, 202, 230, 0.05)",
@@ -81,7 +86,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoadingState(false);
-    }, 3000);
+    }, 1500);
   }, []);
 
   return (
@@ -90,12 +95,32 @@ function App() {
         <TransitionGroup component={TransitionWrapper}>
           <CSSTransition timeout={400} classNames="transition">
             <PreLoader className={loadingState ? "visible" : "hidden"}>
+              <LoadingWrapper>
+                <TextWrapper>
+                  <h1>
+                    J<span>ason</span> C<span>ornish</span>
+                  </h1>
+                  <p>
+                    P<span>ortfolio</span> L<span>oading</span>...
+                  </p>
+                </TextWrapper>
+
+                <div className="loader"></div>
+                <div className="loader-2" />
+                {/* <p>Portfolio Loading...</p> */}
+              </LoadingWrapper>
               {/* <RingsOfLights /> */}
-              <h1>JASON CORNISH</h1>
-              <p>PORTFOLIO LOADING...</p>
             </PreLoader>
           </CSSTransition>
         </TransitionGroup>
+        <MobileWarningWrapper>
+          <MobileWarning>
+            <h2>Mobile Site Under Construction</h2>
+            <h3>Please visit on a different device for now</h3>
+            <CarpenterIcon className="carpenting-icon" />
+            <PlumbingIcon className="plumbing-icon" />
+          </MobileWarning>
+        </MobileWarningWrapper>
 
         <BodyWrapper>
           <Header handleLinkClick={handleLinkClick} />
@@ -168,60 +193,175 @@ const TransitionWrapper = styled.div`
 `;
 
 const PreLoader = styled.div`
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   align-items: center;
   justify-content: center;
   z-index: 10;
+  row-gap: 0px;
   background-color: #150e2b;
-  h1 {
-    text-align: center;
-    font-family: Archivo;
-    font-size: 60px;
-    margin: 0px;
-    color: #e0e3e7;
-    cursor: pointer;
-    :hover {
-      color: #f6f7f8;
-    }
-    margin: 0;
-  }
-  p {
-    font-family: Roboto;
-    display: inline-block;
-    background: linear-gradient(
-      -45deg,
-      #ee7752,
-      #e73c7e,
-      #23a6d5,
-      #23d5ab,
-      #4831d4
-    );
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-    font-weight: 600;
-    position: relative;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 30px;
-    margin-top: 10px;
+`;
 
-    @keyframes gradient {
+const MobileWarningWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  row-gap: 0px;
+  background-color: #150e2b;
+  display: none;
+  @media screen and (max-width: 1000px) {
+    display: flex;
+  }
+`;
+
+const MobileWarning = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: ${(props) => props.theme.colors.opaque1};
+  border-radius: 3px;
+  row-gap: 5px;
+  .plumbing-icon {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+  }
+  .carpenting-icon {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+  }
+  svg {
+    color: #c2bcd7;
+    width: 80px;
+    height: 80px;
+  }
+  h2 {
+    max-width: 350px;
+    text-align: center;
+    font-family: Cardo;
+    font-size: 30px;
+    margin: 0px;
+    color: ${(props) => props.theme.colors.white};
+    cursor: pointer;
+  }
+  h3 {
+    max-width: 250px;
+    text-align: center;
+    font-family: Cardo;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+    color: ${(props) => props.theme.colors.grey};
+  }
+`;
+
+const LoadingWrapper = styled.div`
+  position: relative;
+  flex-direction: column;
+  :before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    border-radius: 3px;
+    background-color: ${(props) => props.theme.colors.opaque3};
+    animation: 1500ms linear 0ms widen infinite;
+    @keyframes widen {
       0% {
-        background-position: 0% 50%;
+        width: 0%;
+      }
+      /* 30% {
+        width: 30%;
       }
       50% {
-        background-position: 100% 50%;
+        width: 40%;
       }
+      70% {
+        width: 60%;
+      } */
       100% {
-        background-position: 0% 50%;
+        width: 100%;
       }
     }
   }
 `;
+
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: ${(props) => props.theme.colors.opaque1};
+  border-radius: 3px;
+  h1 {
+    text-align: center;
+    font-family: Cardo;
+    font-size: 70px;
+    margin: 0px;
+    color: ${(props) => props.theme.colors.white};
+    cursor: pointer;
+    margin-bottom: -15px;
+    z-index: 10;
+    span {
+      font-size: 60px;
+      ${(props) => props.theme.colors.grey};
+    }
+    margin-top: 10px;
+
+    @keyframes gradient {
+      0% {
+        background-position: 100% 0%;
+      }
+      100% {
+        background-position: 0% -100%;
+      }
+    }
+  }
+  p {
+    margin-top: -100px;
+    text-align: center;
+    font-family: Cardo;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0px;
+    color: ${(props) => props.theme.colors.highlight};
+    cursor: pointer;
+    margin: 0;
+    z-index: 10;
+    span {
+      font-size: 23px;
+    }
+  }
+`;
+
+/* HTML: <div class="loader"></div> */
+// .loader {
+//   width: fit-content;
+//   font-weight: bold;
+//   font-family: monospace;
+//   font-size: 30px;
+//   background:linear-gradient(90deg,#000 50%,#0000 0) right/200% 100%;
+//   animation: l21 2s infinite linear;
+// }
+// .loader::before {
+//   content :"Loading...";
+//   color: #0000;
+//   padding: 0 5px;
+//   background: inherit;
+//   background-image: linear-gradient(90deg,#fff 50%,#000 0);
+//   -webkit-background-clip:text;
+//           background-clip:text;
+// }
+
+// @keyframes l21{
+//   100%{background-position: left}
+// }
 
 const BodyWrapper = styled.div`
   width: 100%;
@@ -241,6 +381,9 @@ const Body = styled.section`
   row-gap: 250px;
   padding-bottom: 250px;
   position: relative;
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 const SideBody = styled.div`

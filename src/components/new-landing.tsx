@@ -158,6 +158,7 @@ const SubText = styled.div`
   color: ${(props) => props.theme.colors.grey};
   margin-top: 10px;
   p {
+    font-size: 16px;
     margin: 0;
   }
 `;

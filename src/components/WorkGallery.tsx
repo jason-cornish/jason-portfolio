@@ -4,6 +4,8 @@ import LinkButton from "./reusable/LinkButton";
 import { VerticalWrapper } from "./reusable/styled-components";
 import CodeIcon from "@mui/icons-material/Code";
 import DeadChip from "./reusable/DeadChip";
+import MultiSelectMenu from "./work-gallery/dropdown-menu/multi-select-menu";
+import Toggle from "./work-gallery/dropdown-menu/toggle";
 
 interface ComponentInterface {
   [key: string]: {
@@ -17,7 +19,7 @@ interface ComponentInterface {
 }
 
 const WorkGallery = () => {
-  const [selected, setSelected] = useState("accordion-menu");
+  const [selected, setSelected] = useState("multi-select-menu");
 
   const componentsList: ComponentInterface = {
     // "smart-calendar": {
@@ -45,24 +47,44 @@ const WorkGallery = () => {
     //   chips: ["ReactJS", "Typescript", "Styled-Components", "BlueprintJS"],
     //   propsToggles: <TogglesWrapper></TogglesWrapper>,
     // },
-    "accordion-menu": {
-      title: "Accordion Menu",
+    "multi-select-menu": {
+      title: "Multi-Select Menu",
       subText:
-        "I built this smart-calendar UI component to allow users to filter data within a time range while visualizing the results. A possible use case could be visualizing # of incidents per day, for example.",
-      stateString: "accordion-menu",
-      component: <div />,
-      chips: ["ReactJS", "Typescript", "Styled-Components", "BlueprintJS"],
+        "I designed and built this multi-select dropdown menu to support advanced data filtering with a modern and responsive UX. The dropdown menu itself is actually just a compact component rendered within a flexible and reusable popover component.",
+      stateString: "multi-select-menu",
+      component: <MultiSelectMenu />,
+      chips: [
+        "ReactJS",
+        "Typescript",
+        "Styled-Components",
+        "Reusable Components",
+      ],
       propsToggles: <TogglesWrapper></TogglesWrapper>,
     },
-    "dropdown-menu": {
-      title: "Dropdown Menu",
+    toggle: {
+      title: "Toggle Switch",
       subText:
-        "I built this smart-calendar UI component to allow users to filter data within a time range while visualizing the results. A possible use case could be visualizing # of incidents per day, for example.",
-      stateString: "dropdown-menu",
-      component: <div />,
-      chips: ["ReactJS", "Typescript", "Styled-Components", "BlueprintJS"],
+        "A tried and true staple of UI that serves one simple purpose extremely well: clearly communicate with the user while providing a tactile experience. Built to be reusable.",
+      stateString: "toggle",
+      component: <Toggle />,
+      chips: [
+        "ReactJS",
+        "Typescript",
+        "Styled-Components",
+        "Reusable Components",
+      ],
+
       propsToggles: <TogglesWrapper></TogglesWrapper>,
     },
+    // "accordion-menu": {
+    //   title: "Accordion Menu",
+    //   subText:
+    //     "I built this smart-calendar UI component to allow users to filter data within a time range while visualizing the results. A possible use case could be visualizing # of incidents per day, for example.",
+    //   stateString: "accordion-menu",
+    //   component: <div />,
+    //   chips: ["ReactJS", "Typescript", "Styled-Components", "BlueprintJS"],
+    //   propsToggles: <TogglesWrapper></TogglesWrapper>,
+    // },
   };
 
   // const componentTitleToReactNodeMapping =
@@ -86,6 +108,9 @@ const WorkGallery = () => {
             />
           );
         })}
+        <DeadLink>
+          <p>More Coming Soon!</p>
+        </DeadLink>
       </WorkChips>
       <Divider />
       <SelectedComponentWrapper>
@@ -158,7 +183,7 @@ const SelectedComponentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  overflow: contain;
+  overflow: visible;
   row-gap: 10px;
   max-width: 600px;
   font-family: Cardo;
@@ -194,6 +219,21 @@ const Chips = styled.div`
   display: flex;
   column-gap: 10px;
   flex-wrap: nowrap;
+`;
+
+const DeadLink = styled.div`
+  display: flex;
+  justify-content: center;
+  p {
+    font-family: Cardo !important;
+    font-size: 18px;
+    font-weight: 400;
+    color: ${(props) => props.theme.colors.grey};
+    cursor: disabled;
+    font-weight: bold;
+    margin: 0px;
+    margin-top: 5px;
+  }
 `;
 
 const ViewSourceCodeButton = styled.div`
@@ -245,7 +285,7 @@ const ViewSourceCodeButton = styled.div`
 // `;
 
 const ComponentViewFinder = styled.div`
-  background-color: ${(props) => props.theme.colors.darkOpaque5};
+  background-color: #1f1a2e;
   width: 100%;
   border-radius: 3px;
   height: 290px;
