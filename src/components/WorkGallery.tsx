@@ -14,6 +14,7 @@ interface ComponentInterface {
     subText: string;
     component: ReactNode;
     chips: Array<string>;
+    link: string;
     propsToggles: ReactNode;
   };
 }
@@ -53,6 +54,7 @@ const WorkGallery = () => {
         "I designed and built this multi-select dropdown menu to support advanced data filtering with a modern and responsive UX. The dropdown menu itself is actually just a compact component rendered within a flexible and reusable popover component.",
       stateString: "multi-select-menu",
       component: <MultiSelectMenu />,
+      link: "https://github.com/jason-cornish/jason-portfolio/blob/elegant/src/components/work-gallery/dropdown-menu/multi-select-menu.tsx",
       chips: [
         "ReactJS",
         "Typescript",
@@ -67,6 +69,7 @@ const WorkGallery = () => {
         "A tried and true staple of UI that serves one simple purpose extremely well: clearly communicate with the user while providing a tactile experience. Built to be reusable.",
       stateString: "toggle",
       component: <Toggle />,
+      link: "https://github.com/jason-cornish/jason-portfolio/blob/elegant/src/components/work-gallery/dropdown-menu/toggle.tsx",
       chips: [
         "ReactJS",
         "Typescript",
@@ -156,7 +159,13 @@ const WorkGallery = () => {
         </ViewFinderWrapper>
         <ViewSourceCodeButton>
           <CodeIcon color="inherit" />
-          <a href="https://www.google.com">View Source Code</a>
+          <a
+            href={componentsList[selected].link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View Source Code
+          </a>
         </ViewSourceCodeButton>
       </SelectedComponentWrapper>
     </WorkGalleryWrapper>

@@ -22,13 +22,25 @@ const NewLanding = () => {
             </p>
           </SubText>
           <Links>
-            <LinkWrapper>
+            <LinkWrapper
+              href="https://www.linkedin.com/in/jason-cornish5/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <LinkedInIcon fontSize="large" />
             </LinkWrapper>
-            <LinkWrapper>
+            <LinkWrapper
+              href="https://github.com/jason-cornish"
+              target="_blank"
+              rel="noreferrer"
+            >
               <GitHubIcon fontSize="large" />
             </LinkWrapper>
-            <LinkWrapper>
+            <LinkWrapper
+              href="mailto: jasoncornish14@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <EmailIcon fontSize="large" />
             </LinkWrapper>
           </Links>
@@ -130,7 +142,7 @@ const Links = styled.div`
   justify-content: space-evenly;
   margin-top: 20px;
 `;
-const LinkWrapper = styled.div`
+const LinkWrapper = styled.a`
   border-radius: 3px;
   background-color: ${(props) => props.theme.colors.opaque3};
   padding: 5px 10px;
