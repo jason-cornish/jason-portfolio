@@ -327,10 +327,10 @@ const SubmitButton = styled.button`
   position: relative;
   padding: 5px 50px;
   border-radius: 3px;
-  background-color: ${(props) => props.theme.colors.opaque3} !important;
-  border: 2px solid ${(props) => props.theme.colors.opaque3} !important;
-  background-color: transparent;
-
+  border: 0px;
+  background-color: ${(props) => props.theme.colors.opaque3};
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
   p {
     position: relative;
     z-index: 2;
@@ -341,23 +341,8 @@ const SubmitButton = styled.button`
     color: ${(props) => props.theme.colors.white} !important;
     line-height: 40px;
   }
-  &:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: ${(props) => props.theme.colors.opaque4};
-    width: 0px;
-    height: 100%;
-    transition: all 0.3s;
-  }
 
   :hover {
-    &:before {
-      width: 100%;
-    }
-    border: 2px solid #4831d4;
-    color: #e0e3e7 !important;
-    cursor: pointer;
+    background-color: ${(props) => props.theme.colors.purpleDark};
   }
 `;

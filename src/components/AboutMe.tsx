@@ -24,7 +24,7 @@ const AboutMe = forwardRef((props, aboutRef: any) => {
             Having powered dozens of applications with <span>React</span> &{" "}
             <span>Typescript</span>, I can admit to being a bit{" "}
             <span>React</span> obsessed. While I'm most excited about these
-            Front-End technologies, I also have experience working with{" "}
+            front-end technologies, I also have experience working with{" "}
             <span>NodeJS</span>, <span>Express.JS</span>, and{" "}
             <span>PostgreSQL</span>.
           </p>
