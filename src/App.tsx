@@ -13,6 +13,7 @@ import NewLanding from "./components/new-landing";
 import PlumbingIcon from "@mui/icons-material/Plumbing";
 import CarpenterIcon from "@mui/icons-material/Carpenter";
 import Footer from "./components/Footer";
+import MobileWorkSection from "./components/mobile-components-section";
 
 // const theme = {
 //   colors: {
@@ -70,6 +71,17 @@ function App() {
   const workRef = useRef<any>(null);
   const contactRef = useRef<any>(null);
 
+  const [screenWidth, setScreenWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const [loadingState, setLoadingState] = useState<boolean>(true);
 
   const handleLinkClick = (refType: string) => {
@@ -109,18 +121,18 @@ function App() {
                 <div className="loader-2" />
                 {/* <p>Portfolio Loading...</p> */}
               </LoadingWrapper>
-              {/* <RingsOfLights /> */}
+              <RingsOfLights />
             </PreLoader>
           </CSSTransition>
         </TransitionGroup>
-        <MobileWarningWrapper>
+        {/* <MobileWarningWrapper>
           <MobileWarning>
             <h2>Mobile Site Under Construction</h2>
             <h3>Please visit on a different device for now</h3>
             <CarpenterIcon className="carpenting-icon" />
             <PlumbingIcon className="plumbing-icon" />
           </MobileWarning>
-        </MobileWarningWrapper>
+        </MobileWarningWrapper> */}
 
         <BodyWrapper>
           <Header handleLinkClick={handleLinkClick} />
@@ -132,7 +144,12 @@ function App() {
             {/* <ScrollableBody> */}
             <NewLanding />
             <AboutMe ref={aboutRef} />
-            <ComponentsSection ref={workRef} />
+            {screenWidth && screenWidth > 1100 ? (
+              <ComponentsSection ref={workRef} />
+            ) : (
+              <MobileWorkSection />
+            )}
+
             <ContactMe ref={contactRef} />
 
             {/* </ScrollableBody> */}
@@ -365,6 +382,7 @@ const TextWrapper = styled.div`
 
 const BodyWrapper = styled.div`
   width: 100%;
+  position: relative;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -372,6 +390,10 @@ const BodyWrapper = styled.div`
   justify-content: space-between;
   font-family: Roboto;
   background-color: #150e2b;
+  overflow-x: hidden;
+  @media screen and (max-width: 1100px) {
+    align-items: normal;
+  }
 `;
 
 const Body = styled.section`
@@ -381,8 +403,9 @@ const Body = styled.section`
   row-gap: 250px;
   padding-bottom: 250px;
   position: relative;
-  @media screen and (max-width: 1000px) {
-    display: none;
+  @media screen and (max-width: 1100px) {
+    row-gap: 100px;
+    padding-bottom: 50px;
   }
 `;
 

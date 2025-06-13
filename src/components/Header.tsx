@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {
-  HorizontalWrapper,
-  HoverWrapper,
-} from "../components/reusable/styled-components";
+import { HorizontalWrapper } from "../components/reusable/styled-components";
 import AnimatedHamburger from "../components/reusable/animated-hamburger";
-import HamburgerModal from "../components/HamburgerModal";
+import HamburgerModal from "./HamburgerModal";
 
 const Header = (props: any) => {
   const [modalState, setModalState] = useState<boolean>(false);
@@ -13,7 +10,9 @@ const Header = (props: any) => {
   return (
     <HeaderWrapper>
       <Title onClick={() => props.handleLinkClick("home")}>
-        <h1>J<span>ason</span>C<span>ornish</span></h1>
+        <h1>
+          J<span>ason</span>C<span>ornish</span>
+        </h1>
       </Title>
       <HeaderOptions>
         <HamburgerWrapper>
@@ -63,15 +62,14 @@ const HeaderWrapper = styled.header`
     }
     pointer-events: auto;
   }
-  @media screen and (max-width: 1200px) {
-    width: 97.5%;
-  }
 
-  @media screen and (max-width: 700px) {
-    background: #4831d4;
-    width: 95%;
-    padding: 15px 15px;
+  @media screen and (max-width: 1100px) {
+    background-color: #1c143a;
+    width: 100%;
+    padding: 15px 30px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    z-index: 10;
+    margin: 0px;
     h1 {
       font-size: 20px;
     }

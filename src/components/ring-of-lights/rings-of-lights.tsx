@@ -6,9 +6,9 @@ import OuterRing from "./outer-ring";
 const RingsOfLights = () => {
   return (
     <RingsOfLightsWrapper className="lights-background">
-      <InnerCircle />
+      {/* <InnerCircle />
       <InnerRing />
-      <OuterRing />
+      <OuterRing /> */}
     </RingsOfLightsWrapper>
   );
 };
@@ -18,7 +18,7 @@ export default RingsOfLights;
 const RingsOfLightsWrapper = styled.div`
   width: 100vw;
   height: 100vh;
-  opacity: 0.1;
+  opacity: 0.2;
   left: 0;
   top: 0;
   position: fixed;

@@ -41,7 +41,6 @@ const SelectedWorkContent = (props: WorkProps) => {
             <DeadChip content={"Zustand"} />
             <DeadChip content={"Node.js"} />
             <DeadChip content={"Styled-Components"} />
-            {/* <DeadChip content={"BlueprintJS"} /> */}
             <DeadChip content={"Highcharts"} />
           </ChipRow>
           <WorkContent>
@@ -337,7 +336,7 @@ const TransitionWrapper = styled.div`
 
 const WorkWrapper = styled(VerticalWrapper)`
   padding: 0px 0px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     width: 70%;
   }
 `;
@@ -354,7 +353,7 @@ const WorkTitle = styled.h1`
     color: #d0cae6;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     margin-top: 10px;
     padding: 0 10%;
   }
@@ -386,7 +385,7 @@ const WorkSubTitle = styled.h2`
     color: ${(props) => props.theme.colors.highlight};
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     padding-left: 10%;
   }
 
@@ -402,7 +401,7 @@ const ChipRow = styled(HorizontalWrapper)`
   flex-wrap: wrap;
   row-gap: 5px;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     padding: 0 10%;
     flex-wrap: wrap;
     column-gap: 5px;
@@ -420,7 +419,7 @@ const ChipRow = styled(HorizontalWrapper)`
 const WorkContent = styled(VerticalWrapper)`
   width: 100%;
   row-gap: 10px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     width: 100%;
     justify-content: center;
   }
@@ -433,7 +432,7 @@ const WorkParagraphWrapper = styled(VerticalWrapper)`
   margin-top: 5px;
 
   word-wrap: break-word;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     max-width: 100%;
     margin: auto auto;
     margin-top: 15px;
@@ -496,7 +495,7 @@ const AppleImage = styled.div`
     opacity: 100%;
     fill: black;
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     height: auto;
     img {
       width: 80%;
@@ -528,7 +527,7 @@ const ZollegeImage = styled.div`
     width: 550px;
     height: auto;
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     display: flex;
     justify-content: center;
     img {
@@ -552,7 +551,7 @@ const ElliotImage = styled.div`
     width: 550px;
     height: auto;
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     display: flex;
     justify-content: center;
     img {

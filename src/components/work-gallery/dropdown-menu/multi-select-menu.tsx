@@ -109,7 +109,7 @@ const MultiSelectMenu = () => {
       <SelectAllButton onClick={handleSelectAllButtonClick}>
         <p>
           {selectedOptions.length === options.length
-            ? "De-Select All"
+            ? "Deselect All"
             : "Select All"}
         </p>
       </SelectAllButton>

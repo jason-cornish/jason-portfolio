@@ -69,6 +69,9 @@ const NewLandingWrapper = styled.div`
   flex-direction: column;
   margin-bottom: 150px;
   @media screen and (max-width: 800px) {
+    padding-top: 200px;
+    margin-bottom: 500px;
+    min-height: auto;
     .lights-background {
       display: none;
     }
@@ -126,7 +129,6 @@ const CenterWrapper = styled.div`
   border-radius: 3px;
   padding: 30px;
   transition: background-color, height 700ms ease-in-out;
-
   /* :hover {
     background-color: rgba(208, 202, 230, 0.1);
     height: 500px;

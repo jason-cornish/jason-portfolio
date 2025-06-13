@@ -92,65 +92,69 @@ const ContactMe = forwardRef((props, contactRef: any) => {
 
   return (
     <ContactMeWrapper ref={contactRef}>
-      {/* <CurveContainer inverted={true} fill={"#1b1236"} aligned={"top"} /> */}
-      <SectionTitle>Inquire</SectionTitle>
-      <SubHeader>Like what you see? Shoot me a message.</SubHeader>
-      <ContactForm noValidate>
-        <HorizontalWrapper className="horizontal-wrapper">
+      <BackgroundWrapper>
+        {/* <CurveContainer inverted={true} fill={"#1b1236"} aligned={"top"} /> */}
+        <SectionTitle>Inquire</SectionTitle>
+        <SubHeader>Like what you see? Shoot me a message.</SubHeader>
+        <ContactForm noValidate>
+          <HorizontalWrapper className="horizontal-wrapper">
+            <InputWrapper
+              className={nameErrorState ? `error ${nameErrorState}` : "default"}
+            >
+              <label htmlFor="name" className="name-label">
+                Your Name
+              </label>
+              <Input
+                id="name"
+                className="name-input error"
+                placeholder="Name"
+                required={true}
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+            </InputWrapper>
+            <InputWrapper
+              className={
+                emailErrorState ? `error ${emailErrorState}` : "default"
+              }
+            >
+              <label htmlFor="email" className="email-label">
+                Email Address
+              </label>
+              <Input
+                id="email"
+                className="email-input"
+                type="email"
+                required={true}
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+            </InputWrapper>
+          </HorizontalWrapper>
           <InputWrapper
-            className={nameErrorState ? `error ${nameErrorState}` : "default"}
+            className={
+              messageErrorState ? `error ${messageErrorState}` : "default"
+            }
           >
-            <label htmlFor="name" className="name-label">
-              Your Name
+            <label htmlFor="message" className="message-label">
+              Your Message
             </label>
-            <Input
-              id="name"
-              className="name-input error"
-              placeholder="Name"
+            <MessageInput
+              id="message"
+              className="messageInput"
               required={true}
-              type="text"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
+              placeholder="Coffee?"
+              onChange={(e) => setMessage(e.target.value)}
+              value={message}
             />
           </InputWrapper>
-          <InputWrapper
-            className={emailErrorState ? `error ${emailErrorState}` : "default"}
-          >
-            <label htmlFor="email" className="email-label">
-              Email Address
-            </label>
-            <Input
-              id="email"
-              className="email-input"
-              type="email"
-              required={true}
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-          </InputWrapper>
-        </HorizontalWrapper>
-        <InputWrapper
-          className={
-            messageErrorState ? `error ${messageErrorState}` : "default"
-          }
-        >
-          <label htmlFor="message" className="message-label">
-            Your Message
-          </label>
-          <MessageInput
-            id="message"
-            className="messageInput"
-            required={true}
-            placeholder="Coffee?"
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
-          />
-        </InputWrapper>
-      </ContactForm>
-      <SubmitButton onClick={submitForm}>
-        <p>Send</p>
-      </SubmitButton>
+        </ContactForm>
+        <SubmitButton onClick={submitForm}>
+          <p>Send</p>
+        </SubmitButton>
+      </BackgroundWrapper>
     </ContactMeWrapper>
   );
 });
@@ -159,7 +163,6 @@ export default ContactMe;
 
 const ContactMeWrapper = styled(VerticalWrapper)`
   position: relative;
-  background-color: ${(props) => props.theme.colors.opaque1};
   border-radius: 3px;
   padding: 30px;
   align-items: center;
@@ -181,20 +184,43 @@ const ContactMeWrapper = styled(VerticalWrapper)`
   }
   .horizontal-wrapper {
     column-gap: 30px;
-    @media screen and (max-width: 700px) {
-      row-gap: 40px;
+    @media screen and (max-width: 1100px) {
+      width: 100%;
+      row-gap: 15px;
       flex-direction: column;
     }
+  }
+  @media screen and (max-width: 1100px) {
+    margin: 0px 15px;
+    h1 {
+      font-size: 30px;
+    }
+    h2 {
+      font-size: 16px;
+    }
+    padding: 30px;
+  }
+`;
+
+const BackgroundWrapper = styled.div`
+  background-color: ${(props) => props.theme.colors.opaque1};
+  position: relative;
+  border-radius: 3px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (max-width: 1100px) {
+    width: 100%;
   }
 `;
 
 const ContactForm = styled.form`
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   padding-top: 30px;
-  row-gap: 40px;
-  margin-bottom: 40px;
+  row-gap: 30px;
+  margin-bottom: 30px;
   .error {
     @keyframes shake {
       0% {
@@ -246,6 +272,12 @@ const ContactForm = styled.form`
       content: "This field is required.";
     }
   }
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+    padding-top: 15px;
+    row-gap: 15px;
+    margin-bottom: 15px;
+  }
 `;
 
 const InputWrapper = styled(VerticalWrapper)`
@@ -260,6 +292,14 @@ const InputWrapper = styled(VerticalWrapper)`
   :focus-within label {
     transition: all 300ms ease-in-out;
   }
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+    max-width: 100%;
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  }
 `;
 
 const Input = styled.input`
@@ -267,7 +307,6 @@ const Input = styled.input`
   font-size: 16px;
   font-family: Cardo;
   height: 30px;
-  width: 300px;
   background-color: ${(props) => props.theme.colors.opaque2};
   border: 1px solid transparent;
   border-radius: 6px;
@@ -289,8 +328,8 @@ const Input = styled.input`
       color: #918da1;
     }
   }
-  @media screen and (max-width: 700px) {
-    width: 385px;
+  @media screen and (max-width: 1100px) {
+    height: 20px;
   }
 `;
 

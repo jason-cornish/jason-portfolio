@@ -10,7 +10,10 @@ const AboutMe = forwardRef((props, aboutRef: any) => {
       {/* <CurveContainer fill={"#4831d4"} inverted={true} aligned="top" /> */}
       <ContentWrapper>
         <ImageSection>
-          <img src={JasonCornish}></img>
+          <img
+            src={JasonCornish}
+            alt="Jason Cornish standing on a Mexican beach at sunset"
+          ></img>
         </ImageSection>
         <TextSection>
           <Heading>Over the years,</Heading>
@@ -22,7 +25,7 @@ const AboutMe = forwardRef((props, aboutRef: any) => {
           <br />
           <p>
             Having powered dozens of applications with <span>React</span> &{" "}
-            <span>Typescript</span>, I can admit to being a bit{" "}
+            <span>Typescript</span>, I think I can admit to being a bit{" "}
             <span>React</span> obsessed. While I'm most excited about these
             front-end technologies, I also have experience working with{" "}
             <span>NodeJS</span>, <span>Express.JS</span>, and{" "}
@@ -94,6 +97,9 @@ const AboutMeWrapper = styled(HorizontalWrapper)`
   box-sizing: border-box;
   justify-content: center;
   margin-top: -400px;
+  @media screen and (max-width: 1100px) {
+    padding: 0px 15px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -115,6 +121,12 @@ const TextSection = styled.div`
       font-weight: 600;
     }
   }
+  @media screen and (max-width: 800px) {
+    p {
+      font-size: 15px;
+      margin: -3px 0px;
+    }
+  }
 `;
 
 const Heading = styled.h1`
@@ -122,6 +134,9 @@ const Heading = styled.h1`
   font-size: 28px;
   color: ${(props) => props.theme.colors.white} !important;
   margin-bottom: 10px;
+  @media screen and (max-width: 800px) {
+    font-size: 24px;
+  }
 `;
 
 const ImageSection = styled.div`

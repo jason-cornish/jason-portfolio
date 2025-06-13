@@ -86,7 +86,7 @@ const WorkWrapper = styled.div`
     font-size: 45px;
     margin: 0 0 20px 0px;
   }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     .WorkSectionTitle {
       display: flex;
     }
@@ -107,7 +107,7 @@ const ContentWrapper = styled.div`
   box-sizing: border-box;
   justify-content: center;
   /* column-gap: 15px; */
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -127,7 +127,7 @@ const WorkChips = styled(VerticalWrapper)`
   row-gap: 15px;
   box-sizing: border-box;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     flex-direction: row;
     overflow-x: auto;
     column-gap: 15px;
@@ -171,7 +171,7 @@ const Divider = styled.div`
   width: 0px;
   border: 1px solid ${(props) => props.theme.colors.opaque2};
   border-radius: 3px;
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1100px) {
     display: none;
   }
 `;
