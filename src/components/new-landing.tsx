@@ -7,6 +7,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import { ReactComponent as LinksCircle } from "../svg/links.svg";
 import Icon from "@mui/material/Icon";
+import JasonCornish from "../images/jason_cornish.jpeg";
 
 const NewLanding = () => {
   return (
@@ -15,6 +16,12 @@ const NewLanding = () => {
         <CenterWrapper>
           <h1>Jason Cornish</h1>
           <h2>Front-End Engineer</h2>
+          <JasonImageWrapper>
+            <img
+              src={JasonCornish}
+              alt="Jason Cornish standing on a Mexican beach at sunset"
+            ></img>
+          </JasonImageWrapper>
           <SubText>
             <p>
               I design and engineer innovative web experiences in React &
@@ -68,9 +75,11 @@ const NewLandingWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-bottom: 150px;
-  @media screen and (max-width: 800px) {
-    padding-top: 200px;
-    margin-bottom: 500px;
+  @media screen and (max-width: 1100px) {
+    padding-top: 150px;
+    margin-bottom: 400px;
+    width: 100%;
+    padding: 150px 15px 0px 15px;
     min-height: auto;
     .lights-background {
       display: none;
@@ -113,7 +122,16 @@ const BackgroundWrapper = styled.div`
     display: none;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1100px) {
+    width: 100%;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    h1 {
+      font-size: 45px;
+    }
+    h2 {
+      font-size: 25px;
+    }
   }
 `;
 
@@ -135,6 +153,32 @@ const CenterWrapper = styled.div`
   } */
   .display-navigator {
     display: flex;
+  }
+  @media screen and (max-width: 1100px) {
+    padding: 30px 15px;
+  }
+`;
+
+const JasonImageWrapper = styled.div`
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  margin: 15px 0px;
+  max-width: 250px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+  img {
+    position: relative;
+    opacity: 70%;
+    height: 600px;
+    border-radius: 3px;
+  }
+  @media screen and (min-width: 1100px) {
+    display: none;
   }
 `;
 

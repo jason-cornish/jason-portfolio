@@ -64,10 +64,11 @@ const HeaderWrapper = styled.header`
   }
 
   @media screen and (max-width: 1100px) {
-    background-color: #1c143a;
+    background-color: #150e2b;
+    border-bottom: 2px solid #0d0622;
     width: 100%;
-    padding: 15px 30px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 10px 15px;
+    box-shadow: #0d0622 0px 1px 4px;
     z-index: 10;
     margin: 0px;
     h1 {

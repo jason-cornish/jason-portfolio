@@ -170,9 +170,10 @@ const SelectedWorkContent = (props: WorkProps) => {
           <WorkContent>
             <WorkParagraphWrapper>
               <WorkParagraph>
-                Collaborated on a team of 5 junior developers to develop a fully
-                responsive static website with HTML5, CSS3, Bootstrap, and
-                Javascript.
+                "Designed and built an internal Gantt chart dashboard in React
+                for class instructors to visualize and organize class schedules,
+                along with a fully responsive static website with HTML5, CSS3,
+                Bootstrap, and Javascript.
               </WorkParagraph>
               {/* <WorkParagraph>
                 Implemented the DHTMLX Gantt library to build an interactable

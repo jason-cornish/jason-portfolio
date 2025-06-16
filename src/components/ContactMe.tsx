@@ -186,7 +186,7 @@ const ContactMeWrapper = styled(VerticalWrapper)`
     column-gap: 30px;
     @media screen and (max-width: 1100px) {
       width: 100%;
-      row-gap: 15px;
+      row-gap: 25px;
       flex-direction: column;
     }
   }
@@ -258,6 +258,9 @@ const ContactForm = styled.form`
       bottom: -25px;
       left: 0px;
       color: #e64848;
+      @media screen and (max-width: 1100px) {
+        bottom: -20px;
+      }
     }
   }
 
@@ -275,7 +278,7 @@ const ContactForm = styled.form`
   @media screen and (max-width: 1100px) {
     width: 100%;
     padding-top: 15px;
-    row-gap: 15px;
+    row-gap: 20px;
     margin-bottom: 15px;
   }
 `;

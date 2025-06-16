@@ -25,11 +25,10 @@ const AboutMe = forwardRef((props, aboutRef: any) => {
           <br />
           <p>
             Having powered dozens of applications with <span>React</span> &{" "}
-            <span>Typescript</span>, I think I can admit to being a bit{" "}
-            <span>React</span> obsessed. While I'm most excited about these
-            front-end technologies, I also have experience working with{" "}
-            <span>NodeJS</span>, <span>Express.JS</span>, and{" "}
-            <span>PostgreSQL</span>.
+            <span>Typescript</span>, I think I can admit to being a bit
+            obsessed. While I'm most excited about these front-end technologies,
+            I also have experience working with <span>NodeJS</span>,{" "}
+            <span>Express.JS</span>, and <span>PostgreSQL</span>.
           </p>
 
           {/* <p>
@@ -158,7 +157,7 @@ const ImageSection = styled.div`
     zoom: 125%;
     opacity: 80%;
 
-    margin-right: 00px;
+    margin-right: 0px;
   }
   @media screen and (max-width: 1100px) {
     display: none;
